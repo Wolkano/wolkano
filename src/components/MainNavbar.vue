@@ -1,19 +1,23 @@
 <template>
   <div class="navbar">
     <div class="first">
-      <img
-        src="../assets/028a399e-aec3-4368-bc6e-2fc7207d884e-removebg-preview.png"
-        class="logo" />
-      <p>Om oss</p>
-      <p>Erbjudande</p>
-      <p>Hur fungerar det</p>
+      <router-link to="/">
+        <img
+          src="../assets/028a399e-aec3-4368-bc6e-2fc7207d884e-removebg-preview.png"
+          class="logo"
+      /></router-link>
+      <router-link to="/about"><p>Om oss</p></router-link>
+      <router-link to="#"><p>Erbjudande</p></router-link>
+      <router-link to="#"><p>Hur fungerar det</p></router-link>
     </div>
     <div class="second">
-      <p>Partners</p>
-      <p>Projekt</p>
+      <router-link to="#"><p>Partners</p></router-link>
+      <router-link to="#"><p>Projekt</p></router-link>
     </div>
   </div>
 </template>
+
+<script setup></script>
 
 <style scoped lang="scss">
 .navbar {

@@ -35,11 +35,47 @@
           förfrågningar!
         </p>
         <br />
+
         <router-link to="/form">
-          <button class="btn" variant="outlined">
+          <button class="button-56" role="button">
             Begär en offert nu
           </button></router-link
         >
+      </div>
+    </div>
+    <div class="info">
+      <div>
+        <img />
+        <h1>Testar</h1>
+        <p>
+          Ett CRM-system ger dig en central databas för att lagra och hantera
+          detaljerad kundinformation på ett strukturerat sätt. Med ett
+          CRM-system blir det enkelt att hålla reda på alla dina
+          kontaktuppgifter, kommunikationshistoriken och dina kunders
+          preferenser.
+        </p>
+      </div>
+      <div>
+        <img />
+        <h1>Testar</h1>
+        <p>
+          Ett CRM-system ger dig en central databas för att lagra och hantera
+          detaljerad kundinformation på ett strukturerat sätt. Med ett
+          CRM-system blir det enkelt att hålla reda på alla dina
+          kontaktuppgifter, kommunikationshistoriken och dina kunders
+          preferenser.
+        </p>
+      </div>
+      <div>
+        <img />
+        <h1>Testar</h1>
+        <p>
+          Ett CRM-system ger dig en central databas för att lagra och hantera
+          detaljerad kundinformation på ett strukturerat sätt. Med ett
+          CRM-system blir det enkelt att hålla reda på alla dina
+          kontaktuppgifter, kommunikationshistoriken och dina kunders
+          preferenser.
+        </p>
       </div>
     </div>
   </div>
@@ -63,13 +99,13 @@ export default {
   margin-top: 100px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   font-size: larger;
   color: black;
 }
 .intro {
   width: 45%;
   h1 {
-    color: white;
   }
   .company_name {
     color: rgb(254, 157, 1);
@@ -77,6 +113,16 @@ export default {
   }
 }
 .steps {
-  width: 35%;
+  width: 45%;
+}
+.info {
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+  justify-content: center;
+  gap: 50px;
+  h1 {
+    color: rgb(254, 157, 1);
+  }
 }
 </style>

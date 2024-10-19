@@ -16,8 +16,23 @@ import MainNavbar from "@/components/MainNavbar.vue";
   margin-right: auto;
 }
 
-.btn {
-  color: red;
+.button-56 {
+  height: 40px;
+  border-radius: 10px;
+  border: none;
+  background-color: #ffbc4f;
+  font-weight: 600;
+}
+
+.button-56:hover {
+  background-color: #fe9d01;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .button-56 {
+    padding: 0 40px;
+  }
 }
 
 nav {
