@@ -5,7 +5,8 @@
         <img
           src="../assets/028a399e-aec3-4368-bc6e-2fc7207d884e-removebg-preview.png"
           class="logo"
-      /></router-link>
+      />
+    </router-link>
       <router-link to="/about"><p>Om oss</p></router-link>
       <router-link to="#"><p>Erbjudande</p></router-link>
       <router-link to="#"><p>Hur fungerar det</p></router-link>
@@ -17,7 +18,8 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+</script>
 
 <style scoped lang="scss">
 .navbar {
@@ -43,6 +45,20 @@
       color: black;
       font-weight: 600;
     }
+  }
+
+}
+.second{
+  p{
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #ffbc4f;
+    border-radius: 10px;
+  }
+  p:hover{
+    background-color: #fe9d01;
   }
 }
 </style>
