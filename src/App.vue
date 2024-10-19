@@ -1,7 +1,6 @@
 <template>
   <main-navbar />
   <router-view />
-  test
 </template>
 
 <script setup>
