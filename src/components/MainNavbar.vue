@@ -3,7 +3,9 @@
     <div class="first">
       <router-link to="/">
         <img
-          src="../assets/028a399e-aec3-4368-bc6e-2fc7207d884e-removebg-preview.png"
+          :src="currentImg"
+          @mouseover="changeImageOnHover"
+          @mouseout="resetImage"
           class="logo"
       />
     </router-link>
@@ -19,6 +21,20 @@
 </template>
 
 <script setup>
+import { ref } from 'vue';
+
+const originalImg = require('../assets/028a399e-aec3-4368-bc6e-2fc7207d884e-removebg-preview.png');
+const hoverImg = require('../assets/testlogga.png');
+
+const currentImg = ref(originalImg);
+
+function changeImageOnHover() {
+  currentImg.value = hoverImg;
+}
+
+function resetImage() {
+  currentImg.value = originalImg;
+}
 </script>
 
 <style scoped lang="scss">
