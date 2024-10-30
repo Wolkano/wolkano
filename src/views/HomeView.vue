@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <div class="mainDiv flex flex-row items-center mt-10 space-y-16">
+    <div class="mainDiv flex flex-row items-center mt-10 space-y-16 gap-10">
       <div class="intro text-center md:text-left max-w-3xl">
         <h1 class="text-3xl font-bold text-gray-800">
           Förenkla din offertförfrågan med vårt automatiserade system
@@ -19,7 +19,7 @@
         </p>
       </div>
 
-      <div class="steps max-w-2xl text-center md:text-left">
+      <div class="steps max-w-2xl text-center md:text-center">
         <h2 class="text-2xl font-semibold text-gray-800">
           Så här fungerar det:
         </h2>
@@ -48,7 +48,7 @@
         </router-link>
       </div>
     </div>
-
+    <PricePlans />
     <div class="info flex flex-col md:flex-row justify-center gap-12 mt-10 p-4">
       <div class="text-center max-w-xs">
         <img />
@@ -87,9 +87,6 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: "HomeView",
-  components: {},
-};
+<script setup>
+import PricePlans from "@/components/PricePlans.vue";
 </script>

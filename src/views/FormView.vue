@@ -1,28 +1,12 @@
 <template>
-  <div>
-    <input type="text" placeholder="Email" />
-    <input type="text" placeholder="Ditt namn" />
-    <div class="radio-input">
-      <label class="label">
-        <input
-          type="radio"
-          id="value-1"
-          checked=""
-          name="value-radio"
-          value="value-1" />
-        <p class="text">OfferMe</p>
-      </label>
-      <label class="label">
-        <input type="radio" id="value-2" name="value-radio" value="value-2" />
-        <p class="text">OfferMe + Ombyggnad av hemsida</p>
-      </label>
-      <label class="label">
-        <input type="radio" id="value-3" name="value-radio" value="value-3" />
-        <p class="text">OfferMe + Ny hemsida</p>
-      </label>
-    </div>
+  <div class="bg-red-50">
+    <PricePlans />
   </div>
 </template>
+
+<script setup>
+import PricePlans from "@/components/PricePlans.vue";
+</script>
 
 <style scoped lang="scss">
 /* From Uiverse.io by Na3ar-17 */
