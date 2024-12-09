@@ -1,6 +1,6 @@
 <template>
-  <main-navbar />
-  <router-view />
+  <main-navbar class="navbarComponent" />
+  <router-view class="content" />
 </template>
 
 <script setup>
@@ -8,10 +8,16 @@ import MainNavbar from "@/components/MainNavbar.vue";
 </script>
 
 <style lang="scss">
+.navbarComponent {
+  position: absolute;
+}
+.content {
+  padding-top: 150px;
+  top: 0;
+}
 #app {
   text-align: center;
-  color: #2c3e50;
-  width: 50%;
+  color: white;
   margin-left: auto;
   margin-right: auto;
 }
@@ -32,19 +38,6 @@ import MainNavbar from "@/components/MainNavbar.vue";
 @media (min-width: 768px) {
   .button-56 {
     padding: 0 40px;
-  }
-}
-
-nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
   }
 }
 </style>

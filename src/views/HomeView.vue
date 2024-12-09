@@ -1,92 +1,91 @@
+<script setup>
+import { computed } from "vue";
+import { useStore } from "vuex";
+
+const store = useStore();
+const copy = computed(() => store.state.copy.home);
+</script>
+
 <template>
   <div class="home">
-    <div class="mainDiv flex flex-row items-center mt-10 space-y-16 gap-10">
-      <div class="intro text-center md:text-left max-w-3xl">
-        <h1 class="text-3xl font-bold text-gray-800">
-          Förenkla din offertförfrågan med vårt automatiserade system
-        </h1>
-        <br />
-        <p class="text-lg text-gray-700">
-          Välkommen till
-          <span class="company_name text-orange-500 font-extrabold">
-            Wolkano Solutions</span
-          >, din smarta lösning för snabba och enkla offertförfrågningar! Vårt
-          automatiserade system gör det möjligt för företag att hantera
-          kundförfrågningar effektivt och smidigt. Genom vårt användarvänliga
-          formulär kan dina kunder snabbt fylla i sina behov och få en anpassad
-          offert – helt utan krångel. Med vårt system sparar du tid, ökar din
-          effektivitet och ger dina kunder en förstklassig upplevelse.
+    <div class="mainDiv">
+      <div class="intro">
+        <h1>{{ copy.title }}</h1>
+        <p>
+          {{ copy.description1 }}
+          <span class="company_name">{{ copy.companyName }}</span
+          >, {{ copy.description2 }}
         </p>
+        <div class="buttons">
+          <router-link to="/about" class="button">Om oss</router-link>
+          <router-link to="/test" class="button">Kontakta oss</router-link>
+        </div>
       </div>
 
-      <div class="steps max-w-2xl text-center md:text-center">
-        <h2 class="text-2xl font-semibold text-gray-800">
-          Så här fungerar det:
-        </h2>
-        <br />
-        <ol class="list-decimal list-inside text-lg text-gray-700 space-y-2">
-          <li>Kunder fyller i offertformuläret online.</li>
-          <li>
-            Vårt system samlar all information och skickar en anpassad offert
-            automatiskt.
-          </li>
-          <li>
-            Du får alla detaljer och kan fokusera på att leverera bästa möjliga
-            tjänst!
-          </li>
-        </ol>
-        <p class="mt-4 text-lg text-gray-700">
-          Testa vårt system idag och upplev hur enkelt det kan vara att hantera
-          förfrågningar!
-        </p>
-        <br />
-        <router-link to="/form">
-          <button
-            class="button-56 bg-orange-500 text-white py-2 px-6 rounded-lg shadow-md hover:bg-orange-600 focus:outline-none">
-            Begär en offert nu
-          </button>
-        </router-link>
-      </div>
-    </div>
-    <PricePlans />
-    <div class="info flex flex-col md:flex-row justify-center gap-12 mt-10 p-4">
-      <div class="text-center max-w-xs">
-        <img />
-        <h1 class="text-xl font-semibold text-orange-500">Testar</h1>
-        <p class="text-gray-700 mt-2">
-          Ett CRM-system ger dig en central databas för att lagra och hantera
-          detaljerad kundinformation på ett strukturerat sätt. Med ett
-          CRM-system blir det enkelt att hålla reda på alla dina
-          kontaktuppgifter, kommunikationshistoriken och dina kunders
-          preferenser.
-        </p>
-      </div>
-      <div class="text-center max-w-xs">
-        <img />
-        <h1 class="text-xl font-semibold text-orange-500">Testar</h1>
-        <p class="text-gray-700 mt-2">
-          Ett CRM-system ger dig en central databas för att lagra och hantera
-          detaljerad kundinformation på ett strukturerat sätt. Med ett
-          CRM-system blir det enkelt att hålla reda på alla dina
-          kontaktuppgifter, kommunikationshistoriken och dina kunders
-          preferenser.
-        </p>
-      </div>
-      <div class="text-center max-w-xs">
-        <img />
-        <h1 class="text-xl font-semibold text-orange-500">Testar</h1>
-        <p class="text-gray-700 mt-2">
-          Ett CRM-system ger dig en central databas för att lagra och hantera
-          detaljerad kundinformation på ett strukturerat sätt. Med ett
-          CRM-system blir det enkelt att hålla reda på alla dina
-          kontaktuppgifter, kommunikationshistoriken och dina kunders
-          preferenser.
-        </p>
+      <div class="image">
+        <img
+          class="businessManImage"
+          src="../assets/—Pngtree—happy corporate business professional one_13504468.png" />
       </div>
     </div>
   </div>
 </template>
 
-<script setup>
-import PricePlans from "@/components/PricePlans.vue";
-</script>
+<style lang="scss">
+.home {
+  background-color: #28a2ff;
+
+  .mainDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+
+    .intro {
+      text-align: left;
+      max-width: 48rem;
+      width: 30%;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      h1 {
+        font-size: 48px;
+        font-weight: bold;
+      }
+
+      p {
+        font-size: 24px;
+
+        .company_name {
+          color: #fe9d01;
+          font-weight: 800;
+        }
+      }
+
+      .buttons {
+        display: flex;
+        gap: 50px;
+
+        .button {
+          background-color: white;
+          border-radius: 100px;
+          color: black;
+          padding: 10px 20px;
+          transition: background-color 200ms linear;
+
+          &:hover {
+            background-color: rgb(231, 231, 231);
+          }
+        }
+      }
+    }
+
+    .image .businessManImage {
+      width: 800px;
+      height: auto;
+    }
+  }
+}
+</style>

@@ -1,14 +1,17 @@
-import { createStore } from 'vuex'
+import { createStore } from "vuex";
+import dictionary from "./dictionary.json";
 
 export default createStore({
   state: {
+    priceChoice: null,
+    copy: dictionary,
   },
-  getters: {
-  },
+  getters: {},
   mutations: {
+    setPriceChoice(state, payload) {
+      state.priceChoice = payload;
+    },
   },
-  actions: {
-  },
-  modules: {
-  }
-})
+  actions: {},
+  modules: {},
+});

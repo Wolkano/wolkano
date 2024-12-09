@@ -1,15 +1,74 @@
 <template>
-  <div class="bg-red-50">
-    <PricePlans />
+  <div class="mt-10 lg:ml-[20%] mr-[20%]">
+    <h1 class="text-2xl">Få en offert för anpassade CRM-lösningar</h1>
+    <p class="mb-10">
+      Är du redo att ta kundrelationerna till nästa nivå? Fyll i formuläret
+      nedan så återkommer vi med en skräddarsydd offert baserad på dina behov
+      och mål. Vår CRM-tjänst är anpassningsbar och flexibel för att stödja
+      företag av alla storlekar och inom alla branscher. Vi ser fram emot att
+      höra hur vi kan hjälpa dig förbättra dina affärsprocesser och
+      kundupplevelser.
+    </p>
+    <h2 class="text-xl">Formulärbeskrivning och instruktioner</h2>
+    <p class="mb-10">
+      För att kunna ge dig en exakt offert, behöver vi veta lite mer om ditt
+      företag och dina specifika behov. Vänligen fyll i så många detaljer som
+      möjligt i formuläret nedan. Ju mer information vi har, desto bättre kan vi
+      anpassa våra tjänster för att passa just ditt företag.
+    </p>
+    <div>
+      <div class="flex justify-center gap-5">
+        <div>
+          <p>Förnamn</p>
+          <input
+            class="bg-white px-4 py-3 outline-none w-[280px] text-black rounded-lg border-2 transition-colors duration-100 border-solid focus:border-[#f5bf69] border-[#FE9D01]"
+            v-model="firstName"
+            placeholder="Jane" />
+          <p>Efternamn</p>
+          <input
+            class="bg-white px-4 py-3 outline-none w-[280px] text-black rounded-lg border-2 transition-colors duration-100 border-solid focus:border-[#f5bf69] border-[#FE9D01]"
+            v-model="lastName"
+            placeholder="Doe" />
+        </div>
+        <div>
+          <p>E-mail</p>
+          <input
+            class="bg-white px-4 py-3 outline-none w-[280px] text-black rounded-lg border-2 transition-colors duration-100 border-solid focus:border-[#f5bf69] border-[#FE9D01]"
+            v-model="email"
+            placeholder="test@test.se" />
+          <p>Telefonnummer</p>
+          <input
+            class="bg-white px-4 py-3 outline-none w-[280px] text-black rounded-lg border-2 transition-colors duration-100 border-solid focus:border-[#f5bf69] border-[#FE9D01]"
+            v-model="phone"
+            placeholder="+46xxxxxxx" />
+        </div>
+      </div>
+      <h3 class="text-xl">Val av tjänst</h3>
+      <div class="flex gap-10 justify-center items-center flex-column">
+        <input type="radio" id="one" value="1" v-model="radioButtonChoice" />
+        <label for="one">Hobby</label>
+        <input type="radio" id="two" value="2" v-model="radioButtonChoice" />
+        <label for="two">Företag</label>
+        {{ priceChoice }}
+      </div>
+    </div>
   </div>
 </template>
 
 <script setup>
-import PricePlans from "@/components/PricePlans.vue";
+import { ref, computed } from "vue";
+import { useStore } from "vuex";
+const store = useStore();
+const priceChoice = computed(() => store.state.priceChoice);
+
+const radioButtonChoice = ref(priceChoice.value ?? 0);
+const firstName = ref("");
+const lastName = ref("");
+const email = ref("");
+const phone = ref("");
 </script>
 
 <style scoped lang="scss">
-/* From Uiverse.io by Na3ar-17 */
 .radio-input {
   display: flex;
   flex-direction: column;
