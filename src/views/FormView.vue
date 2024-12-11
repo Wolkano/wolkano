@@ -1,16 +1,15 @@
 <template>
   <div class="mainDiv">
-    <h1>
-      Kontakta <span class="companyName">Wolkano Solutions</span><br />
-      Din partner för smidiga offertlösningar
-    </h1>
+    <h1>Kontakta <span class="companyName">Wolkano</span></h1>
+    <h2>Din partner för smidiga offertlösningar</h2>
     <p class="description">
       Har du frågor om våra automatiserade offerttjänster, eller vill du veta
       hur vi kan hjälpa ditt företag att spara tid och öka effektiviteten? Vi
       finns här för att hjälpa dig! Fyll i formuläret nedan, så återkommer vi
-      till dig så snart som möjligt. Hos Wolkano Solutions är vår ambition att
-      göra offertprocessen enkel, snabb och skräddarsydd för dina behov. Tveka
-      inte att höra av dig – vi ser fram emot att samarbeta med dig!
+      till dig så snart som möjligt.<br />
+      Hos Wolkano är vår ambition att göra offertprocessen enkel, snabb och
+      skräddarsydd för dina behov. Tveka inte att höra av dig – vi ser fram emot
+      att samarbeta med dig!
     </p>
     <form class="form">
       <div>
