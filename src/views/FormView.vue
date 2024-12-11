@@ -1,6 +1,6 @@
 <template>
   <div class="mainDiv">
-    <h1 class="title">
+    <h1>
       Kontakta <span class="companyName">Wolkano Solutions</span><br />
       Din partner för smidiga offertlösningar
     </h1>
@@ -36,16 +36,17 @@
 
 <script setup></script>
 <style lang="scss" scoped>
+@import "../assets/scss/variables.scss";
 .mainDiv {
-  background-color: #0b0033;
+  background: rgb(56, 23, 173);
+  background: radial-gradient(
+    circle,
+    rgba(56, 23, 173, 1) 0%,
+    rgba(11, 0, 51, 1) 100%
+  );
   padding-bottom: 100px;
-  .title {
-    font-size: 32px;
-    margin-bottom: 20px;
-    font-weight: 600;
-    .companyName {
-      color: #fe9d01;
-    }
+  .companyName {
+    color: #fe9d01;
   }
   .description {
     width: 50%;

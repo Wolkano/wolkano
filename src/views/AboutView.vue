@@ -27,6 +27,7 @@
 <script setup></script>
 
 <style lang="scss" scoped>
+@import "../assets/scss/variables.scss";
 .about {
   display: flex;
   flex-wrap: wrap;
@@ -34,14 +35,9 @@
   justify-content: center;
   gap: 30px;
   width: 100%;
-  background-color: #28a2ff;
+  background: #{$gradient-background};
   padding-bottom: 50px;
 
-  h1 {
-    font-size: 48px;
-    font-weight: bold;
-    width: 100%;
-  }
   .cName {
     color: #fe9d01;
     text-shadow: 0px 1px 1px rgb(0, 0, 0);

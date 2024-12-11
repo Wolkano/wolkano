@@ -1,0 +1,46 @@
+$primary-color: #3498db;
+$secondary-color: #2ecc71;
+$text-color: #333333;
+$font-size-base: 16px;
+$spacing-unit: 8px;
+$gradient-background: radial-gradient(
+  circle,
+  rgba(31, 0, 145, 1) 1%,
+  rgba(11, 0, 51, 1) 100%
+);
+
+// Typography Sizes
+$font-size-h1: 3rem; // 40px
+$font-size-h2: 2rem; // 32px
+$font-size-h3: 1.75rem; // 28px
+$font-size-p: 1rem; // 16px
+
+.button {
+  background-color: white;
+  border-radius: 100px;
+  color: black;
+  padding: 10px 20px;
+  transition: background-color 200ms linear;
+
+  &:hover {
+    background-color: rgb(231, 231, 231);
+  }
+}
+
+h1 {
+  font-size: $font-size-h1;
+  font-weight: 600;
+  margin-bottom: $spacing-unit * 2;
+}
+h2 {
+  font-size: $font-size-h2;
+  margin-bottom: $spacing-unit * 1.5;
+}
+h3 {
+  font-size: $font-size-h3;
+  margin-bottom: $spacing-unit * 1.25;
+}
+p {
+  font-size: $font-size-p;
+  margin-bottom: $spacing-unit * 1;
+}

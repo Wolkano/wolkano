@@ -1,0 +1,17 @@
+# Wolkano Solutions
+
+## Om oss
+
+- Text om företaget
+- Bild på  anställda?????
+
+## Kontakta oss
+
+- Förklara vad kunden kan skriva till oss angående
+- Förklara övergripande om tjänsten
+- Formulär
+- Koppla submit till notion ??
+
+## Hur fungerar det
+
+- Animation som symboliserar flödet? Tangentbord, formlär, email

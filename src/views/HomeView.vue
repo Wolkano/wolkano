@@ -32,8 +32,9 @@ const copy = computed(() => store.state.copy.home);
 </template>
 
 <style lang="scss" scoped>
+@import "../assets/scss/variables.scss";
 .home {
-  background-color: #0b0033;
+  background: #{$gradient-background};
 
   .mainDiv {
     display: flex;
@@ -50,11 +51,6 @@ const copy = computed(() => store.state.copy.home);
       flex-direction: column;
       gap: 20px;
 
-      h1 {
-        font-size: 48px;
-        font-weight: bold;
-      }
-
       p {
         font-size: 24px;
 
@@ -67,18 +63,6 @@ const copy = computed(() => store.state.copy.home);
       .buttons {
         display: flex;
         gap: 50px;
-
-        .button {
-          background-color: white;
-          border-radius: 100px;
-          color: black;
-          padding: 10px 20px;
-          transition: background-color 200ms linear;
-
-          &:hover {
-            background-color: rgb(231, 231, 231);
-          }
-        }
       }
     }
 
