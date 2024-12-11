@@ -18,7 +18,7 @@ const copy = computed(() => store.state.copy.home);
         </p>
         <div class="buttons">
           <router-link to="/about" class="button">Om oss</router-link>
-          <router-link to="/test" class="button">Kontakta oss</router-link>
+          <router-link to="/form" class="button">Kontakta oss</router-link>
         </div>
       </div>
 
@@ -31,9 +31,9 @@ const copy = computed(() => store.state.copy.home);
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .home {
-  background-color: #28a2ff;
+  background-color: #0b0033;
 
   .mainDiv {
     display: flex;

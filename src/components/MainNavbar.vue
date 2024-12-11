@@ -3,12 +3,10 @@
     <div class="navbar">
       <div class="first flex items-center justify-center">
         <router-link to="/">
-          <img
-            src="../assets/028a399e-aec3-4368-bc6e-2fc7207d884e-removebg-preview.png"
-            class="logo"
+          <img src="../assets/testlogga1.png" class="logo"
         /></router-link>
         <router-link class="item" to="/about"><p>Om oss</p></router-link>
-        <router-link class="item" to="/test"><p>Erbjudande</p></router-link>
+        <router-link class="item" to="/form"><p>Kontakta oss</p></router-link>
         <router-link class="item" to="/something"
           ><p>Hur fungerar det</p></router-link
         >
