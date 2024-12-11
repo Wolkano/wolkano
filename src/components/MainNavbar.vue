@@ -3,7 +3,7 @@
     <div class="navbar">
       <div class="first flex items-center justify-center">
         <router-link to="/">
-          <img src="../assets/newLogo.png" class="logo"
+          <img src="../assets/newLogoWhite.png" class="logo"
         /></router-link>
         <router-link class="item" to="/about"><p>Om oss</p></router-link>
         <router-link class="item" to="/form"><p>Kontakta oss</p></router-link>
