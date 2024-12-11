@@ -43,7 +43,7 @@
   }
   .cName{
       color: #fe9d01;
-      text-shadow: 0px 1px 1px black;
+      text-shadow: 0px 1px 1px rgb(0, 0, 0);
     }
 
   .abInfo{
@@ -66,20 +66,21 @@
   }
 
   .kButton{
-    background-color: white;
-    border-radius: 100px;
-    color: black;
-    padding: 10px 20px;
-    transition: background-color 200ms linear;
-    &:hover {
-      background-color: rgb(231, 231, 231);
+    .button{
+      background-color: white;
+      border-radius: 100px;
+      color: black;
+      padding: 10px 20px;
+      transition: background-color 200ms linear;
+      font-weight: 500;
+      &:hover {
+        background-color: rgb(231, 231, 231);
+      }
     }
   }
-
-}
-.custBanner{
-  background-color: black;
-  display:flex;
+  .custBanner{
+  background-color:rgb(39, 39, 39);
+  display: flex;
   justify-content: center;
   width: 100%;
   margin-top: 50px;
@@ -88,6 +89,9 @@
     width: 20%;
   }
 }
+
+}
+
 
 
 </style>
