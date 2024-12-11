@@ -1,4 +1,5 @@
 <template>
+
   <div class="about">
     <h1>Om <span class="cName">Wolkano</span></h1>
     <div class="abInfo">
@@ -10,14 +11,20 @@
   <div class="kButton">
   <router-link to="/test" class="button">Kontakta oss</router-link>
   </div>
+  <div class="custBanner">
+    <div class="customers">
+    <img src="../assets/byggproffs.webp"/>
   </div>
+  </div>
+</div>
+  
+ 
+  
+  
 </template>
 <script setup></script>
 <style lang="scss" scoped>
-.cName{
-      color: #fe9d01;
-      text-shadow: 0px 1px 1px black;
-    }
+
 .about{
   display: flex;
   flex-wrap: wrap;
@@ -26,7 +33,7 @@
   gap: 30px;
   width: 100%;
   background-color: #28a2ff;
-  padding-bottom: 500px;
+  padding-bottom: 50px;
 
   h1{
     font-size: 48px;
@@ -34,7 +41,10 @@
     width: 100%;
     
   }
-  
+  .cName{
+      color: #fe9d01;
+      text-shadow: 0px 1px 1px black;
+    }
 
   .abInfo{
     display: flex;
@@ -67,5 +77,17 @@
   }
 
 }
+.custBanner{
+  background-color: black;
+  display:flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 50px;
+  .customers{
+    padding: 10px;
+    width: 20%;
+  }
+}
+
 
 </style>
