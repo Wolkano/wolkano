@@ -48,6 +48,12 @@
   align-items: flex-start;
   div {
     text-align: left;
+    h4 {
+      border-width: 0px 0px 1px 0px;
+      border-style: solid;
+      border-color: white;
+      padding-bottom: 5px;
+    }
   }
 }
 .subFooter {
