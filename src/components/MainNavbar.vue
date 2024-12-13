@@ -7,8 +7,7 @@
         /></router-link>
         <router-link class="item" to="/about"><p>Om oss</p></router-link>
         <router-link class="item" to="/form"><p>Kontakta oss</p></router-link>
-        <router-link class="item" to="/something"
-          ><p>Hur fungerar det</p></router-link
+        <router-link class="item" to="/works"><p>Hur fungerar det</p></router-link
         >
       </div>
       <div class="second flex items-center justify-center">
