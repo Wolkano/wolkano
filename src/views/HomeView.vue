@@ -29,6 +29,49 @@ const copy = computed(() => store.state.copy.home);
       </div>
     </div>
   </div>
+  <div class="secondDiv">
+    <div>
+      <div>
+        <h3>Inmatning av information</h3>
+        <p>
+          Kunden fyller i ett enkelt formulär online med detaljer om sina behov,
+          inklusive specifikationer, kvantiteter och önskade tidsramar. Systemet
+          samlar in all nödvändig information direkt från kunden.
+        </p>
+
+        <h3>Automatisk analys</h3>
+        <p>
+          Systemet analyserar den inskickade informationen med hjälp av
+          förinställda parametrar och smarta algoritmer. Det identifierar
+          matchande produkter, tjänster eller leverantörer och beräknar
+          kostnader baserat på aktuella data.
+        </p>
+
+        <h3>Skapande av offert</h3>
+        <p>
+          Offerten genereras automatiskt och kan anpassas med företagets
+          logotyp, villkor och en personlig hälsning. Systemet säkerställer att
+          allt är korrekt och ser professionellt ut.
+        </p>
+
+        <h3>Granskning och godkännande</h3>
+        <p>
+          Du får möjlighet att granska offerten innan den skickas. Om allt ser
+          bra ut kan den levereras till kunden med bara ett klick – antingen via
+          e-post eller som en nedladdningsbar fil.
+        </p>
+
+        <h3>Uppföljning och spårning</h3>
+        <p>
+          Systemet håller reda på när kunden öppnar offerten och kan automatiskt
+          skicka påminnelser om svar. Det ger dig full insyn i processen och
+          hjälper dig att stänga affärer snabbare.
+        </p>
+      </div>
+
+      <img class="flowGif" src="../assets/Förnamn.gif" />
+    </div>
+  </div>
 </template>
 
 <style lang="scss" scoped>
@@ -69,6 +112,35 @@ const copy = computed(() => store.state.copy.home);
     .image .businessManImage {
       width: 800px;
       height: auto;
+    }
+  }
+}
+.secondDiv {
+  div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 20px 0px;
+    align-items: center;
+    div {
+      display: flex;
+      flex-direction: column;
+      width: 30%;
+      h3 {
+        color: #fe9d01;
+      }
+      p {
+        color: black;
+      }
+    }
+
+    .flowGif {
+      width: 30%;
+      height: min-content;
+      border-style: solid;
+      border-width: 5px;
+      border-color: #fe9d01;
+      border-radius: 20px;
     }
   }
 }
