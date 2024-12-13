@@ -1,0 +1,57 @@
+<template>
+  <div class="footer">
+    <div>
+      <h4>Wolkano</h4>
+      <p>
+        Trygghet i varje offertförfrågan.<br />
+        En partner du kan lita på.
+      </p>
+    </div>
+    <div>
+      <h4>Tjänster</h4>
+      <p>Lite text om företaget</p>
+      <p>Testar igen</p>
+    </div>
+    <div>
+      <h4>Kontakt</h4>
+      <p>
+        Har du frågor eller vill veta mer om våra tjänster? Hör av dig till oss!
+        <ul>
+          <li> E-post: <u><a href="mailto:info@wolkano.se">info@wolkano.se</a></u></li>
+          <li>Telefon: <u><a href="tel:0761778821">+46 (0)123-456 789</a></u></li>
+          <li>Adress: <u><a href="https://maps.app.goo.gl/6d3BPb9pY1EBcEy6A" target="_blank">Wolkano AB
+            Företagsgatan 12 123 45 Stockholm, Sverige</a></u></li>
+        </ul>
+      </p>
+    </div>
+  </div>
+  <div class="subFooter">
+    <p>
+      © Wolkano 2024 | Innovativa lösningar för smidigare offertförfrågningar.
+    </p>
+    <p>
+      <a href="#">Privacy Policy</a> |
+      <a href="#">Terms of Service</a>
+    </p>
+  </div>
+</template>
+
+<style lang="scss" scoped>
+@import "../assets/scss/variables.scss";
+.footer {
+  padding: 15px 0px;
+  width: 100%;
+  background-color: #fe9d01;
+  min-height: 130px;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  div {
+    text-align: left;
+  }
+}
+.subFooter {
+  padding: 15px 0px;
+  background-color: #b87100;
+}
+</style>

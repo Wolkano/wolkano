@@ -13,27 +13,72 @@
     </p>
     <form class="form">
       <div>
-        <input type="text" id="fname" name="fname" placeholder="Förnamn" />
-        <input type="text" id="lname" name="lname" placeholder="Efternamn" />
+        <input
+          type="text"
+          id="fname"
+          name="fname"
+          placeholder="Förnamn"
+          v-model="userInformation.firstName" />
+        <input
+          type="text"
+          id="lname"
+          name="lname"
+          placeholder="Efternamn"
+          v-model="userInformation.lastName" />
       </div>
       <input
         type="text"
         id="companyName"
         name="companyName"
-        placeholder="Företagsnamn" />
+        placeholder="Företagsnamn"
+        v-model="userInformation.company" />
       <div>
-        <input type="tel" id="phone" name="phone" placeholder="Telefonnummer" />
-        <input type="email" id="email" name="email" placeholder="Email" />
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          placeholder="Telefonnummer"
+          v-model="userInformation.phone" />
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Email"
+          v-model="userInformation.email" />
       </div>
       <div class="infoDiv">
-        <textarea type="text" id="info" name="info" placeholder="Information" />
+        <textarea
+          type="text"
+          id="info"
+          name="info"
+          placeholder="Information"
+          v-model="userInformation.info" />
       </div>
-      <button>Skicka in</button>
+      <button @click.prevent="submit">Skicka in</button>
     </form>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { reactive } from "vue";
+import { useStore } from "vuex";
+const store = useStore();
+
+const userInformation = reactive({
+  firstName: "",
+  lastName: "",
+  email: "",
+  phone: "",
+  info: "",
+  company: "",
+});
+
+const submit = () => {
+  console.log(userInformation);
+  store.dispatch("submitToNotion", { title: "Test", description: "Testar" });
+};
+</script>
+
 <style lang="scss" scoped>
 @import "../assets/scss/variables.scss";
 .mainDiv {
