@@ -163,6 +163,7 @@ const isMobile = computed(() => windowWidth.value < 768);
           &:hover {
             background-color: #f0f0f0;
             color: #fe9d01;
+            border-radius: 5px;
           }
         }
       }
