@@ -3,33 +3,30 @@
     <div class="navbar">
       <div class="first flex items-center justify-center">
         <router-link to="/">
-          <img src="../assets/newLogoWhite.png" class="logo"
-        /></router-link>
+          <img src="../assets/newLogoWhite.png" class="logo" />
+        </router-link>
 
-        <router-link class="item" to="/works"
-          ><p>Hur fungerar det</p></router-link
-        >
-        <div class="dropdown" @click="toggleDropdown">
-          <span class="menu-link dropdown-toggle"
-            >Tjänster
+        <router-link class="item" to="/works">
+          <p>Hur fungerar det</p>
+        </router-link>
+        <div class="dropdown">
+          <span class="menu-link dropdown-toggle">
+            Tjänster
             <v-icon
               name="bi-chevron-down"
               scale="1"
-              :flip="isDropdownOpen ? 'vertical' : null"
-          /></span>
-          <ul
-            class="dropdown-menu"
-            :class="{ 'dropdown-open': isDropdownOpen }"
-            v-if="isDropdownOpen">
-            <router-link class="dropdown-item" to="/works"
-              ><p>OfferMe</p></router-link
-            >
-            <router-link class="dropdown-item" to="/works"
-              ><p>Hur fungerar det</p></router-link
-            >
-            <router-link class="dropdown-item" to="/works"
-              ><p>Hur fungerar det</p></router-link
-            >
+              :flip="isDropdownOpen ? 'vertical' : null" />
+          </span>
+          <ul class="dropdown-menu">
+            <router-link class="dropdown-item" to="/works">
+              <p>OfferMe</p>
+            </router-link>
+            <router-link class="dropdown-item" to="/works">
+              <p>Webbutveckling</p>
+            </router-link>
+            <router-link class="dropdown-item" to="/works">
+              <p>CRM-system (Pilot)</p>
+            </router-link>
           </ul>
         </div>
       </div>
@@ -42,13 +39,7 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
-
-const isDropdownOpen = ref(false);
-
-function toggleDropdown() {
-  isDropdownOpen.value = !isDropdownOpen.value;
-}
+// No need for `toggleDropdown` anymore
 </script>
 
 <style scoped lang="scss">
@@ -124,6 +115,12 @@ function toggleDropdown() {
         }
       }
 
+      /* On hover show dropdown menu */
+      &:hover .dropdown-menu {
+        opacity: 1;
+        transform: scaleY(1);
+      }
+
       .dropdown-menu {
         position: absolute;
         display: flex;
@@ -144,28 +141,23 @@ function toggleDropdown() {
         opacity: 0;
         transform: scaleY(0);
         transform-origin: top;
+      }
 
-        &.dropdown-open {
-          opacity: 1;
-          transform: scaleY(1) !important;
-        }
+      .dropdown-item {
+        p {
+          display: block;
+          padding: 0.5rem 1rem;
+          color: #333;
+          text-decoration: none;
+          font-size: larger;
+          font-weight: 600;
+          -webkit-transition: color 200ms linear;
+          -ms-transition: color 200ms linear;
+          transition: color 200ms linear;
 
-        .dropdown-item {
-          p {
-            display: block;
-            padding: 0.5rem 1rem;
-            color: #333;
-            text-decoration: none;
-            font-size: larger;
-            font-weight: 600;
-            -webkit-transition: color 200ms linear;
-            -ms-transition: color 200ms linear;
-            transition: color 200ms linear;
-
-            &:hover {
-              background-color: #f0f0f0;
-              color: #fe9d01;
-            }
+          &:hover {
+            background-color: #f0f0f0;
+            color: #fe9d01;
           }
         }
       }
