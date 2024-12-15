@@ -159,6 +159,9 @@ const isMobile = computed(() => windowWidth.value < 768);
           -webkit-transition: color 200ms linear;
           -ms-transition: color 200ms linear;
           transition: color 200ms linear;
+          -webkit-transition: background-color 200ms linear;
+          -ms-transition: background-color 200ms linear;
+          transition: background-color 200ms linear;
 
           &:hover {
             background-color: #f0f0f0;
