@@ -68,7 +68,8 @@ const copy = computed(() => store.state.copy.home);
 </template>
 
 <style lang="scss" scoped>
-@import "../assets/scss/variables.scss";
+@import "../assets/scss/variables.scss"; // Assuming variables are defined here
+
 .home {
   background: #{$gradient-background};
 
@@ -108,6 +109,7 @@ const copy = computed(() => store.state.copy.home);
     }
   }
 }
+
 .secondDiv {
   div {
     display: flex;
@@ -115,13 +117,16 @@ const copy = computed(() => store.state.copy.home);
     justify-content: space-around;
     padding: 20px 0px;
     align-items: center;
+
     div {
       display: flex;
       flex-direction: column;
       width: 30%;
+
       h3 {
         color: #fe9d01;
         text-align: left;
+        font-size: 1.5rem; // Default font size for h3
       }
       p {
         color: black;
@@ -137,6 +142,44 @@ const copy = computed(() => store.state.copy.home);
       border-color: #fe9d01;
       border-radius: 20px;
     }
+  }
+}
+
+// Mobile styles for smaller screens
+@media (max-width: 768px) {
+  .home {
+    padding-top: 150px;
+    padding-left: 20px;
+    padding-right: 20px;
+    .mainDiv {
+      .intro {
+        width: 100%; // Adjust intro section to take full width on mobile
+      }
+
+      .image .businessManImage {
+        width: 100%; // Make image responsive for mobile
+      }
+    }
+  }
+
+  .secondDiv {
+    div {
+      flex-direction: column; // Stack divs vertically on mobile
+      align-items: center; // Center items
+    }
+
+    h3 {
+      font-size: $font-size-mobile-h3; // Apply mobile font size for h3
+    }
+
+    .flowGif {
+      width: 80%; // Adjust gif width for mobile view
+    }
+  }
+
+  // Smaller font size for h1 on mobile view
+  h1 {
+    font-size: $font-size-mobile-h1;
   }
 }
 </style>

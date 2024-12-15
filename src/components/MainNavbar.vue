@@ -6,22 +6,16 @@
           <img src="../assets/newLogoWhite.png" class="logo" />
         </router-link>
 
-        <router-link class="item" to="/works">
+        <router-link class="item" to="/works" v-if="!isMobile">
           <p>Hur fungerar det</p>
         </router-link>
         <div class="dropdown">
-          <span class="menu-link dropdown-toggle">
-            Tjänster
-            <v-icon
-              name="bi-chevron-down"
-              scale="1"
-              :flip="isDropdownOpen ? 'vertical' : null" />
-          </span>
+          <span class="menu-link dropdown-toggle"> Tjänster </span>
           <ul class="dropdown-menu">
-            <router-link class="dropdown-item" to="/works">
+            <router-link class="dropdown-item" to="/OfferMe">
               <p>OfferMe</p>
             </router-link>
-            <router-link class="dropdown-item" to="/works">
+            <router-link class="dropdown-item" to="/WebbUtv">
               <p>Webbutveckling</p>
             </router-link>
             <router-link class="dropdown-item" to="/works">
@@ -30,7 +24,7 @@
           </ul>
         </div>
       </div>
-      <div class="second flex items-center justify-center">
+      <div class="second flex items-center justify-center" v-if="!isMobile">
         <router-link class="item" to="/about"><p>Om oss</p></router-link>
         <router-link class="item" to="/form"><p>Kontakta oss</p></router-link>
       </div>
@@ -39,7 +33,9 @@
 </template>
 
 <script setup>
-// No need for `toggleDropdown` anymore
+import { computed, ref } from "vue";
+const windowWidth = ref(window.innerWidth);
+const isMobile = computed(() => windowWidth.value < 768);
 </script>
 
 <style scoped lang="scss">
@@ -159,6 +155,28 @@
             background-color: #f0f0f0;
             color: #fe9d01;
           }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .mainDiv {
+    width: 100%;
+    .navbar {
+      justify-content: space-between;
+      width: 100%;
+      padding: 0px 10px;
+      margin-left: 0;
+      margin-right: 0;
+      div {
+        width: 100%;
+        justify-content: flex-end;
+      }
+      .dropdown {
+        .dropdown-menu {
+          width: 300px;
+          left: auto;
         }
       }
     }
