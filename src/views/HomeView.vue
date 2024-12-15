@@ -54,13 +54,6 @@ const copy = computed(() => store.state.copy.home);
           allt är korrekt och ser professionellt ut.
         </p>
 
-        <h3>Granskning och godkännande</h3>
-        <p>
-          Du får möjlighet att granska offerten innan den skickas. Om allt ser
-          bra ut kan den levereras till kunden med bara ett klick – antingen via
-          e-post eller som en nedladdningsbar fil.
-        </p>
-
         <h3>Uppföljning och spårning</h3>
         <p>
           Systemet håller reda på när kunden öppnar offerten och kan automatiskt
@@ -128,9 +121,11 @@ const copy = computed(() => store.state.copy.home);
       width: 30%;
       h3 {
         color: #fe9d01;
+        text-align: left;
       }
       p {
         color: black;
+        text-align: left;
       }
     }
 
