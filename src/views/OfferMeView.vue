@@ -73,6 +73,7 @@ import CompanyBanner from "@/components/CompanyBanner.vue";
     display: flex;
     justify-content: center;
     h1 {
+      font-weight: 700;
       width: fit-content;
       border-bottom: 2px solid #fe9d01;
       span {

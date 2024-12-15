@@ -3,6 +3,7 @@ import HomeView from "../views/HomeView.vue";
 import FormView from "../views/FormView.vue";
 import AboutView from "../views/AboutView.vue";
 import OfferMeView from "../views/OfferMeView.vue";
+import WebbUtvView from "../views/WebbUtvView.vue";
 
 const routes = [
   {
@@ -24,6 +25,11 @@ const routes = [
     path: "/OfferMe",
     name: "OfferMe",
     component: OfferMeView,
+  },
+  {
+    path: "/WebbUtv",
+    name: "WebbUtv",
+    component: WebbUtvView,
   }
 ];
 
