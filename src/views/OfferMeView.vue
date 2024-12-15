@@ -2,7 +2,7 @@
   <div class="offerMe">
     <div class="intro">
       <div class="titel">
-        <h1>Våra<span>tjänster</span></h1>
+        <h1>Offer Me<span></span></h1>
       </div>
       <div class="col">
         <div class="animation">
