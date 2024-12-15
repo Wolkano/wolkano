@@ -51,9 +51,13 @@ import CompanyBanner from "@/components/CompanyBanner.vue";
   padding-bottom: 50px;
   padding-top: 150px;
 
+  h1 {
+    font-weight: 700;
+    width: fit-content;
+    border-bottom: 2px solid #fe9d01;
+  }
   .cName {
     color: #fe9d01;
-    text-shadow: 0px 1px 1px rgb(0, 0, 0);
   }
 
   .abInfo {
