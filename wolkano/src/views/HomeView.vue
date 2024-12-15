@@ -150,9 +150,15 @@ const copy = computed(() => store.state.copy.home);
     padding-top: 150px;
     padding-left: 20px;
     padding-right: 20px;
+
     .mainDiv {
       .intro {
         width: 100%;
+        justify-content: center;
+        h1 {
+          font-size: $font-size-mobile-h1;
+          margin-bottom: 0;
+        }
         p {
           font-size: 20px;
         }
@@ -165,9 +171,13 @@ const copy = computed(() => store.state.copy.home);
   }
 
   .secondDiv {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
     div {
       flex-direction: column;
-      align-items: center;
+      align-items: flex-start;
+      text-align: left;
       div {
         width: 90%;
       }
@@ -180,10 +190,6 @@ const copy = computed(() => store.state.copy.home);
     .flowGif {
       width: 100%;
     }
-  }
-
-  h1 {
-    font-size: $font-size-mobile-h1;
   }
 }
 </style>

@@ -75,7 +75,7 @@ const userInformation = reactive({
 
 const submit = () => {
   console.log(userInformation);
-  store.dispatch("submitToNotion", { title: "Test", description: "Testar" });
+  store.dispatch("submitToNotion", userInformation);
 };
 </script>
 
