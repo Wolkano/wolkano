@@ -68,11 +68,10 @@ const copy = computed(() => store.state.copy.home);
 </template>
 
 <style lang="scss" scoped>
-@import "../assets/scss/variables.scss"; // Assuming variables are defined here
+@import "../assets/scss/variables.scss";
 
 .home {
   background: #{$gradient-background};
-
   .mainDiv {
     display: flex;
     justify-content: center;
@@ -126,7 +125,7 @@ const copy = computed(() => store.state.copy.home);
       h3 {
         color: #fe9d01;
         text-align: left;
-        font-size: 1.5rem; // Default font size for h3
+        font-size: 1.5rem;
       }
       p {
         color: black;
@@ -153,31 +152,36 @@ const copy = computed(() => store.state.copy.home);
     padding-right: 20px;
     .mainDiv {
       .intro {
-        width: 100%; // Adjust intro section to take full width on mobile
+        width: 100%;
+        p {
+          font-size: 20px;
+        }
       }
 
       .image .businessManImage {
-        width: 100%; // Make image responsive for mobile
+        width: 100%;
       }
     }
   }
 
   .secondDiv {
     div {
-      flex-direction: column; // Stack divs vertically on mobile
-      align-items: center; // Center items
+      flex-direction: column;
+      align-items: center;
+      div {
+        width: 90%;
+      }
     }
 
     h3 {
-      font-size: $font-size-mobile-h3; // Apply mobile font size for h3
+      font-size: $font-size-mobile-h3;
     }
 
     .flowGif {
-      width: 80%; // Adjust gif width for mobile view
+      width: 100%;
     }
   }
 
-  // Smaller font size for h1 on mobile view
   h1 {
     font-size: $font-size-mobile-h1;
   }

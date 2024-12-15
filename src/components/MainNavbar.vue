@@ -21,6 +21,15 @@
             <router-link class="dropdown-item" to="/works">
               <p>CRM-system (Pilot)</p>
             </router-link>
+            <router-link class="dropdown-item" v-if="isMobile" to="/about"
+              ><p>Om oss</p></router-link
+            >
+            <router-link class="dropdown-item" v-if="isMobile" to="/form"
+              ><p>Kontakta oss</p></router-link
+            >
+            <router-link v-if="isMobile" class="dropdown-item" to="/works">
+              <p>Hur fungerar det</p>
+            </router-link>
           </ul>
         </div>
       </div>
@@ -53,7 +62,7 @@ const isMobile = computed(() => windowWidth.value < 768);
     background-color: transparent;
 
     .logo {
-      height: 50px;
+      max-height: 50px;
     }
 
     div {
@@ -164,6 +173,7 @@ const isMobile = computed(() => windowWidth.value < 768);
   .mainDiv {
     width: 100%;
     .navbar {
+      margin-top: 30px;
       justify-content: space-between;
       width: 100%;
       padding: 0px 10px;
@@ -175,7 +185,7 @@ const isMobile = computed(() => windowWidth.value < 768);
       }
       .dropdown {
         .dropdown-menu {
-          width: 300px;
+          width: 220px;
           left: auto;
         }
       }
