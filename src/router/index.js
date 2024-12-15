@@ -2,7 +2,7 @@ import { createRouter, createWebHashHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import FormView from "../views/FormView.vue";
 import AboutView from "../views/AboutView.vue";
-import WorksView from "../views/WorksView.vue";
+import OfferMeView from "../views/OfferMeView.vue";
 
 const routes = [
   {
@@ -21,9 +21,9 @@ const routes = [
     component: FormView,
   },
   {
-    path: "/works",
-    name: "works",
-    component: WorksView,
+    path: "/OfferMe",
+    name: "OfferMe",
+    component: OfferMeView,
   }
 ];
 

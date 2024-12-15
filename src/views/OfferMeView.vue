@@ -1,8 +1,8 @@
 <template>
-  <div class="howWorks">
+  <div class="offerMe">
     <div class="intro">
       <div class="titel">
-        <h1>Hur <span>fungerar</span> det?</h1>
+        <h1>Våra<span>tjänster</span></h1>
       </div>
       <div class="col">
         <div class="animation">
@@ -59,7 +59,7 @@ import CompanyBanner from "@/components/CompanyBanner.vue";
 <style lang="scss" scoped>
 @import "../assets/scss/variables.scss";
 
-.howWorks {
+.offerMe {
   background: #{$gradient-background};
 
   .intro {
