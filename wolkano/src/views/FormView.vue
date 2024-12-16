@@ -103,7 +103,7 @@ const submit = () => {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 25px;
     width: 50%;
     margin-left: auto;
     margin-right: auto;
