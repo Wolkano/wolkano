@@ -103,4 +103,19 @@ import CompanyBanner from "@/components/CompanyBanner.vue";
     color: black;
   }
 }
+
+@media (max-width: 768px) {
+  .offerMe {
+    .col {
+      flex-direction: column;
+      p {
+        width: 100%;
+      }
+      .animation {
+        width: 100%;
+        padding: 0px;
+      }
+    }
+  }
+}
 </style>

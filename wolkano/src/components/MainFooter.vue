@@ -27,12 +27,9 @@
   </div>
   <div class="subFooter">
     <p>
-      © Wolkano 2024 | Innovativa lösningar för smidigare offertförfrågningar.
+      © Wolkano 2024
     </p>
-    <p>
-      <a href="#">Privacy Policy</a> |
-      <a href="#">Terms of Service</a>
-    </p>
+    <p>Innovativa lösningar för smidigare offertförfrågningar.</p>
   </div>
 </template>
 
@@ -53,11 +50,28 @@
       border-style: solid;
       border-color: white;
       padding-bottom: 5px;
+      font-weight: 600;
     }
   }
 }
 .subFooter {
   padding: 15px 0px;
   background-color: #b87100;
+}
+
+@media (max-width: 768px) {
+.footer {
+  flex-direction: column;
+  padding: 20px 20px;  
+  gap: 20px;
+  div {
+    h4 {
+      font-size: $font-size-mobile-h4;
+    }
+  }
+}
+.subFooter {
+  padding: 10px 0px;
+}
 }
 </style>

@@ -32,6 +32,10 @@ const copy = computed(() => store.state.copy.home);
   <div class="secondDiv">
     <div>
       <div>
+        <font-awesome-icon
+          class="icon"
+          :icon="['fas', 'file-circle-plus']"
+          size="3x" />
         <h3>Inmatning av information</h3>
         <p>
           Kunden fyller i ett enkelt formulär online med detaljer om sina behov,
@@ -39,6 +43,7 @@ const copy = computed(() => store.state.copy.home);
           samlar in all nödvändig information direkt från kunden.
         </p>
 
+        <font-awesome-icon class="icon" :icon="['fas', 'cogs']" size="3x" />
         <h3>Automatisk analys</h3>
         <p>
           Systemet analyserar den inskickade informationen med hjälp av
@@ -47,6 +52,10 @@ const copy = computed(() => store.state.copy.home);
           kostnader baserat på aktuella data.
         </p>
 
+        <font-awesome-icon
+          class="icon"
+          :icon="['fas', 'file-invoice']"
+          size="3x" />
         <h3>Skapande av offert</h3>
         <p>
           Offerten genereras automatiskt och kan anpassas med företagets
@@ -54,6 +63,10 @@ const copy = computed(() => store.state.copy.home);
           allt är korrekt och ser professionellt ut.
         </p>
 
+        <font-awesome-icon
+          class="icon"
+          :icon="['fas', 'clipboard-check']"
+          size="3x" />
         <h3>Uppföljning och spårning</h3>
         <p>
           Systemet håller reda på när kunden öppnar offerten och kan automatiskt
@@ -122,10 +135,16 @@ const copy = computed(() => store.state.copy.home);
       flex-direction: column;
       width: 30%;
 
-      h3 {
+      .icon {
         color: #fe9d01;
+        margin-top: 20px;
+        margin-bottom: 5px;
+      }
+
+      h3 {
+        font-weight: 700;
+        color: $text-color;
         text-align: left;
-        font-size: 1.5rem;
       }
       p {
         color: black;
@@ -178,17 +197,22 @@ const copy = computed(() => store.state.copy.home);
       flex-direction: column;
       align-items: flex-start;
       text-align: left;
+      width: 100%;
       div {
-        width: 90%;
+        width: 100%;
+        .icon {
+          align-self: center;
+          margin-bottom: 30px;
+        }
+      }
+
+      .flowGif {
+        width: 100%;
       }
     }
 
     h3 {
       font-size: $font-size-mobile-h3;
-    }
-
-    .flowGif {
-      width: 100%;
     }
   }
 }
