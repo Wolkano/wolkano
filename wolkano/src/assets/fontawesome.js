@@ -5,9 +5,10 @@ import {
   faCogs,
   faFileInvoice,
   faClipboardCheck,
+  faBars,
 } from "@fortawesome/free-solid-svg-icons";
 
 // Add icons to the library
-library.add(faFileCirclePlus, faCogs, faFileInvoice, faClipboardCheck);
+library.add(faFileCirclePlus, faCogs, faFileInvoice, faClipboardCheck, faBars);
 
 export default FontAwesomeIcon;

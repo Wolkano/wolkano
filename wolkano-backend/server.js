@@ -6,8 +6,6 @@ const cors = require("cors");
 app.use(express.json()).use(cors());
 
 app.post("/api/send-to-zapier", async (req, res) => {
-  console.log(req.body);
-  console.log("testar");
   try {
     const response = await axios.post(
       "https://hooks.zapier.com/hooks/catch/16327715/2sqvtiy/",

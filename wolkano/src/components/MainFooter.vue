@@ -38,7 +38,7 @@
 .footer {
   padding: 15px 0px;
   width: 100%;
-  background-color: #fe9d01;
+  background-color: #3d3b30;
   min-height: 130px;
   display: flex;
   justify-content: space-around;
@@ -56,7 +56,7 @@
 }
 .subFooter {
   padding: 15px 0px;
-  background-color: #b87100;
+  background-color: #3d3b30;
 }
 
 @media (max-width: 768px) {

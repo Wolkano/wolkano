@@ -34,10 +34,7 @@ const copy = computed(() => store.state.copy.home);
       <div>
         <div>
           <div v-motion-pop-visible-once :duration="700" :delay="100">
-            <font-awesome-icon
-              class="icon"
-              :icon="['fas', 'file-circle-plus']"
-              size="3x" />
+            <p class="icon">✅</p>
             <h3>Inmatning av information</h3>
             <p>
               Kunden fyller i ett enkelt formulär online med detaljer om sina
@@ -47,7 +44,7 @@ const copy = computed(() => store.state.copy.home);
             </p>
           </div>
           <div v-motion-pop-visible-once :duration="700" :delay="100">
-            <font-awesome-icon class="icon" :icon="['fas', 'cogs']" size="3x" />
+            <p class="icon">🤖</p>
             <h3>Automatisk analys</h3>
             <p>
               Systemet analyserar den inskickade informationen med hjälp av
@@ -57,10 +54,7 @@ const copy = computed(() => store.state.copy.home);
             </p>
           </div>
           <div v-motion-pop-visible-once :duration="700" :delay="100">
-            <font-awesome-icon
-              class="icon"
-              :icon="['fas', 'file-invoice']"
-              size="3x" />
+            <p class="icon">📄</p>
             <h3>Skapande av offert</h3>
             <p>
               Offerten genereras automatiskt och kan anpassas med företagets
@@ -69,10 +63,7 @@ const copy = computed(() => store.state.copy.home);
             </p>
           </div>
           <div v-motion-pop-visible-once :duration="700" :delay="100">
-            <font-awesome-icon
-              class="icon"
-              :icon="['fas', 'clipboard-check']"
-              size="3x" />
+            <p class="icon">📩</p>
             <h3>Uppföljning och spårning</h3>
             <p>
               Systemet håller reda på när kunden öppnar offerten och kan
@@ -147,6 +138,7 @@ const copy = computed(() => store.state.copy.home);
           color: #fe9d01;
           margin-top: 20px;
           margin-bottom: 5px;
+          font-size: xx-large;
         }
 
         h3 {

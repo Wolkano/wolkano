@@ -10,7 +10,12 @@
           <p>Hur fungerar det</p>
         </router-link>
         <div class="dropdown">
-          <span class="menu-link dropdown-toggle"> Tjänster </span>
+          <span v-if="!isMobile" class="menu-link dropdown-toggle">
+            Tjänster
+          </span>
+          <span v-else
+            ><font-awesome-icon :icon="['fas', 'bars']" size="2x"
+          /></span>
           <ul class="dropdown-menu">
             <router-link class="dropdown-item" to="/OfferMe">
               <p>OfferMe</p>
@@ -180,7 +185,7 @@ const isMobile = computed(() => windowWidth.value < 768);
       margin-top: 30px;
       justify-content: space-between;
       width: 100%;
-      padding: 0px 10px;
+      padding: 0px 20px;
       margin-left: 0;
       margin-right: 0;
       div {

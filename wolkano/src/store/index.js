@@ -6,25 +6,29 @@ export default createStore({
   state: {
     priceChoice: null,
     copy: dictionary,
+    submittedSuccessfully: false,
   },
   getters: {},
   mutations: {
     setPriceChoice(state, payload) {
       state.priceChoice = payload;
     },
+    setSubmittedSuccessfully(state, payload) {
+      state.submittedSuccessfully = payload;
+      console.log(state.submittedSuccessfully);
+    },
   },
   actions: {
-    async submitToNotion(state, customerInfo) {
-      console.log(customerInfo);
+    async submitToNotion({ commit }, customerInfo) {
       (async () => {
         try {
-          const response = await axios.post(
+          await axios.post(
             "http://localhost:3000/api/send-to-zapier",
             customerInfo
           );
-          console.log(response);
+          commit("setSubmittedSuccessfully", true);
         } catch (error) {
-          console.error("Error creating page:", error);
+          commit("setSubmittedSuccessfully", false);
         }
       })();
     },
