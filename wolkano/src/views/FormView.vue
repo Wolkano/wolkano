@@ -85,6 +85,7 @@ const userInformation = reactive({
 
 const submit = () => {
   store.dispatch("submitToNotion", userInformation);
+  // Should only scroll up for success. Add error handling
   window.scrollTo({ top: 0, behavior: "smooth" });
 };
 </script>
