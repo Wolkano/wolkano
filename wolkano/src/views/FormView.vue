@@ -16,16 +16,15 @@
         <div>
           <input
             type="text"
-            id="fname"
-            name="fname"
-            placeholder="Förnamn"
-            v-model="userInformation.firstName" />
-          <input
-            type="text"
-            id="lname"
-            name="lname"
-            placeholder="Efternamn"
-            v-model="userInformation.lastName" />
+            id="name"
+            name="name"
+            placeholder="Namn*"
+            v-model="userInformation.name" />
+          <p
+            class="missingField"
+            v-if="!userInformation.name && hasMissingFields">
+            ❌ Fyll i namn
+          </p>
         </div>
         <input
           type="text"
@@ -38,14 +37,24 @@
             type="tel"
             id="phone"
             name="phone"
-            placeholder="Telefonnummer"
+            placeholder="Telefonnummer*"
             v-model="userInformation.phone" />
+          <p
+            class="missingField"
+            v-if="!userInformation.phone && hasMissingFields">
+            ❌ Fyll i telefonnummer
+          </p>
           <input
             type="email"
             id="email"
             name="email"
-            placeholder="Email"
+            placeholder="Email*"
             v-model="userInformation.email" />
+          <p
+            class="missingField"
+            v-if="!userInformation.email && hasMissingFields">
+            ❌ Fyll i email
+          </p>
         </div>
         <div class="infoDiv">
           <textarea
@@ -61,7 +70,7 @@
 
     <div v-if="isSubmitting" class="spinner-container">
       <div class="spinner"></div>
-      <div v-motion-slide-left :duration="1000" :delay="100" class="icon">
+      <div v-motion-slide-left :duration="500" :delay="100" class="icon">
         ⏳
       </div>
       <p>Skickar in...</p>
@@ -100,14 +109,23 @@ const success = computed(() => store.state.submittedSuccessfully);
 const hasSubmitted = computed(() => store.state.hasSubmitted);
 const userInformation = reactive({
   firstName: "",
-  lastName: "",
   email: "",
   phone: "",
   info: "",
   company: "",
 });
+const hasMissingFields = ref(false);
 
 const submit = async () => {
+  if (
+    !userInformation.name ||
+    !userInformation.email ||
+    !userInformation.phone
+  ) {
+    hasMissingFields.value = true;
+    console.log("test");
+    return;
+  }
   isSubmitting.value = true;
   await store.dispatch("submitToNotion", userInformation);
   window.scrollTo({ top: 0, behavior: "smooth" });
@@ -143,13 +161,17 @@ const isSubmitting = ref(false);
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 25px;
+    gap: 20px;
     width: 50%;
     margin-left: auto;
     margin-right: auto;
     background-color: #fe9d01;
     padding: 50px 30px;
     border-radius: 5px;
+    .missingField {
+      color: red;
+      font-style: italic;
+    }
     input {
       color: black;
       width: 100%;
@@ -158,15 +180,20 @@ const isSubmitting = ref(false);
     }
     div {
       display: flex;
-      flex-direction: row;
-      gap: 20px;
+      flex-direction: column;
       justify-content: space-around;
       width: 100%;
+      gap: 20px;
       input {
         color: black;
         width: 100%;
         border-radius: 3px;
         padding: 5px;
+      }
+      p {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        align-self: flex-start;
       }
     }
     .infoDiv {
@@ -186,6 +213,7 @@ const isSubmitting = ref(false);
       -webkit-transition: background-color 200ms linear;
       -ms-transition: background-color 200ms linear;
       transition: background-color 200ms linear;
+      font-weight: 600;
       &:hover {
         background-color: #cf8102;
         color: white;

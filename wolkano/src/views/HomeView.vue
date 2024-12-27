@@ -110,6 +110,9 @@ const copy = computed(() => store.state.copy.home);
       .buttons {
         display: flex;
         gap: 50px;
+        .button {
+          font-weight: 600;
+        }
       }
     }
 

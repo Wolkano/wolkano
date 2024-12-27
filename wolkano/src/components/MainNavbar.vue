@@ -3,14 +3,23 @@
     <div class="navbar">
       <div class="first flex items-center justify-center">
         <router-link to="/">
-          <img src="../assets/newLogoWhite.png" class="logo" />
+          <img
+            :src="
+              isAboutPage
+                ? require('../assets/newLogo.png')
+                : require('../assets/newLogoWhite.png')
+            "
+            class="logo" />
         </router-link>
 
         <router-link class="item" to="/works" v-if="!isMobile">
-          <p>Hur fungerar det</p>
+          <p :class="{ blackText: isAboutPage }">Hur fungerar det</p>
         </router-link>
         <div class="dropdown">
-          <span v-if="!isMobile" class="menu-link dropdown-toggle">
+          <span
+            v-if="!isMobile"
+            class="menu-link dropdown-toggle"
+            :class="{ blackText: isAboutPage }">
             Tjänster
           </span>
           <span v-else
@@ -18,29 +27,35 @@
           /></span>
           <ul class="dropdown-menu">
             <router-link class="dropdown-item" to="/OfferMe">
-              <p>OfferMe</p>
+              <p :class="{ blackText: isAboutPage }">OfferMe</p>
             </router-link>
             <router-link class="dropdown-item" to="/WebbUtv">
-              <p>Webbutveckling</p>
+              <p :class="{ blackText: isAboutPage }">Webbutveckling</p>
             </router-link>
             <router-link class="dropdown-item" to="/works">
-              <p>CRM-system (Pilot)</p>
+              <p :class="{ blackText: isAboutPage }">CRM-system (Pilot)</p>
             </router-link>
             <router-link class="dropdown-item" v-if="isMobile" to="/about"
-              ><p>Om oss</p></router-link
+              ><p :class="{ blackText: isAboutPage }">Om oss</p></router-link
             >
             <router-link class="dropdown-item" v-if="isMobile" to="/form"
-              ><p>Kontakta oss</p></router-link
+              ><p :class="{ blackText: isAboutPage }">
+                Kontakta oss
+              </p></router-link
             >
             <router-link v-if="isMobile" class="dropdown-item" to="/works">
-              <p>Hur fungerar det</p>
+              <p :class="{ blackText: isAboutPage }">Hur fungerar det</p>
             </router-link>
           </ul>
         </div>
       </div>
       <div class="second flex items-center justify-center" v-if="!isMobile">
-        <router-link class="item" to="/about"><p>Om oss</p></router-link>
-        <router-link class="item" to="/form"><p>Kontakta oss</p></router-link>
+        <router-link class="item" to="/about"
+          ><p :class="{ blackText: isAboutPage }">Om oss</p></router-link
+        >
+        <router-link class="item" to="/form"
+          ><p :class="{ blackText: isAboutPage }">Kontakta oss</p></router-link
+        >
       </div>
     </div>
   </div>
@@ -48,11 +63,19 @@
 
 <script setup>
 import { computed, ref } from "vue";
+import { useRoute } from "vue-router";
+
+const route = useRoute();
 const windowWidth = ref(window.innerWidth);
 const isMobile = computed(() => windowWidth.value < 768);
+const isAboutPage = computed(() => route.path === "/about");
 </script>
 
 <style scoped lang="scss">
+.blackText {
+  color: #031a4a !important;
+}
+
 .mainDiv {
   width: 100%;
 
