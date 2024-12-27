@@ -7,6 +7,7 @@ export default createStore({
     priceChoice: null,
     copy: dictionary,
     submittedSuccessfully: false,
+    hasSubmitted: false,
   },
   getters: {},
   mutations: {
@@ -15,7 +16,9 @@ export default createStore({
     },
     setSubmittedSuccessfully(state, payload) {
       state.submittedSuccessfully = payload;
-      console.log(state.submittedSuccessfully);
+    },
+    setHasSubmitted(state, payload) {
+      state.hasSubmitted = payload;
     },
   },
   actions: {
@@ -27,8 +30,10 @@ export default createStore({
             customerInfo
           );
           commit("setSubmittedSuccessfully", true);
+          commit("setHasSubmitted", true);
         } catch (error) {
           commit("setSubmittedSuccessfully", false);
+          commit("setHasSubmitted", true);
         }
       })();
     },

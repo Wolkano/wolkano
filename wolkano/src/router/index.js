@@ -8,17 +8,17 @@ import WebbUtvView from "../views/WebbUtvView.vue";
 const routes = [
   {
     path: "/",
-    name: "home",
+    name: "Wolkano",
     component: HomeView,
   },
   {
     path: "/about",
-    name: "about",
+    name: "Om oss · Wolkano",
     component: AboutView,
   },
   {
     path: "/form",
-    name: "Form",
+    name: "Kontakta oss · Wolkano",
     component: FormView,
   },
   {
@@ -28,14 +28,19 @@ const routes = [
   },
   {
     path: "/WebbUtv",
-    name: "WebbUtv",
+    name: "Webbutveckling · Wolkano",
     component: WebbUtvView,
-  }
+  },
 ];
 
 const router = createRouter({
   history: createWebHashHistory(),
   routes,
+});
+
+router.beforeEach((to, from, next) => {
+  document.title = to.name;
+  next();
 });
 
 export default router;

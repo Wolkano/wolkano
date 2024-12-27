@@ -1,8 +1,11 @@
 <template>
-  <div class="mainDiv" v-if="!success">
-    <div v-motion-fade-visible-once :duration="500" :delay="100">
+  <div class="mainDiv" v-if="!hasSubmitted">
+    <div
+      v-motion-fade-visible-once
+      :duration="500"
+      :delay="100"
+      v-if="!isSubmitting">
       <h1>Kontakta <span class="companyName">Wolkano</span></h1>
-
       <form class="form">
         <p class="description">
           Har du frågor om våra automatiserade offerttjänster, eller vill du
@@ -55,8 +58,17 @@
         <button @click.prevent="submit">Skicka in</button>
       </form>
     </div>
+
+    <div v-if="isSubmitting" class="spinner-container">
+      <div class="spinner"></div>
+      <div v-motion-slide-left :duration="1000" :delay="100" class="icon">
+        ⏳
+      </div>
+      <p>Skickar in...</p>
+    </div>
   </div>
-  <div class="success" v-else>
+
+  <div class="success" v-if="hasSubmitted && success">
     <div v-motion-slide-left :duration="1500" :delay="100" class="icon">📨</div>
     <div v-motion-fade-visible-once :duration="1000" :delay="100">
       <h1>Tack för din inskickade information!</h1>
@@ -67,13 +79,25 @@
       </p>
     </div>
   </div>
+
+  <div class="failure" v-if="hasSubmitted && !success">
+    <div v-motion-pop-visible-once :duration="1500" :delay="100" class="icon">
+      ❌
+    </div>
+    <div v-motion-fade-visible-once :duration="1000" :delay="100">
+      <h1>Något gick fel!</h1>
+      <p>Vänligen försök igen senare</p>
+      <button @click.prevent="reset">Försök igen</button>
+    </div>
+  </div>
 </template>
 
 <script setup>
-import { reactive, computed } from "vue";
+import { reactive, computed, ref } from "vue";
 import { useStore } from "vuex";
 const store = useStore();
 const success = computed(() => store.state.submittedSuccessfully);
+const hasSubmitted = computed(() => store.state.hasSubmitted);
 const userInformation = reactive({
   firstName: "",
   lastName: "",
@@ -83,11 +107,16 @@ const userInformation = reactive({
   company: "",
 });
 
-const submit = () => {
-  store.dispatch("submitToNotion", userInformation);
-  // Should only scroll up for success. Add error handling
+const submit = async () => {
+  isSubmitting.value = true;
+  await store.dispatch("submitToNotion", userInformation);
   window.scrollTo({ top: 0, behavior: "smooth" });
 };
+const reset = () => {
+  isSubmitting.value = false;
+  store.commit("setHasSubmitted", false);
+};
+const isSubmitting = ref(false);
 </script>
 
 <style lang="scss" scoped>
@@ -100,6 +129,7 @@ const submit = () => {
     rgb(24, 23, 26) 100%
   );
   padding-bottom: 100px;
+  padding-top: 120px;
   .companyName {
     color: #fe9d01;
   }
@@ -162,6 +192,38 @@ const submit = () => {
       }
     }
   }
+
+  .spinner-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: white;
+    padding-bottom: 100px;
+    .icon {
+      font-size: 50px;
+    }
+  }
+
+  .spinner {
+    margin-bottom: 25px;
+    border: 5px solid rgba(255, 255, 255, 0.2);
+    border-top: 5px solid #fe9d01;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
 }
 
 .success {
@@ -189,6 +251,45 @@ const submit = () => {
     font-size: larger;
   }
 }
+.failure {
+  background: rgb(56, 23, 173);
+  background: radial-gradient(
+    circle,
+    rgba(56, 23, 173, 1) 0%,
+    rgb(24, 23, 26) 100%
+  );
+  padding-bottom: 100px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 20px;
+  h1 {
+    color: #fe9d01;
+  }
+  .icon {
+    font-size: 80px;
+  }
+
+  p {
+    font-size: larger;
+  }
+  button {
+    background-color: #fe9d01;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 5px;
+    -webkit-transition: background-color 200ms linear;
+    -ms-transition: background-color 200ms linear;
+    transition: background-color 200ms linear;
+    margin-top: 25px;
+    &:hover {
+      background-color: #cf8102;
+      color: white;
+    }
+  }
+}
 @media (max-width: 768px) {
   .mainDiv {
     h1 {
@@ -214,6 +315,17 @@ const submit = () => {
     }
   }
   .success {
+    h1 {
+      font-size: $font-size-mobile-h1;
+    }
+    .icon {
+      font-size: 60px;
+    }
+    p {
+      font-size: large;
+    }
+  }
+  .failure {
     h1 {
       font-size: $font-size-mobile-h1;
     }
