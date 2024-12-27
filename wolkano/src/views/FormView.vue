@@ -71,7 +71,7 @@
     <div v-if="isSubmitting" class="spinner-container">
       <div class="spinner"></div>
       <div v-motion-slide-left :duration="500" :delay="100" class="icon">
-        ⏳
+        🤞
       </div>
       <p>Skickar in...</p>
     </div>
@@ -312,6 +312,7 @@ const isSubmitting = ref(false);
     -ms-transition: background-color 200ms linear;
     transition: background-color 200ms linear;
     margin-top: 25px;
+    font-weight: 600;
     &:hover {
       background-color: #cf8102;
       color: white;
