@@ -4,6 +4,7 @@ import FormView from "../views/FormView.vue";
 import AboutView from "../views/AboutView.vue";
 import OfferMeView from "../views/OfferMeView.vue";
 import WebbUtvView from "../views/WebbUtvView.vue";
+import HowItWorks from "@/views/HowItWorks.vue";
 
 const routes = [
   {
@@ -30,6 +31,11 @@ const routes = [
     path: "/WebbUtv",
     name: "Webbutveckling · Wolkano",
     component: WebbUtvView,
+  },
+  {
+    path: "/works",
+    name: "Webbutveckling · Hur fungerar det",
+    component: HowItWorks,
   },
 ];
 

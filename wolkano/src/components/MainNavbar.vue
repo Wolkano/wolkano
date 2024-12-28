@@ -5,7 +5,7 @@
         <router-link to="/">
           <img
             :src="
-              isAboutPage
+              isLightBackground
                 ? require('../assets/newLogo.png')
                 : require('../assets/newLogoWhite.png')
             "
@@ -13,48 +13,57 @@
         </router-link>
 
         <router-link class="item" to="/works" v-if="!isMobile">
-          <p :class="{ blackText: isAboutPage }">Hur fungerar det</p>
+          <p :class="{ blackText: isLightBackground }">Hur fungerar det</p>
         </router-link>
         <div class="dropdown">
           <span
             v-if="!isMobile"
             class="menu-link dropdown-toggle"
-            :class="{ blackText: isAboutPage }">
+            :class="{ blackText: isLightBackground }">
             Tjänster
           </span>
           <span v-else
-            ><font-awesome-icon :icon="['fas', 'bars']" size="2x"
+            ><font-awesome-icon
+              :class="{ blackText: isLightBackground }"
+              :icon="['fas', 'bars']"
+              size="2x"
           /></span>
           <ul class="dropdown-menu">
             <router-link class="dropdown-item" to="/OfferMe">
-              <p :class="{ blackText: isAboutPage }">OfferMe</p>
+              <p :class="{ blackText: isLightBackground }">OfferMe</p>
             </router-link>
             <router-link class="dropdown-item" to="/WebbUtv">
-              <p :class="{ blackText: isAboutPage }">Webbutveckling</p>
+              <p :class="{ blackText: isLightBackground }">Webbutveckling</p>
             </router-link>
             <router-link class="dropdown-item" to="/works">
-              <p :class="{ blackText: isAboutPage }">CRM-system (Pilot)</p>
+              <p :class="{ blackText: isLightBackground }">
+                CRM-system (Pilot)
+              </p>
             </router-link>
             <router-link class="dropdown-item" v-if="isMobile" to="/about"
-              ><p :class="{ blackText: isAboutPage }">Om oss</p></router-link
+              ><p :class="{ blackText: isLightBackground }">
+                Om oss
+              </p></router-link
             >
             <router-link class="dropdown-item" v-if="isMobile" to="/form"
-              ><p :class="{ blackText: isAboutPage }">
+              ><p :class="{ blackText: isLightBackground }">
                 Kontakta oss
               </p></router-link
             >
             <router-link v-if="isMobile" class="dropdown-item" to="/works">
-              <p :class="{ blackText: isAboutPage }">Hur fungerar det</p>
+              <p :class="{ blackText: isLightBackground }">Hur fungerar det</p>
             </router-link>
           </ul>
         </div>
       </div>
       <div class="second flex items-center justify-center" v-if="!isMobile">
         <router-link class="item" to="/about"
-          ><p :class="{ blackText: isAboutPage }">Om oss</p></router-link
+          ><p :class="{ blackText: isLightBackground }">Om oss</p></router-link
         >
         <router-link class="item" to="/form"
-          ><p :class="{ blackText: isAboutPage }">Kontakta oss</p></router-link
+          ><p :class="{ blackText: isLightBackground }">
+            Kontakta oss
+          </p></router-link
         >
       </div>
     </div>
@@ -68,7 +77,9 @@ import { useRoute } from "vue-router";
 const route = useRoute();
 const windowWidth = ref(window.innerWidth);
 const isMobile = computed(() => windowWidth.value < 768);
-const isAboutPage = computed(() => route.path === "/about");
+const isLightBackground = computed(
+  () => route.path === "/about" || route.path === "/works"
+);
 </script>
 
 <style scoped lang="scss">
@@ -202,6 +213,9 @@ const isAboutPage = computed(() => route.path === "/about");
   }
 }
 @media (max-width: 768px) {
+  .blackText {
+    color: black;
+  }
   .mainDiv {
     width: 100%;
     .navbar {
