@@ -5,10 +5,10 @@
         <h1>OfferMe</h1>
       </div>
       <div class="col">
-        <div class="animation">
+        <div class="animation" v-motion-pop-visible-once :duration="700" :delay="50">
           <img src="../assets/Förnamn.gif" />
         </div>
-        <div class="section">
+        <div class="section" v-motion-pop-visible-once :duration="700" :delay="100">
           <h2>Offerter</h2>
           <p class="infoText">
             OfferMe är tjänsten som revolutionerar hur offerter skapas. Med vår smarta och användarvänliga plattform kan kunder snabbt och enkelt få en skräddarsydd offert direkt efter att de har fyllt i alla nödvändiga uppgifter.
@@ -17,14 +17,12 @@
         </div>
       </div>
       <div class="col">
-        <div class="section">
+        <div class="section" v-motion-pop-visible-once :duration="700" :delay="50">
           <h2>Varför välja OfferMe?</h2>
         <p class="infoText">
           <ul>
             <li>Snabbhet och effektivitet</li>
             Med OfferMe får dina kunder en professionell offert på några sekunder. Vår automatiserade process eliminerar väntetider och säkerställer att du alltid ligger steget före.
-            <li>Enkel användning</li>
-            Plattformen är designad för att vara användarvänlig. Varken du eller dina kunder behöver teknisk expertis – bara fyll i nödvändig information, så sköter OfferMe resten.
             <li>Skräddarsydda lösningar</li>
             Varje offert anpassas efter kundens specifika behov, vilket ökar chanserna att du vinner affären.
             <li>Tid för det som är viktigast</li>
@@ -32,15 +30,15 @@
           </ul>
         </p>
         </div>
-        <div class="animation">
+        <div class="animation" v-motion-pop-visible-once :duration="700" :delay="100">
           <img src="../assets/Förnamn.gif" />
         </div>
       </div>
       <div class="col">
-        <div class="animation">
+        <div class="animation" v-motion-pop-visible-once :duration="700" :delay="50">
           <img src="../assets/Förnamn.gif" />
         </div>
-        <div class="section">
+        <div class="section" v-motion-pop-visible-once :duration="700" :delay="100">
           <h2>Heading 2</h2>
         <p class="infoText">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
