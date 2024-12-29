@@ -206,14 +206,17 @@ const copy = computed(() => store.state.copy.works);
 
 @media (max-width: 768px) {
   .home {
+    h1 {
+      font-size: $font-size-mobile-h1;
+    }
     .mainDiv {
       padding-left: 20px;
       padding-right: 20px;
       .intro {
         width: 100%;
         justify-content: center;
-        h1 {
-          font-size: $font-size-mobile-h1;
+        h2 {
+          font-size: $font-size-mobile-h2;
           margin-bottom: 0;
         }
         p {
