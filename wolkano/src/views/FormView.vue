@@ -148,6 +148,10 @@ const isSubmitting = ref(false);
   );
   padding-bottom: 100px;
   padding-top: 120px;
+  color: black;
+  h1{
+    color:white;
+  }
   .companyName {
     color: #fe9d01;
   }
@@ -165,7 +169,7 @@ const isSubmitting = ref(false);
     width: 50%;
     margin-left: auto;
     margin-right: auto;
-    background-color: #fe9d01;
+    background-color: white;
     padding: 50px 30px;
     border-radius: 5px;
     .missingField {
@@ -177,6 +181,7 @@ const isSubmitting = ref(false);
       width: 100%;
       border-radius: 3px;
       padding: 5px;
+      border: 1px solid gray;
     }
     div {
       display: flex;
@@ -203,6 +208,7 @@ const isSubmitting = ref(false);
         color: black;
         border-radius: 3px;
         padding: 5px;
+        border: 1px solid gray;
       }
     }
     button {
