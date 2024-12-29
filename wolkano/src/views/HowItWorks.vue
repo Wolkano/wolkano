@@ -1,8 +1,9 @@
 <template>
   <div class="home">
+    <h1>Hur fungerar det</h1>
     <div class="mainDiv">
       <div class="intro">
-        <h1>{{ copy.title }}</h1>
+        <h2>{{ copy.title }}</h2>
         <p>
           {{ copy.description1 }}
         </p>
@@ -20,7 +21,7 @@
   <div class="home">
     <div class="secondDiv">
       <div class="intro" v-motion-pop-visible-once :duration="700" :delay="100">
-        <h1>Steg 1: Samla in rätt information</h1>
+        <h2>Steg 1: Samla in rätt information</h2>
         <p>
           Börja med att fylla i eller importera den data som behövs för att
           skapa offerten. Vårt system integreras med dina befintliga verktyg och
@@ -38,7 +39,7 @@
   <div class="home">
     <div class="mainDiv">
       <div class="intro" v-motion-pop-visible-once :duration="700" :delay="100">
-        <h1>Steg 2: Generera offerten automatiskt</h1>
+        <h2>Steg 2: Generera offerten automatiskt</h2>
         <p>
           När all data är på plats tar systemet över och räknar ut priser,
           rabatter och villkor baserat på dina förinställda regler. Inom några
@@ -55,7 +56,7 @@
   <div class="home">
     <div class="secondDiv">
       <div class="intro" v-motion-pop-visible-once :duration="700" :delay="100">
-        <h1>Steg 3: Skicka och följ upp</h1>
+        <h2>Steg 3: Skicka och följ upp</h2>
         <p>
           Med ett klick kan du skicka offerten direkt till kunden via e-post
           eller andra kanaler. Systemet hjälper dig dessutom att hålla koll på
@@ -94,6 +95,10 @@ const copy = computed(() => store.state.copy.works);
 
 .home {
   background-color: #f7f9fa;
+  padding-top: 150px;
+  h1 {
+    color: #031a4a;
+  }
 
   .mainDiv {
     display: flex;
@@ -103,8 +108,13 @@ const copy = computed(() => store.state.copy.works);
     flex-wrap: wrap;
     flex-direction: row-reverse;
     color: #031a4a;
-    padding-top: 150px;
     padding-bottom: 150px;
+
+    .image {
+      img {
+        border-radius: 10px;
+      }
+    }
 
     .intro {
       text-align: left;
