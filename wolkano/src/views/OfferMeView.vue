@@ -2,30 +2,34 @@
   <div class="offerMe">
     <div class="intro">
       <div class="titel">
-        <h1>OfferMe<span></span></h1>
+        <h1>OfferMe</h1>
       </div>
       <div class="col">
         <div class="animation">
-          <img src="../assets/Unknown.jpg" />
+          <img src="../assets/Förnamn.gif" />
         </div>
         <div class="section">
           <h2>Offerter</h2>
           <p class="infoText">
             OfferMe är tjänsten som revolutionerar hur offerter skapas. Med vår smarta och användarvänliga plattform kan kunder snabbt och enkelt få en skräddarsydd offert direkt efter att de har fyllt i alla nödvändiga uppgifter.
+            Processen är enkel: Kunden anger detaljer om sitt behov genom vårt intuitiva gränssnitt, som guidar dem genom varje steg. När alla uppgifter är inskickade bearbetas informationen av vår avancerade algoritm som automatiskt sammanställer en offert som både är tydlig och professionell. Resultatet levereras omedelbart – ingen väntetid, inget krångel.
           </p>
         </div>
       </div>
       <div class="col">
         <div class="section">
-          <h2>Heading 2</h2>
+          <h2>Varför välja OfferMe?</h2>
         <p class="infoText">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
+          <ul>
+            <li>Snabbhet och effektivitet</li>
+            Med OfferMe får dina kunder en professionell offert på några sekunder. Vår automatiserade process eliminerar väntetider och säkerställer att du alltid ligger steget före.
+            <li>Enkel användning</li>
+            Plattformen är designad för att vara användarvänlig. Varken du eller dina kunder behöver teknisk expertis – bara fyll i nödvändig information, så sköter OfferMe resten.
+            <li>Skräddarsydda lösningar</li>
+            Varje offert anpassas efter kundens specifika behov, vilket ökar chanserna att du vinner affären.
+            <li>Tid för det som är viktigast</li>
+            Genom att automatisera offertprocessen kan du fokusera mer på din kärnverksamhet och mindre på administration.
+          </ul>
         </p>
         </div>
         <div class="animation">
@@ -34,7 +38,7 @@
       </div>
       <div class="col">
         <div class="animation">
-          <img src="../assets/testProfilePicture.png" />
+          <img src="../assets/Förnamn.gif" />
         </div>
         <div class="section">
           <h2>Heading 2</h2>
@@ -79,9 +83,6 @@ import CompanyBanner from "@/components/CompanyBanner.vue";
       font-weight: 700;
       width: fit-content;
       border-bottom: 2px solid #fe9d01;
-      span {
-        color: #fe9d01;
-      }
     }
   }
 
@@ -90,6 +91,8 @@ import CompanyBanner from "@/components/CompanyBanner.vue";
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
 
 
     .animation {
@@ -120,6 +123,18 @@ import CompanyBanner from "@/components/CompanyBanner.vue";
       color: #fe9d01;
       font-weight: 700;
     }
+    ul{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    li{
+      font-size: 1.2rem;
+      font-weight: 600;
+      border-bottom: 2px solid #fe9d01;
+      width: fit-content;
+      margin: 10px;
+    }
     }
   }
   .col:nth-of-type(3) {
@@ -131,18 +146,24 @@ import CompanyBanner from "@/components/CompanyBanner.vue";
 @media (max-width: 768px) {
   .offerMe {
     .col {
-      flex-direction: column;
+      flex-direction: column-reverse;
       .section {
+        width: 70%;
         p {
           width: 100%;
-          padding: 20px;
         }
       }
       .animation {
-        width: 100%;
-        padding: 0px;
+        width: 60%;
+        margin-top: 20px;
       }
     }
+    .col:nth-of-type(3){
+      .animation{
+        display: none;
+      }
+    }
+    
   }
 }
 </style>
