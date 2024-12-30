@@ -7,10 +7,10 @@
       </div>
       <div class="col">
         <div class="animation" v-motion-pop-visible-once :duration="700" :delay="50">
-          <img src="../assets/Byggproffsform.png" />
+          <img src="../assets/byggGif.gif" />
         </div>
         <div class="section" v-motion-pop-visible-once :duration="700" :delay="100">
-          <h2>Offerter</h2>
+         <h2>Vad är OfferMe?</h2>
           <p class="infoText">
             OfferMe är tjänsten som revolutionerar hur offerter skapas. Med vår smarta och användarvänliga plattform kan kunder snabbt och enkelt få en skräddarsydd offert direkt efter att de har fyllt i alla nödvändiga uppgifter.
             Processen är enkel: Kunden anger detaljer om sitt behov genom vårt intuitiva gränssnitt, som guidar dem genom varje steg. När alla uppgifter är inskickade bearbetas informationen av vår avancerade algoritm som automatiskt sammanställer en offert som både är tydlig och professionell. Resultatet levereras omedelbart – ingen väntetid, inget krångel.
@@ -55,10 +55,11 @@
       </div>
       -->
       <div class="kontakta">
-        <p>Har du frågor eller funderingar?<br/> Vi på OfferMe finns här för att hjälpa dig <br/> tveka inte att kontakta oss!</p>
+        <p>Har du frågor eller funderingar?</p>
+           <p>Vi på OfferMe finns här för att hjälpa dig - tveka inte att kontakta oss!</p>
       <div class="button">
           <router-link to="/form" class="button">Kontakta oss</router-link>
-        </div>
+      </div>
       </div>
     </div>
     <!--
@@ -108,7 +109,7 @@
 
 
     .animation {
-      width: 35%;
+      width: 50%;
       margin: 30px;
       padding: 30px;
 
@@ -161,9 +162,15 @@
     gap: 20px;
     padding-top: 40px;
     padding-bottom: 40px;
+    background-color: #fe9d01;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-radius: 10px;
     
     p{
       font-size: 1.5rem;
+      padding-left: 20px;
+      padding-right: 20px;
     }
 
     .button{
@@ -182,13 +189,14 @@
     .col {
       flex-direction: column-reverse;
       .section {
-        width: 70%;
+        width: 100%;
         p {
-          width: 100%;
+          width: 90%;
+          text-align: left;
         }
       }
       .animation {
-        width: 80%;
+        width: 100%;
         margin-top: 20px;
       }
     }
@@ -197,7 +205,9 @@
         display: none;
       }
     }
-    
+    .kontakta{
+      width: 80%;
+    }
   }
 }
 </style>
