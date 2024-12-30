@@ -4,7 +4,7 @@
       <h1>Webbutveckling</h1>
     </div>
     <div class="infoDiv">
-      <img src="../assets/Förnamn.gif" />
+      <img src="../assets/placeholderbild.jpg" />
       <div class="info">
         <h2>Hemsidor som passar dina behov</h2>
         <p>
@@ -58,10 +58,8 @@
     img {
       width: 30%;
       height: min-content;
-      border-style: solid;
-      border-width: 5px;
-      border-color: #fe9d01;
-      border-radius: 20px;
+      border-radius: 5px;
+      //box-shadow: 2px 2px 2px black;
       margin-left: auto;
     }
     .info {

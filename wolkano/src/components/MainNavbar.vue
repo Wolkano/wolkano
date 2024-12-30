@@ -12,9 +12,11 @@
             class="logo" />
         </router-link>
 
+        <!--
         <router-link class="item" to="/works" v-if="!isMobile">
           <p :class="{ blackText: isLightBackground }">Hur fungerar det</p>
         </router-link>
+        -->
         <div class="dropdown">
           <span
             v-if="!isMobile"

@@ -1,4 +1,7 @@
 <template>
+  <!--
+  <img src="../assets/footerb.png"/>
+  -->
   <div class="footer">
     <div>
       <h4>Wolkano</h4>

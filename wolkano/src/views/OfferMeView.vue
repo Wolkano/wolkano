@@ -2,11 +2,12 @@
   <div class="offerMe">
     <div class="intro">
       <div class="titel">
-        <h1>OfferMe</h1>
+        <img src="../assets/offermewhitelogo.png" alt="OfferMe Logo white" />
+        <!---<h1>OfferMe</h1>--->
       </div>
       <div class="col">
         <div class="animation" v-motion-pop-visible-once :duration="700" :delay="50">
-          <img src="../assets/Förnamn.gif" />
+          <img src="../assets/Byggproffsform.png" />
         </div>
         <div class="section" v-motion-pop-visible-once :duration="700" :delay="100">
           <h2>Offerter</h2>
@@ -34,6 +35,7 @@
           <img src="../assets/Förnamn.gif" />
         </div>
       </div>
+      <!--
       <div class="col">
         <div class="animation" v-motion-pop-visible-once :duration="700" :delay="50">
           <img src="../assets/Förnamn.gif" />
@@ -51,6 +53,7 @@
         </p>
         </div>
       </div>
+      -->
     </div>
 
     <CompanyBanner />
@@ -65,23 +68,27 @@ import CompanyBanner from "@/components/CompanyBanner.vue";
 @import "../assets/scss/variables.scss";
 
 .offerMe {
-  background: #{$gradient-background};
+  background-color: rgb(20, 0, 90);
 
   .intro {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    padding-bottom: 100px;
+    
   }
   .titel {
     width: 100%;
     display: flex;
     justify-content: center;
-    h1 {
+    img{
+      width: 30%;
+    }
+    
+    /*h1 {
       font-weight: 700;
       width: fit-content;
       border-bottom: 2px solid #fe9d01;
-    }
+    }*/
   }
 
   .col {
@@ -143,6 +150,11 @@ import CompanyBanner from "@/components/CompanyBanner.vue";
 
 @media (max-width: 768px) {
   .offerMe {
+    .titel{
+      img{
+        width:70%;
+      }
+    }
     .col {
       flex-direction: column-reverse;
       .section {
@@ -152,7 +164,7 @@ import CompanyBanner from "@/components/CompanyBanner.vue";
         }
       }
       .animation {
-        width: 60%;
+        width: 80%;
         margin-top: 20px;
       }
     }
