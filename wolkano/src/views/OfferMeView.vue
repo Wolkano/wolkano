@@ -5,7 +5,7 @@
         <img src="../assets/offermewhitelogo.png" alt="OfferMe Logo white" />
         <!---<h1>OfferMe</h1>--->
       </div>
-      <div class="col">
+      <div class="col firstCol">
         <div class="animation" v-motion-pop-visible-once :duration="700" :delay="50">
           <img src="../assets/byggGif.gif" />
         </div>
@@ -98,6 +98,7 @@
       border-bottom: 2px solid #fe9d01;
     }*/
   }
+ 
 
   .col {
     display: flex;
@@ -149,6 +150,9 @@
       margin: 10px;
     }
     }
+  }
+  .firstCol{
+    text-align: left;
   }
   .col:nth-of-type(3) {
     background-color: white;
