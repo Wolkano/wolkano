@@ -54,14 +54,21 @@
         </div>
       </div>
       -->
+      <div class="kontakta">
+        <p>Har du frågor eller funderingar?<br/> Vi på OfferMe finns här för att hjälpa dig <br/> tveka inte att kontakta oss!</p>
+      <div class="button">
+          <router-link to="/form" class="button">Kontakta oss</router-link>
+        </div>
+      </div>
     </div>
-
+    <!--
     <CompanyBanner />
+    -->
   </div>
 </template>
 
 <script setup>
-import CompanyBanner from "@/components/CompanyBanner.vue";
+//import CompanyBanner from "@/components/CompanyBanner.vue";
 </script>
 
 <style lang="scss" scoped>
@@ -74,7 +81,7 @@ import CompanyBanner from "@/components/CompanyBanner.vue";
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    
+    align-items: center;
   }
   .titel {
     width: 100%;
@@ -121,7 +128,7 @@ import CompanyBanner from "@/components/CompanyBanner.vue";
 
       p {
       font-size: $font-size-p;
-      width: 70%;
+      width: 80%;
     }
     h2{
       font-size: $font-size-h2;
@@ -145,6 +152,23 @@ import CompanyBanner from "@/components/CompanyBanner.vue";
   .col:nth-of-type(3) {
     background-color: white;
     color: black;
+  }
+  .kontakta{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    
+    p{
+      font-size: 1.5rem;
+    }
+
+    .button{
+      font-weight: 600;
+    }
   }
 }
 

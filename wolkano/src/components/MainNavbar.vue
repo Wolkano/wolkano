@@ -28,9 +28,12 @@
             ><font-awesome-icon
               :class="{ blackText: isLightBackground }"
               :icon="['fas', 'bars']"
+              @click="toggleMenu"
               size="2x"
           /></span>
-          <ul class="dropdown-menu">
+          <ul class="dropdown-menu"
+          :class="{ dropdownMenuOpen: isMenuOpen }"
+          >
             <router-link class="dropdown-item" to="/OfferMe">
               <p :class="{ blackText: isLightBackground }">OfferMe</p>
             </router-link>
@@ -52,9 +55,11 @@
                 Kontakta oss
               </p></router-link
             >
+            <!--
             <router-link v-if="isMobile" class="dropdown-item" to="/works">
               <p :class="{ blackText: isLightBackground }">Hur fungerar det</p>
             </router-link>
+            -->
           </ul>
         </div>
       </div>
@@ -82,6 +87,11 @@ const isMobile = computed(() => windowWidth.value < 768);
 const isLightBackground = computed(
   () => route.path === "/about" || route.path === "/works"
 );
+
+
+const isMenuOpen = ref(false);
+const toggleMenu = () => {isMenuOpen.value = !isMenuOpen.value};
+
 </script>
 
 <style scoped lang="scss">
@@ -166,6 +176,10 @@ const isLightBackground = computed(
         opacity: 1;
         transform: scaleY(1);
       }
+      .dropdownMenuOpen {
+        opacity: 1;
+        transform: scaleY(1);
+      }
 
       .dropdown-menu {
         position: absolute;
@@ -236,6 +250,7 @@ const isLightBackground = computed(
           width: 220px;
           left: auto;
         }
+        
       }
     }
   }

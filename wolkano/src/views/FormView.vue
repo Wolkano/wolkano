@@ -141,11 +141,7 @@ const isSubmitting = ref(false);
 @import "../assets/scss/variables.scss";
 .mainDiv {
   background: rgb(56, 23, 173);
-  background: radial-gradient(
-    circle,
-    rgba(56, 23, 173, 1) 0%,
-    rgb(24, 23, 26) 100%
-  );
+  background: #{$gradient-background};
   padding-bottom: 100px;
   padding-top: 120px;
   color: black;
