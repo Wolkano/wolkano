@@ -42,6 +42,7 @@ const routes = [
 const router = createRouter({
   history: createWebHashHistory(),
   routes,
+  scrollBehavior() {return { top: 0 };}, // Gör så att man hamnar högst upp på sidan när man redirectar
 });
 
 router.beforeEach((to, from, next) => {

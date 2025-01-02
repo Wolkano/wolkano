@@ -34,37 +34,30 @@
           <img src="../assets/Förnamn.gif" />
         </div>
       </div>
-      <!--
-      <div class="col">
-        <div class="animation" v-motion-pop-visible-once :duration="700" :delay="50">
-          <img src="../assets/Förnamn.gif" />
+      
+      <div class="col sistaCol" v-motion-pop-visible-once :duration="700" :delay="50">
+        <h2>Har du frågor eller funderingar?</h2>
+        <div class="knappar">
+        <div class="knappDiv">
+          <p>Se hur den automatiserade offertjänsten fungerar</p>
+          <router-link to="/works" class="button">Hur Fungerar det?</router-link>
         </div>
-        <div class="section" v-motion-pop-visible-once :duration="700" :delay="100">
-          <h2>Heading 2</h2>
-        <p class="infoText">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
-        </p>
+        <div class="knappDiv">
+          <p>Vi på OfferMe finns här för att hjälpa dig - tveka inte att kontakta oss!</p>
+          <div class="button">
+              <router-link to="/form" class="button">Kontakta oss</router-link>
+          </div>
         </div>
       </div>
-      -->
-      <div class="kontakta">
-        <p>Har du frågor eller funderingar?</p>
-           <p>Vi på OfferMe finns här för att hjälpa dig - tveka inte att kontakta oss!</p>
-      <div class="button">
-          <router-link to="/form" class="button">Kontakta oss</router-link>
-      </div>
+      <img src="../assets/4killar.jpeg"/>
       </div>
     </div>
+      
+      
+  </div>
     <!--
     <CompanyBanner />
     -->
-  </div>
 </template>
 
 <script setup>
@@ -150,33 +143,46 @@
       width: 100%;
     }
   }
-  .col:nth-of-type(3) {
-    background-color: white;
-    color: black;
-  }
-  .kontakta{
-    width: 40%;
+  .sistaCol{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 20px;
+    padding-right: 20px;
+    gap: 50px;
+    img {
+      width: 30%;
+      border-radius: 5px;
+    }
+    h2{
+      width: 100%;
+      padding-bottom: 30px;
+    }
+    .button{
+      font-weight: 600;
+      width: fit-content;
+    }
+    .knappar{
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    .knappDiv{
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    padding-top: 40px;
-    padding-bottom: 40px;
-    background-color: #fe9d01;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    border-radius: 10px;
-    
     p{
-      font-size: 1.5rem;
-      padding-left: 20px;
-      padding-right: 20px;
+      font-size: $font-size-p;
     }
 
-    .button{
-      font-weight: 600;
-    }
   }
+  }
+  }
+  .col:nth-of-type(3) {
+    background-color: white;
+    color: black;
+  }
+  
 }
 
 @media (max-width: 768px) {
