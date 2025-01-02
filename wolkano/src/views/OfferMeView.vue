@@ -3,7 +3,6 @@
     <div class="intro">
       <div class="titel">
         <img src="../assets/offermewhitelogo.png" alt="OfferMe Logo white" />
-        <!---<h1>OfferMe</h1>--->
       </div>
       <div class="col firstCol">
         <div class="animation" v-motion-pop-visible-once :duration="700" :delay="50">
@@ -91,12 +90,6 @@
     img{
       width: 30%;
     }
-    
-    /*h1 {
-      font-weight: 700;
-      width: fit-content;
-      border-bottom: 2px solid #fe9d01;
-    }*/
   }
  
 
@@ -153,6 +146,9 @@
   }
   .firstCol{
     text-align: left;
+    p{
+      width: 100%;
+    }
   }
   .col:nth-of-type(3) {
     background-color: white;
@@ -196,7 +192,7 @@
         width: 100%;
         p {
           width: 90%;
-          text-align: left;
+          
         }
       }
       .animation {
