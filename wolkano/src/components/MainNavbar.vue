@@ -35,14 +35,17 @@
           :class="{ dropdownMenuOpen: isMenuOpen }"
           >
             <router-link class="dropdown-item" to="/OfferMe">
-              <p :class="{ blackText: isLightBackground }">OfferMe</p>
+              <p :class="{ blackText: isLightBackground }">OfferMe<br/>
+                <span v-if="!isMobile">Vår automatiserade offerttjänst</span></p>
             </router-link>
             <router-link class="dropdown-item" to="/WebbUtv">
-              <p :class="{ blackText: isLightBackground }">Webbutveckling</p>
+              <p :class="{ blackText: isLightBackground }">Webbutveckling<br/>
+                <span v-if="!isMobile">Skräddarsydda hemsidor för din framgång</span></p>
             </router-link>
             <router-link class="dropdown-item" to="/works">
               <p :class="{ blackText: isLightBackground }">
-                CRM-system (Pilot)
+                Hur Fungerar Det?
+                <!--CRM-system (Pilot)-->
               </p>
             </router-link>
             <router-link class="dropdown-item" v-if="isMobile" to="/about"
@@ -204,6 +207,7 @@ const toggleMenu = () => {isMenuOpen.value = !isMenuOpen.value};
       }
 
       .dropdown-item {
+
         p {
           display: block;
           padding: 0.5rem 1rem;
@@ -218,6 +222,12 @@ const toggleMenu = () => {isMenuOpen.value = !isMenuOpen.value};
           -ms-transition: background-color 200ms linear;
           transition: background-color 200ms linear;
 
+          span{
+            font-size: 14px;
+            font-weight: 300;
+          }
+
+          
           &:hover {
             background-color: #f0f0f0;
             color: #fe9d01;
