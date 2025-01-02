@@ -44,7 +44,8 @@
             </router-link>
             <router-link class="dropdown-item" to="/works">
               <p :class="{ blackText: isLightBackground }">
-                Hur Fungerar Det?
+                Hur Fungerar Det?<br/>
+                <span v-if="!isMobile">Så fungerar vår automatiserade offerttjänst</span>
                 <!--CRM-system (Pilot)-->
               </p>
             </router-link>
@@ -195,7 +196,7 @@ const toggleMenu = () => {isMenuOpen.value = !isMenuOpen.value};
         background-color: #fff;
         list-style: none;
         margin: 0;
-        width: 400px;
+        width: max-content; // ändrat från 400pxs
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         z-index: 1000;
         text-align: left;
@@ -221,10 +222,15 @@ const toggleMenu = () => {isMenuOpen.value = !isMenuOpen.value};
           -webkit-transition: background-color 200ms linear;
           -ms-transition: background-color 200ms linear;
           transition: background-color 200ms linear;
-
+         
+          //manges kod
           span{
+            padding-top: 5px;
+            padding-right: 5px;
             font-size: 14px;
             font-weight: 300;
+            border-top: 2px solid #fe9d01;
+            //border-right: 2px solid #fe9d01;
           }
 
           

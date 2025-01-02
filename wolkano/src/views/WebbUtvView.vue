@@ -17,7 +17,16 @@
           oss för att diskutera dina idéer och hur vi kan hjälpa dig att
           förverkliga dem!
         </p>
+        <div class="kontakta">
+        <p>Behöver du en hemsida? Tveka inte att kontakta oss</p>
+        <div class="button">
+          
+          <router-link to="/form" class="button">Kontakta oss</router-link>
+
       </div>
+      </div>
+    </div>
+    
     </div>
   </div>
 </template>
@@ -55,7 +64,7 @@
     align-items: center;
     width: 100%;
     img {
-      width: 30%;
+      width: 35%;
       border-radius: 5px;
 
     }
@@ -71,9 +80,29 @@
         width: 70%;
         font-size: #{$font-size-p};
       }
+      .kontakta{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+
+        p{
+          border-top: 2px solid white;
+          padding-top: 10px;
+          margin-top: 10px;
+        }
+        .button {
+          font-weight: 600;
+          width: fit-content;
+        }
+      }
     }
   }
-}
+
+
+  }
+
 @media (max-width: 768px){
   .webbUtv{
 
