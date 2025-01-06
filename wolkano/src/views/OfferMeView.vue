@@ -51,6 +51,9 @@
       </div>
       <img src="../assets/4killar.jpeg"/>
       </div>
+      <div class="offertFormDiv" >
+        <div v-motion-pop-visible-once :duration="700" :delay="50"><OffertForm /></div>
+      </div>
     </div>
       
       
@@ -62,6 +65,7 @@
 
 <script setup>
 //import CompanyBanner from "@/components/CompanyBanner.vue";
+import OffertForm from "@/components/OffertForm.vue"
 </script>
 
 <style lang="scss" scoped>
@@ -184,6 +188,13 @@
   }
   
   
+}
+
+.offertFormDiv {
+  background-color: white;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 @media (max-width: 768px) {
