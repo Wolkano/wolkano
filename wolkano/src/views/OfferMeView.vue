@@ -1,14 +1,14 @@
 <template>
   <div class="offerMe">
-    <div class="intro">
+    <div class="body">
       <div class="titel">
         <img src="../assets/offermewhitelogo.png" alt="OfferMe Logo white" />
       </div>
-      <div class="col firstCol">
-        <div class="animation" v-motion-pop-visible-once :duration="700" :delay="50">
+      <div class="row firstRow">
+        <div class="imgElement" v-motion-pop-visible-once :duration="700" :delay="50">
           <img src="../assets/byggGif.gif" />
         </div>
-        <div class="section" v-motion-pop-visible-once :duration="700" :delay="100">
+        <div class="textSection" v-motion-pop-visible-once :duration="700" :delay="100">
          <h2>Vad är OfferMe?</h2>
           <p class="infoText">
             OfferMe är tjänsten som revolutionerar hur offerter skapas. Med vår smarta och användarvänliga plattform kan kunder snabbt och enkelt få en skräddarsydd offert direkt efter att de har fyllt i alla nödvändiga uppgifter.
@@ -16,8 +16,8 @@
           </p>
         </div>
       </div>
-      <div class="col">
-        <div class="section" v-motion-pop-visible-once :duration="700" :delay="50">
+      <div class="row secondRow">
+        <div class="textSection" v-motion-pop-visible-once :duration="700" :delay="50">
           <h2>Varför välja OfferMe?</h2>
         <p class="infoText">
           <ul>
@@ -30,12 +30,12 @@
           </ul>
         </p>
         </div>
-        <div class="animation" v-motion-pop-visible-once :duration="700" :delay="100">
+        <div class="imgElement" v-motion-pop-visible-once :duration="700" :delay="100">
           <img src="../assets/Förnamn.gif" />
         </div>
       </div>
       
-      <div class="col sistaCol" v-motion-pop-visible-once :duration="700" :delay="50">
+      <div class="row thirdRow" v-motion-pop-visible-once :duration="700" :delay="50">
         <h2>Har du frågor eller funderingar?</h2>
         <div class="knappar">
         <div class="knappDiv">
@@ -70,7 +70,7 @@
 .offerMe {
   background-color: rgb(20, 0, 90);
 
-  .intro {
+  .body {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -86,7 +86,7 @@
   }
  
 
-  .col {
+  .row {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -95,7 +95,7 @@
     padding-bottom: 40px;
 
 
-    .animation {
+    .imgElement {
       width: 50%;
       margin: 30px;
       padding: 30px;
@@ -108,7 +108,7 @@
       }
 
     }
-    .section{
+    .textSection{
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -137,13 +137,17 @@
     }
     }
   }
-  .firstCol{
+  .firstRow{
     text-align: left;
     p{
       width: 100%;
     }
   }
-  .sistaCol{
+  .secondRow {
+    background-color: white;
+    color: black;
+  }
+  .thirdRow{
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -178,10 +182,7 @@
   }
   }
   }
-  .col:nth-of-type(3) {
-    background-color: white;
-    color: black;
-  }
+  
   
 }
 
@@ -192,21 +193,21 @@
         width:70%;
       }
     }
-    .col {
+    .Row {
       flex-direction: column-reverse;
-      .section {
+      .textSection {
         width: 100%;
         p {
           width: 90%;
           
         }
       }
-      .animation {
+      .imgElement {
         width: 100%;
         margin-top: 20px;
       }
     }
-    .col:nth-of-type(3){
+    .secondRow{
       .animation{
         display: none;
       }
