@@ -25,7 +25,8 @@ const copy = computed(() => store.state.copy.home);
       <div class="image">
         <img
           class="businessManImage"
-          src="../assets/—Pngtree—happy corporate business professional one_13504468.png" />
+          src="../assets/—Pngtree—happy corporate business professional one_13504468.png"
+        />
       </div>
     </div>
   </div>
@@ -82,7 +83,7 @@ const copy = computed(() => store.state.copy.home);
 @import "../assets/scss/variables.scss";
 
 .home {
-  background: #{$gradient-background};
+  background: $background-color;
   .mainDiv {
     display: flex;
     justify-content: center;

@@ -174,19 +174,21 @@ const toggleMenu = () => {
       position: relative;
       cursor: pointer;
 
+      &:hover .menu-link {
+        color: $background-color;
+      }
+
       .menu-link {
         color: #fff;
         padding: 0.5rem 1rem;
         text-decoration: none;
         font-size: larger;
-        -webkit-transition: color 200ms linear;
-        -ms-transition: color 200ms linear;
-        transition: color 200ms linear;
+        //-webkit-transition: color 200ms linear;
+        //-ms-transition: color 200ms linear;
+        transition: color 100ms linear;
         font-weight: 600;
 
-        &:hover {
-          color: #fe9d01;
-        }
+        //&:hover {color: #fe9d01;}
       }
 
       /* On hover show dropdown menu */
@@ -206,7 +208,7 @@ const toggleMenu = () => {
         justify-content: flex-start;
         top: -60%;
         padding: 15px 20px;
-        left: 100%;
+        left: 0%;
         //background-color: #fff;
         list-style: none;
         margin: 0;
@@ -235,7 +237,7 @@ const toggleMenu = () => {
           -webkit-transition: background-color 200ms linear;
           -ms-transition: background-color 200ms linear;
           transition: background-color 200ms linear;
-          transition: box-shadow 300ms linear;
+          border-radius: 5px;
 
           //manges kod
           span {
@@ -244,14 +246,10 @@ const toggleMenu = () => {
             font-size: 14px;
             font-weight: 300;
             border-top: 2px solid #fe9d01;
-            //border-right: 2px solid #fe9d01;
           }
 
           &:hover {
-            //background-color: $background-color;
-            box-shadow: 0 5px 6px rgba(0, 0, 0, 0.1);
-            //color: #fe9d01;
-            border-radius: 5px;
+            background-color: rgba(0, 0, 0, 0.2);
           }
         }
       }
