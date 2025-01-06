@@ -72,7 +72,7 @@ import OffertForm from "@/components/OffertForm.vue"
 @import "../assets/scss/variables.scss";
 
 .offerMe {
-  background-color: rgb(20, 0, 90);
+  background-color: $background-color;
 
   .body {
     display: flex;
