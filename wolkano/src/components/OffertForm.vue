@@ -170,12 +170,9 @@ const isSubmitting = ref(false);
 <style lang="scss" scoped>
 @import "../assets/scss/variables.scss";
 .mainDiv {
-  background-color: black;
+  background-color: white;
   padding: 100px 0px;
   color: black;
-  h1 {
-    color: white;
-  }
   .companyName {
     color: #fe9d01;
   }
@@ -186,6 +183,7 @@ const isSubmitting = ref(false);
     font-size: 18px;
   }
   .form {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     display: flex;
     flex-direction: column;
     align-items: center;

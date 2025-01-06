@@ -182,7 +182,6 @@ import OffertForm from "@/components/OffertForm.vue"
     p{
       font-size: $font-size-p;
     }
-
   }
   }
   }
