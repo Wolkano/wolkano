@@ -14,29 +14,41 @@
           effektiviteten? Vi finns här för att hjälpa dig! Fyll i formuläret
           nedan, så återkommer vi till dig så snart som möjligt.
         </p>
-        <div class="radioButtons">
-          <input
-            type="radio"
-            v-model="userInformation.radioChoice"
-            name="1"
-            value="1"
+        <div class="newRadioButtons">
+          <FormRadioButton
+            v-model:activePlan="offerInformation.activePlan"
+            :title="'Produkt 1'"
+            description="Testar"
+            :planDollars="5"
           />
-          <label for="1">1</label>
-          <input
-            type="radio"
-            v-model="userInformation.radioChoice"
-            name="2"
-            value="2"
+          <FormRadioButton
+            v-model:activePlan="offerInformation.activePlan"
+            :title="'Produkt 2'"
+            description="Testar igen"
+            :planDollars="5"
           />
-          <label for="2">2</label>
-          <input
-            type="radio"
-            v-model="userInformation.radioChoice"
-            name="3"
-            value="3"
+          <FormRadioButton
+            v-model:activePlan="offerInformation.activePlan"
+            :title="'Produkt 3'"
+            description="Lorem ipsum"
+            :planDollars="5"
           />
-          <label for="3">3</label>
-          {{ userInformation.radioChoice }}
+        </div>
+        <div class="slidecontainer">
+          <h3>Välj antal produkter</h3>
+          <input
+            type="range"
+            min="1"
+            max="10"
+            step="1"
+            v-model="offerInformation.sliderValue"
+            class="slider"
+            id="myRange"
+          />
+          <p>
+            <b>{{ offerInformation.sliderValue }}</b>
+            {{ offerInformation.sliderValue === 1 ? "produkt" : "produkter" }}
+          </p>
         </div>
         <div>
           <input
@@ -44,11 +56,11 @@
             id="name"
             name="name"
             placeholder="Namn*"
-            v-model="userInformation.name"
+            v-model="offerInformation.name"
           />
           <p
             class="missingField"
-            v-if="!userInformation.name && hasMissingFields"
+            v-if="!offerInformation.name && hasMissingFields"
           >
             ❌ Fyll i namn
           </p>
@@ -59,11 +71,11 @@
             id="phone"
             name="phone"
             placeholder="Telefonnummer*"
-            v-model="userInformation.phone"
+            v-model="offerInformation.phone"
           />
           <p
             class="missingField"
-            v-if="!userInformation.phone && hasMissingFields"
+            v-if="!offerInformation.phone && hasMissingFields"
           >
             ❌ Fyll i telefonnummer
           </p>
@@ -72,11 +84,11 @@
             id="email"
             name="email"
             placeholder="Email*"
-            v-model="userInformation.email"
+            v-model="offerInformation.email"
           />
           <p
             class="missingField"
-            v-if="!userInformation.email && hasMissingFields"
+            v-if="!offerInformation.email && hasMissingFields"
           >
             ❌ Fyll i email
           </p>
@@ -121,29 +133,31 @@
 <script setup>
 import { reactive, computed, ref } from "vue";
 import { useStore } from "vuex";
+import FormRadioButton from "./FormRadioButton.vue";
 const store = useStore();
 const success = computed(() => store.state.submittedSuccessfully);
 const hasSubmitted = computed(() => store.state.hasSubmitted);
-const userInformation = reactive({
+const offerInformation = reactive({
   firstName: "",
   email: "",
   phone: "",
-  radioChoice: 0,
+  activePlan: "",
+  sliderValue: 5,
 });
 const hasMissingFields = ref(false);
 
 const submit = async () => {
   if (
-    !userInformation.name ||
-    !userInformation.email ||
-    !userInformation.phone
+    !offerInformation.name ||
+    !offerInformation.email ||
+    !offerInformation.phone
   ) {
     hasMissingFields.value = true;
     console.log("test");
     return;
   }
   isSubmitting.value = true;
-  await store.dispatch("submitToNotion", userInformation);
+  await store.dispatch("submitToNotion", offerInformation);
   window.scrollTo({ top: 0, behavior: "smooth" });
 };
 const reset = () => {
@@ -182,6 +196,34 @@ const isSubmitting = ref(false);
     background-color: white;
     padding: 50px 50px;
     border-radius: 5px;
+
+    .newRadioButtons {
+      color: black;
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      justify-content: center;
+      align-items: center;
+    }
+    .slidecontainer {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+
+      input {
+        accent-color: $orange;
+        padding: 10px 0px;
+
+        &::-webkit-slider-thumb {
+          padding: 12px;
+          cursor: pointer;
+        }
+      }
+      p {
+        align-self: center !important;
+      }
+    }
     .missingField {
       color: red;
       font-style: italic;
@@ -335,7 +377,11 @@ const isSubmitting = ref(false);
     }
   }
 }
+
 @media (max-width: 768px) {
+  .newRadioButtons {
+    flex-direction: column;
+  }
   .mainDiv {
     h1 {
       font-size: $font-size-mobile-h1;
