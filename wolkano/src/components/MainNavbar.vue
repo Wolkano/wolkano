@@ -174,9 +174,8 @@ const toggleMenu = () => {
       position: relative;
       cursor: pointer;
 
-      &:hover .menu-link {
-        color: $background-color;
-      }
+      //&:hover .menu-link {color: $background-color;}
+      //&:hover .blackText {color: #fff;}
 
       .menu-link {
         color: #fff;
@@ -187,20 +186,25 @@ const toggleMenu = () => {
         //-ms-transition: color 200ms linear;
         transition: color 100ms linear;
         font-weight: 600;
-
-        //&:hover {color: #fe9d01;}
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        opacity: 1;
+        transform: scaleY(1);
+        transform-origin: right;
+      }
+      &:hover .menu-link {
+        opacity: 0;
+        transform: scaleY(0);
       }
 
       /* On hover show dropdown menu */
       &:hover .dropdown-menu {
         opacity: 1;
-        transform: scaleY(1);
+        transform: scaleX(1);
       }
       .dropdownMenuOpen {
         opacity: 1;
-        transform: scaleY(1);
+        transform: scaleX(1);
       }
-
       .dropdown-menu {
         position: absolute;
         display: flex;
