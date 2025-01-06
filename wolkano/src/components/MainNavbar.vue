@@ -9,7 +9,8 @@
                 ? require('../assets/newLogo.png')
                 : require('../assets/newLogoWhite.png')
             "
-            class="logo" />
+            class="logo"
+          />
         </router-link>
 
         <!--
@@ -21,9 +22,14 @@
           <span
             v-if="!isMobile"
             class="menu-link dropdown-toggle"
-            :class="{ blackText: isLightBackground }">
+            :class="{ blackText: isLightBackground }"
+          >
             Tjänster
+            <!--&nbsp;
+            <font-awesome-icon :icon="['fas', 'arrow-right']" />
+            -->
           </span>
+
           <span v-else
             ><font-awesome-icon
               :class="{ blackText: isLightBackground }"
@@ -31,21 +37,27 @@
               @click="toggleMenu"
               size="2x"
           /></span>
-          <ul class="dropdown-menu"
-          :class="{ dropdownMenuOpen: isMenuOpen }"
-          >
+          <ul class="dropdown-menu" :class="{ dropdownMenuOpen: isMenuOpen }">
             <router-link class="dropdown-item" to="/OfferMe">
-              <p :class="{ blackText: isLightBackground }">OfferMe<br/>
-                <span v-if="!isMobile">Vår automatiserade offerttjänst</span></p>
+              <p :class="{ blackText: isLightBackground }">
+                OfferMe<br />
+                <span v-if="!isMobile">Vår automatiserade offerttjänst</span>
+              </p>
             </router-link>
             <router-link class="dropdown-item" to="/WebbUtv">
-              <p :class="{ blackText: isLightBackground }">Webbutveckling<br/>
-                <span v-if="!isMobile">Skräddarsydda hemsidor för din framgång</span></p>
+              <p :class="{ blackText: isLightBackground }">
+                Webbutveckling<br />
+                <span v-if="!isMobile"
+                  >Skräddarsydda hemsidor för din framgång</span
+                >
+              </p>
             </router-link>
             <router-link class="dropdown-item" to="/works">
               <p :class="{ blackText: isLightBackground }">
-                Hur Fungerar Det?<br/>
-                <span v-if="!isMobile">Så fungerar vår automatiserade offerttjänst</span>
+                Hur Fungerar Det?<br />
+                <span v-if="!isMobile"
+                  >Så fungerar vår automatiserade offerttjänst</span
+                >
                 <!--CRM-system (Pilot)-->
               </p>
             </router-link>
@@ -92,13 +104,15 @@ const isLightBackground = computed(
   () => route.path === "/about" || route.path === "/works"
 );
 
-
 const isMenuOpen = ref(false);
-const toggleMenu = () => {isMenuOpen.value = !isMenuOpen.value};
-
+const toggleMenu = () => {
+  isMenuOpen.value = !isMenuOpen.value;
+};
 </script>
 
 <style scoped lang="scss">
+@import "../assets/scss/variables.scss";
+
 .blackText {
   color: #031a4a !important;
 }
@@ -188,31 +202,30 @@ const toggleMenu = () => {isMenuOpen.value = !isMenuOpen.value};
       .dropdown-menu {
         position: absolute;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         justify-content: flex-start;
-        top: 100%;
+        top: -60%;
         padding: 15px 20px;
-        left: 0;
-        background-color: #fff;
+        left: 100%;
+        //background-color: #fff;
         list-style: none;
         margin: 0;
         width: max-content; // ändrat från 400pxs
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        //box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         z-index: 1000;
         text-align: left;
         border-radius: 10px;
         transition: opacity 0.3s ease, transform 0.3s ease;
         opacity: 0;
-        transform: scaleY(0);
-        transform-origin: top;
+        transform: scaleX(0);
+        transform-origin: left;
       }
 
       .dropdown-item {
-
         p {
           display: block;
           padding: 0.5rem 1rem;
-          color: #333;
+          //color: #333;
           text-decoration: none;
           font-size: larger;
           font-weight: 600;
@@ -222,9 +235,10 @@ const toggleMenu = () => {isMenuOpen.value = !isMenuOpen.value};
           -webkit-transition: background-color 200ms linear;
           -ms-transition: background-color 200ms linear;
           transition: background-color 200ms linear;
-         
+          transition: box-shadow 300ms linear;
+
           //manges kod
-          span{
+          span {
             padding-top: 5px;
             padding-right: 5px;
             font-size: 14px;
@@ -233,10 +247,10 @@ const toggleMenu = () => {isMenuOpen.value = !isMenuOpen.value};
             //border-right: 2px solid #fe9d01;
           }
 
-          
           &:hover {
-            background-color: #f0f0f0;
-            color: #fe9d01;
+            //background-color: $background-color;
+            box-shadow: 0 5px 6px rgba(0, 0, 0, 0.1);
+            //color: #fe9d01;
             border-radius: 5px;
           }
         }
@@ -266,7 +280,6 @@ const toggleMenu = () => {isMenuOpen.value = !isMenuOpen.value};
           width: 220px;
           left: auto;
         }
-        
       }
     }
   }
