@@ -54,7 +54,6 @@
     width: 100%;
     padding-bottom: 30px;
     h1 {
-      font-size: #{$font-size-h1};
       font-weight: 700;
       border-bottom: 2px solid #fe9d01;
     }
@@ -79,7 +78,6 @@
       }
       p {
         width: 70%;
-        font-size: #{$font-size-p};
       }
       .kontakta {
         width: 100%;

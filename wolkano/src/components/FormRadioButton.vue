@@ -127,4 +127,18 @@ const updateActivePlan = () => {
   font-size: 1rem;
   text-align: left;
 }
+
+@media (max-width: 768px) {
+  .plan-card {
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    .plan-card-header {
+      margin-bottom: 0;
+    }
+
+    .plan-card-title {
+      margin: 0;
+    }
+  }
+}
 </style>

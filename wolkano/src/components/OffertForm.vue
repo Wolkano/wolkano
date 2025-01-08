@@ -36,19 +36,19 @@
         </div>
         <div class="slidecontainer">
           <h3>Välj antal produkter</h3>
+          <p>
+            <b>{{ offerInformation.sliderValue }}</b>
+            {{ offerInformation.sliderValue === 1 ? "produkt" : "produkter" }}
+          </p>
           <input
             type="range"
-            min="1"
+            min="0"
             max="10"
             step="1"
             v-model="offerInformation.sliderValue"
             class="slider"
             id="myRange"
           />
-          <p>
-            <b>{{ offerInformation.sliderValue }}</b>
-            {{ offerInformation.sliderValue === 1 ? "produkt" : "produkter" }}
-          </p>
         </div>
         <div>
           <input
@@ -171,7 +171,6 @@ const isSubmitting = ref(false);
 @import "../assets/scss/variables.scss";
 .mainDiv {
   background-color: white;
-  padding: 100px 0px;
   color: black;
   .companyName {
     color: #fe9d01;
@@ -262,9 +261,9 @@ const isSubmitting = ref(false);
       }
     }
     button {
-      background-color: white;
-      color: #fe9d01;
-      padding: 5px 15px;
+      background-color: $orange;
+      color: white;
+      padding: 10px 30px;
       border-radius: 5px;
       -webkit-transition: background-color 200ms linear;
       -ms-transition: background-color 200ms linear;
@@ -377,9 +376,6 @@ const isSubmitting = ref(false);
 }
 
 @media (max-width: 768px) {
-  .newRadioButtons {
-    flex-direction: column;
-  }
   .mainDiv {
     h1 {
       font-size: $font-size-mobile-h1;
@@ -387,11 +383,17 @@ const isSubmitting = ref(false);
     .form {
       width: 90%;
       padding: 15px;
+      .newRadioButtons {
+        flex-direction: column;
+      }
       div {
         flex-direction: column;
         input {
           width: 100%;
         }
+      }
+      button {
+        padding: 5px 20px;
       }
     }
     .description {
