@@ -30,6 +30,15 @@
         </div>
       </div>
     </div>
+    <div class="kunder">
+      <h2>Kolla gärna in någon av våra kunders sidor</h2>
+      <div class="kund bp">
+        <h2></h2>
+        <a href="https://www.byggproffsskane.se/" target="_blank"
+          ><img src="../assets/byggproffs.webp"
+        /></a>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -74,7 +83,7 @@
       align-items: center;
       width: 50%;
       h2 {
-        font-size: #{$font-size-h2};
+        color: $orange;
       }
       p {
         width: 70%;
@@ -87,13 +96,41 @@
         gap: 20px;
 
         p {
-          border-top: 2px solid white;
+          border-top: 2px solid $orange;
           padding-top: 10px;
           margin-top: 10px;
         }
         .button {
           font-weight: 600;
           width: fit-content;
+        }
+      }
+    }
+  }
+  .kunder {
+    background-color: white;
+    width: 100%;
+    margin-top: 50px;
+    padding-bottom: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    h2 {
+      width: 100%;
+      color: black;
+    }
+    .kund {
+      img {
+        padding: 10px;
+        background-color: $background-color;
+        border-radius: 10px;
+        //-webkit-transition: background-color 200ms linear;
+        //-ms-transition: background-color 200ms linear;
+        transition: background-color 300ms linear, box-shadow 300ms linear;
+        &:hover {
+          background-color: $orange !important;
+          box-shadow: 0px 3px 3px 4px rgb(0, 0, 0, 0.2);
         }
       }
     }

@@ -188,12 +188,12 @@ const toggleMenu = () => {
         font-weight: 600;
         transition: opacity 0.3s ease, transform 0.3s ease;
         opacity: 1;
-        transform: scaleY(1);
+        transform: scaleX(1);
         transform-origin: right;
       }
       &:hover .menu-link {
         opacity: 0;
-        transform: scaleY(0);
+        transform: scaleX(0);
       }
 
       /* On hover show dropdown menu */
