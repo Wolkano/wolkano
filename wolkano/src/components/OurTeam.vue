@@ -240,9 +240,16 @@
 }
 
 @media (max-width: 768px) {
-  .contactGrid {
-    gap: 20px;
-    padding: 50px 50px;
+  .mainDiv {
+    padding: 0 20px;
+    .contactGrid {
+      gap: 20px;
+      padding: 50px 50px;
+      flex-direction: column;
+      .contactCard {
+        width: 100%;
+      }
+    }
   }
 }
 </style>

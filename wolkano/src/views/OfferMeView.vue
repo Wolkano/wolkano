@@ -51,18 +51,24 @@
           :delay="50"
         >
           <h2>Varför välja OfferMe?</h2>
-          <ul class="infoText">
-            <li>Snabbhet och effektivitet</li>
-            Med OfferMe får dina kunder en professionell offert på några
-            sekunder. Vår automatiserade process eliminerar väntetider och
-            säkerställer att du alltid ligger steget före.
-            <li>Skräddarsydda lösningar</li>
-            Varje offert anpassas efter kundens specifika behov, vilket ökar
-            chanserna att du vinner affären.
-            <li>Tid för det som är viktigast</li>
-            Genom att automatisera offertprocessen kan du fokusera mer på din
-            kärnverksamhet och mindre på administration.
-          </ul>
+          <div class="infoText">
+            <h3>Snabbhet och effektivitet</h3>
+            <p>
+              Med OfferMe får dina kunder en professionell offert på några
+              sekunder. Vår automatiserade process eliminerar väntetider och
+              säkerställer att du alltid ligger steget före.
+            </p>
+            <h3>Skräddarsydda lösningar</h3>
+            <p>
+              Varje offert anpassas efter kundens specifika behov, vilket ökar
+              chanserna att du vinner affären.
+            </p>
+            <h3>Tid för det som är viktigast</h3>
+            <p>
+              Genom att automatisera offertprocessen kan du fokusera mer på din
+              kärnverksamhet och mindre på administration.
+            </p>
+          </div>
         </div>
         <div
           class="imgElement"
@@ -73,13 +79,10 @@
           <img src="../assets/Förnamn.gif" />
         </div>
       </div>
-      <div
-        class="ourTeamContainer"
-        v-motion-pop-visible-once
-        :duration="700"
-        :delay="50"
-      >
-        <OurTeam />
+      <div class="ourTeamContainer">
+        <div>
+          <OurTeam />
+        </div>
       </div>
 
       <div
@@ -193,17 +196,22 @@ import OurTeam from "@/components/OurTeam.vue";
       h2 {
         color: #fe9d01;
       }
-      ul {
+      .infoText {
         display: flex;
         flex-direction: column;
         align-items: center;
-      }
-      li {
-        font-size: 1.2rem;
-        font-weight: 600;
-        border-bottom: 2px solid #fe9d01;
-        width: fit-content;
-        margin: 10px;
+
+        h3 {
+          font-size: 1.2rem;
+          font-weight: 600;
+          border-bottom: 2px solid #fe9d01;
+          width: fit-content;
+          margin: 10px;
+        }
+        p {
+          text-align: left;
+          margin-bottom: 20px;
+        }
       }
     }
   }
@@ -281,7 +289,7 @@ import OurTeam from "@/components/OurTeam.vue";
         width: 70%;
       }
     }
-    .Row {
+    .row {
       flex-direction: column-reverse;
       .textSection {
         width: 100%;
@@ -295,6 +303,12 @@ import OurTeam from "@/components/OurTeam.vue";
       }
     }
     .secondRow {
+      padding: 30px 20px;
+      .textSection {
+        .infoText {
+          text-align: left;
+        }
+      }
       .animation {
         display: none;
       }
