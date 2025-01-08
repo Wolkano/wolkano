@@ -116,6 +116,9 @@ const toggleMenu = () => {
 .blackText {
   color: #031a4a !important;
 }
+.router-link-exact-active .blackText {
+  text-shadow: 1px 1px 2px black;
+}
 
 .mainDiv {
   width: 100%;
