@@ -4,6 +4,7 @@
       <div class="titel">
         <img src="../assets/offermewhitelogo.png" alt="OfferMe Logo white" />
       </div>
+
       <div class="row firstRow">
         <div
           class="imgElement"
@@ -72,6 +73,14 @@
           <img src="../assets/Förnamn.gif" />
         </div>
       </div>
+      <div
+        class="ourTeamContainer"
+        v-motion-pop-visible-once
+        :duration="700"
+        :delay="50"
+      >
+        <OurTeam />
+      </div>
 
       <div
         class="row thirdRow"
@@ -120,6 +129,7 @@
 <script setup>
 //import CompanyBanner from "@/components/CompanyBanner.vue";
 import OffertForm from "@/components/OffertForm.vue";
+import OurTeam from "@/components/OurTeam.vue";
 </script>
 
 <style lang="scss" scoped>
@@ -141,6 +151,11 @@ import OffertForm from "@/components/OffertForm.vue";
     img {
       width: 30%;
     }
+  }
+
+  .ourTeamContainer {
+    padding: 50px 0;
+    background-color: white;
   }
 
   .row {
@@ -290,6 +305,21 @@ import OffertForm from "@/components/OffertForm.vue";
     .thirdRow {
       .questionsContainer {
         flex-direction: column;
+        .knappar {
+          width: 100%;
+          .knappDiv {
+            align-items: center;
+          }
+        }
+      }
+      .killarImageDiv {
+        height: 150px;
+        .killarImage {
+          width: 600px;
+          border-radius: 10px;
+          height: 100%; /* Image height as a percentage of the container */
+          object-fit: cover; /* This ensures the image fills the container, maintaining its aspect ratio */
+        }
       }
     }
   }
