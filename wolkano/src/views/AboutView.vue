@@ -17,6 +17,7 @@
       </div>
     </div>
   </div>
+  <OurTeam />
   <Transition name="fade" appear>
     <div class="secondDiv">
       <div>
@@ -69,6 +70,7 @@
 <script setup>
 import { computed } from "vue";
 import { useStore } from "vuex";
+import OurTeam from "@/components/OurTeam.vue";
 
 const store = useStore();
 const copy = computed(() => store.state.copy.about);

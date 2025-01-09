@@ -127,10 +127,10 @@
         border-radius: 10px;
         //-webkit-transition: background-color 200ms linear;
         //-ms-transition: background-color 200ms linear;
-        transition: background-color 300ms linear, box-shadow 300ms linear;
+        transition: background-color 300ms linear, box-shadow 200ms linear;
         &:hover {
           background-color: $orange !important;
-          box-shadow: 0px 3px 3px 4px rgb(0, 0, 0, 0.2);
+          box-shadow: 0px 3px 3px 1px rgb(0, 0, 0, 0.2);
         }
       }
     }
