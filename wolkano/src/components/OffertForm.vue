@@ -108,13 +108,23 @@
 
   <div class="success" v-if="hasSubmitted && success">
     <div v-motion-slide-left :duration="1500" :delay="100" class="icon">📨</div>
-    <div v-motion-fade-visible-once :duration="1000" :delay="100">
+    <div
+      v-motion-fade-visible-once
+      :duration="1000"
+      :delay="100"
+      class="successText"
+    >
       <h1>Tack för din inskickade information!</h1>
       <p>
         Vi har mottagit ditt formulär och behandlar det så snart som möjligt.
         <br />
         Du kommer att få en bekräftelse eller svar inom kort.
       </p>
+      <div class="bounce-container">
+        <div class="bounce-box" @click="scrollToTop">
+          <p>👆</p>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -135,16 +145,20 @@ import { reactive, computed, ref } from "vue";
 import { useStore } from "vuex";
 import FormRadioButton from "./FormRadioButton.vue";
 const store = useStore();
-const success = computed(() => store.state.submittedSuccessfully);
-const hasSubmitted = computed(() => store.state.hasSubmitted);
+const success = computed(() => store.state.submittedOfferSuccessfully);
+const hasSubmitted = computed(() => store.state.hasSubmittedOffer);
 const offerInformation = reactive({
-  firstName: "",
+  name: "",
   email: "",
   phone: "",
   activePlan: "",
   sliderValue: 5,
 });
 const hasMissingFields = ref(false);
+
+const scrollToTop = () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+};
 
 const submit = async () => {
   if (
@@ -157,12 +171,11 @@ const submit = async () => {
     return;
   }
   isSubmitting.value = true;
-  await store.dispatch("submitToNotion", offerInformation);
-  window.scrollTo({ top: 0, behavior: "smooth" });
+  await store.dispatch("submitOffer", offerInformation);
 };
 const reset = () => {
   isSubmitting.value = false;
-  store.commit("setHasSubmitted", false);
+  store.commit("setHasSubmittedOffer", false);
 };
 const isSubmitting = ref(false);
 </script>
@@ -310,12 +323,6 @@ const isSubmitting = ref(false);
 }
 
 .success {
-  background: rgb(56, 23, 173);
-  background: radial-gradient(
-    circle,
-    rgba(56, 23, 173, 1) 0%,
-    rgb(24, 23, 26) 100%
-  );
   padding-bottom: 100px;
   height: 100vh;
   display: flex;
@@ -333,14 +340,49 @@ const isSubmitting = ref(false);
   p {
     font-size: larger;
   }
+  .successText {
+    p {
+      color: black;
+    }
+    .bounce-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 10vh;
+    }
+
+    .bounce-box {
+      width: 200px;
+      height: 70px;
+      background-color: white;
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-color: $orange;
+      border-width: 3px;
+      cursor: pointer;
+      p {
+        animation: bounce 1s ease-in-out infinite;
+      }
+      &:hover {
+        background-color: rgb(248, 248, 248);
+      }
+    }
+  }
 }
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+}
+
 .failure {
-  background: rgb(56, 23, 173);
-  background: radial-gradient(
-    circle,
-    rgba(56, 23, 173, 1) 0%,
-    rgb(24, 23, 26) 100%
-  );
   padding-bottom: 100px;
   height: 100vh;
   display: flex;
