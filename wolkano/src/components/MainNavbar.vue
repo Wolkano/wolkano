@@ -174,16 +174,11 @@ const toggleMenu = () => {
       position: relative;
       cursor: pointer;
 
-      //&:hover .menu-link {color: $background-color;}
-      //&:hover .blackText {color: #fff;}
-
       .menu-link {
         color: #fff;
         padding: 0.5rem 1rem;
         text-decoration: none;
         font-size: larger;
-        //-webkit-transition: color 200ms linear;
-        //-ms-transition: color 200ms linear;
         transition: color 100ms linear;
         font-weight: 600;
         transition: opacity 0.3s ease, transform 0.3s ease;
@@ -196,7 +191,6 @@ const toggleMenu = () => {
         transform: scaleX(0);
       }
 
-      /* On hover show dropdown menu */
       &:hover .dropdown-menu {
         opacity: 1;
         transform: scaleX(1);
@@ -213,11 +207,9 @@ const toggleMenu = () => {
         top: -60%;
         padding: 15px 20px;
         left: 0%;
-        //background-color: #fff;
         list-style: none;
         margin: 0;
-        width: max-content; // ändrat från 400pxs
-        //box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: max-content;
         z-index: 1000;
         text-align: left;
         border-radius: 10px;
@@ -230,8 +222,7 @@ const toggleMenu = () => {
       .dropdown-item {
         p {
           display: block;
-          padding: 0.5rem 1rem;
-          //color: #333;
+          padding: 0.5rem 1.5rem;
           text-decoration: none;
           font-size: larger;
           font-weight: 600;
@@ -245,11 +236,11 @@ const toggleMenu = () => {
 
           //manges kod
           span {
-            padding-top: 5px;
+            padding-top: 3px;
             padding-right: 5px;
             font-size: 14px;
             font-weight: 300;
-            border-top: 2px solid #fe9d01;
+            border-top: 3px solid #fe9d01;
           }
 
           &:hover {
