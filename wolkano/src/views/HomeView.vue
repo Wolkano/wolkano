@@ -1,6 +1,7 @@
 <script setup>
 import { computed } from "vue";
 import { useStore } from "vuex";
+import OurServices from "@/components/OurServices.vue";
 
 const store = useStore();
 const copy = computed(() => store.state.copy.home);
@@ -77,6 +78,7 @@ const copy = computed(() => store.state.copy.home);
       </div>
     </div>
   </Transition>
+  <OurServices />
 </template>
 
 <style lang="scss" scoped>

@@ -8,17 +8,22 @@ export default createStore({
     copy: dictionary,
     submittedSuccessfully: false,
     hasSubmitted: false,
+    submittedOfferSuccessfully: false,
+    hasSubmittedOffer: false,
   },
   getters: {},
   mutations: {
-    setPriceChoice(state, payload) {
-      state.priceChoice = payload;
-    },
     setSubmittedSuccessfully(state, payload) {
       state.submittedSuccessfully = payload;
     },
     setHasSubmitted(state, payload) {
       state.hasSubmitted = payload;
+    },
+    setOfferSubmittedSuccessfully(state, payload) {
+      state.submittedOfferSuccessfully = payload;
+    },
+    setHasSubmittedOffer(state, payload) {
+      state.hasSubmittedOffer = payload;
     },
   },
   actions: {
@@ -34,6 +39,19 @@ export default createStore({
         } catch (error) {
           commit("setSubmittedSuccessfully", false);
           commit("setHasSubmitted", true);
+        }
+      })();
+    },
+    async submitOffer({ commit }, offerInfo) {
+      (async () => {
+        try {
+          console.log(offerInfo);
+          await axios.post("http://localhost:3000/api/send-offer", offerInfo);
+          commit("setOfferSubmittedSuccessfully", true);
+          commit("setHasSubmittedOffer", true);
+        } catch (error) {
+          commit("setOfferSubmittedSuccessfully", true);
+          commit("setHasSubmittedOffer", true);
         }
       })();
     },
