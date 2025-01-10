@@ -69,7 +69,7 @@
         width: 0;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: baseline;
         .icon {
           text-align: left;
           font-size: x-large;
