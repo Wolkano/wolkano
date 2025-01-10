@@ -127,8 +127,9 @@
         padding: 10px;
         background-color: $background-color;
         border-radius: 10px;
-        -webkit-transition: background-color 300ms linear;
-        -ms-transition: background-color 300ms linear;
+        -webkit-transition: background-color 300ms linear,
+          box-shadow 200ms linear;
+        -ms-transition: background-color 300ms linear, box-shadow 200ms linear;
         transition: background-color 300ms linear, box-shadow 200ms linear;
         &:hover {
           background-color: $orange !important;
