@@ -267,11 +267,23 @@ const toggleMenu = () => {
       div {
         width: 100%;
         justify-content: flex-end;
+
+        p {
+          color: black;
+        }
       }
       .dropdown {
         .dropdown-menu {
-          width: 220px;
+          background-color: white;
+          top: 100%;
+          flex-direction: column;
+          width: max-content;
           left: auto;
+          transform: scaleX(0);
+          transform-origin: right;
+          transition: transform 0.3s ease;
+          padding-left: 0px;
+          padding-right: 0px;
         }
       }
     }
