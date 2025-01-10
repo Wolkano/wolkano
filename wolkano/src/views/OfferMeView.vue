@@ -209,7 +209,6 @@ import OurTeam from "@/components/OurTeam.vue";
           margin: 10px;
         }
         p {
-          text-align: left;
           margin-bottom: 20px;
         }
       }

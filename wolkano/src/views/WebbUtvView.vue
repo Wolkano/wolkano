@@ -33,7 +33,7 @@
     <div class="kunder">
       <h2>Kolla gärna in någon av våra kunders sidor</h2>
       <div class="kund bp">
-        <h2></h2>
+        <h3>Byggproffs skåne</h3>
         <a href="https://www.byggproffsskane.se/" target="_blank"
           ><img src="../assets/byggproffs.webp"
         /></a>
@@ -73,6 +73,8 @@
     justify-content: center;
     align-items: center;
     width: 100%;
+    margin-top: 50px;
+    margin-bottom: 100px;
     img {
       width: 35%;
       border-radius: 5px;
