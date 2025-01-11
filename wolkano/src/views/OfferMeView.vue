@@ -12,7 +12,9 @@
           :duration="700"
           :delay="50"
         >
-          <img src="../assets/byggGif.gif" />
+          <img
+            src="https://images.unsplash.com/photo-1719937050445-098888c0625e?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          />
         </div>
         <div
           class="textSection"
@@ -32,15 +34,33 @@
             som både är tydlig och professionell. Resultatet levereras
             omedelbart – ingen väntetid, inget krångel.
           </p>
-          <br />
-          <h2>Testa själv!</h2>
-          <p class="infoText">
-            Tryck på knappen nedan och testa en låtsas-offert som kommer
-            simulera er kunds upplevelse
-          </p>
           <button class="button" href="#" v-scroll-to="'#offertFormDiv'">
-            Testa
+            Testa redan idag!
           </button>
+          <div class="infoCards">
+            <div class="infoCard">
+              <!-- <img
+                src="https://plus.unsplash.com/premium_photo-1678871480887-e71988d52031?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8b2ZmZXJ8ZW58MHx8MHx8fDA%3D"
+                alt=""
+              /> -->
+              <p class="emoji">✅</p>
+              <div class="cardText">
+                <p>Snabb och Smidig Offertgenerering</p>
+                <h4>Automatiserad, skräddarsydd offert</h4>
+              </div>
+            </div>
+            <div class="infoCard">
+              <!-- <img
+                src="https://plus.unsplash.com/premium_photo-1678871480887-e71988d52031?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8b2ZmZXJ8ZW58MHx8MHx8fDA%3D"
+                alt=""
+              /> -->
+              <p class="emoji">✅</p>
+              <div class="cardText">
+                <p>Intuitiv Process</p>
+                <h4>Enkel steg-för-steg vägledning</h4>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="row secondRow">
@@ -168,24 +188,54 @@ import OurTeam from "@/components/OurTeam.vue";
     align-items: center;
     padding-top: 40px;
     padding-bottom: 40px;
+    gap: 100px;
 
     .imgElement {
-      width: 40%;
-      margin: 30px;
-      padding: 30px;
+      max-width: 30%;
 
       img {
-        border-radius: 20px;
+        aspect-ratio: 1 / 1;
+        border-radius: 10px;
       }
     }
     .textSection {
       display: flex;
       flex-direction: column;
-      align-items: center;
-      width: 35%;
+      width: 40%;
+      justify-content: space-between;
+      align-items: start;
+      gap: 40px;
+      height: 100%;
+      .infoCards {
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+
+        .infoCard {
+          background-color: white;
+          color: black;
+          width: 50%;
+          border-radius: 10px;
+
+          .emoji {
+            font-size: xx-large;
+          }
+
+          p {
+            color: darkgray;
+          }
+          img {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            border-radius: 8px 8px 0px 0px;
+          }
+        }
+        .cardText {
+          padding: 10px;
+        }
+      }
 
       .button {
-        margin-top: 20px;
         width: 30%;
         font-weight: 600;
       }
@@ -216,6 +266,9 @@ import OurTeam from "@/components/OurTeam.vue";
   }
   .firstRow {
     text-align: left;
+    h2 {
+      margin: 0;
+    }
     p {
       width: 100%;
     }
