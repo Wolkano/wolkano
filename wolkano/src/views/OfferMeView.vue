@@ -343,6 +343,7 @@ import OurTeam from "@/components/OurTeam.vue";
     }
     .row {
       flex-direction: column-reverse;
+      padding: 40px;
       .textSection {
         width: 100%;
         p {
@@ -352,6 +353,11 @@ import OurTeam from "@/components/OurTeam.vue";
       .imgElement {
         width: 100%;
         margin-top: 20px;
+      }
+    }
+    .firstRow {
+      .imgElement {
+        display: none;
       }
     }
     .secondRow {
@@ -367,6 +373,9 @@ import OurTeam from "@/components/OurTeam.vue";
     }
     .kontakta {
       width: 80%;
+    }
+    .ourTeamContainer {
+      width: 100%;
     }
     .thirdRow {
       .questionsContainer {
