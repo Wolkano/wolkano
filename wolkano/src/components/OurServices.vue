@@ -45,7 +45,7 @@
 
 .mainDiv {
   background-color: #f7f9fa;
-  padding: 100px 450px;
+  padding: 100px 300px;
   color: black;
   .headingAndCards {
     display: flex;

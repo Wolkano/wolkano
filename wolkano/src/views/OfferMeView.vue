@@ -65,38 +65,39 @@
       </div>
       <div class="row secondRow">
         <div
-          class="textSection"
+          class="infoTextSection"
           v-motion-pop-visible-once
           :duration="700"
           :delay="50"
         >
-          <h2>Varför välja OfferMe?</h2>
           <div class="infoText">
-            <h3>Snabbhet och effektivitet</h3>
-            <p>
-              Med OfferMe får dina kunder en professionell offert på några
-              sekunder. Vår automatiserade process eliminerar väntetider och
-              säkerställer att du alltid ligger steget före.
-            </p>
-            <h3>Skräddarsydda lösningar</h3>
-            <p>
-              Varje offert anpassas efter kundens specifika behov, vilket ökar
-              chanserna att du vinner affären.
-            </p>
-            <h3>Tid för det som är viktigast</h3>
-            <p>
-              Genom att automatisera offertprocessen kan du fokusera mer på din
-              kärnverksamhet och mindre på administration.
-            </p>
+            <div>
+              <p class="emoji">⚡️</p>
+              <h3>Snabbhet och effektivitet</h3>
+              <p>
+                Med OfferMe får dina kunder en professionell offert på några
+                sekunder. Vår automatiserade process eliminerar väntetider och
+                säkerställer att du alltid ligger steget före.
+              </p>
+            </div>
+
+            <div>
+              <p class="emoji">🧩</p>
+              <h3>Skräddarsydda lösningar</h3>
+              <p>
+                Varje offert anpassas efter kundens specifika behov, vilket ökar
+                chanserna att du vinner affären.
+              </p>
+            </div>
+            <div>
+              <p class="emoji">🛠️</p>
+              <h3>Tid för det som är viktigast</h3>
+              <p>
+                Genom att automatisera offertprocessen kan du fokusera mer på
+                din kärnverksamhet och mindre på administration.
+              </p>
+            </div>
           </div>
-        </div>
-        <div
-          class="imgElement"
-          v-motion-pop-visible-once
-          :duration="700"
-          :delay="100"
-        >
-          <img src="../assets/Förnamn.gif" />
         </div>
       </div>
       <div class="ourTeamContainer">
@@ -246,22 +247,6 @@ import OurTeam from "@/components/OurTeam.vue";
       h2 {
         color: #fe9d01;
       }
-      .infoText {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        h3 {
-          font-size: 1.2rem;
-          font-weight: 600;
-          border-bottom: 2px solid #fe9d01;
-          width: fit-content;
-          margin: 10px;
-        }
-        p {
-          margin-bottom: 20px;
-        }
-      }
     }
   }
   .firstRow {
@@ -271,11 +256,45 @@ import OurTeam from "@/components/OurTeam.vue";
     }
     p {
       width: 100%;
+      font-size: 18px;
     }
   }
   .secondRow {
-    background-color: white;
+    background-color: #f7f9fa;
     color: black;
+    padding: 75px 0px;
+
+    .infoTextSection {
+      width: 90%;
+      .infoText {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 50px;
+        flex-wrap: wrap;
+
+        div {
+          display: flex;
+          flex-direction: column;
+          text-align: left;
+          width: 25%;
+          .emoji {
+            font-size: 50px;
+          }
+          p {
+            font-size: 18px;
+          }
+        }
+
+        h3 {
+          font-weight: 600;
+        }
+        p {
+          margin-bottom: 20px;
+        }
+      }
+    }
   }
   .thirdRow {
     width: 100%;
@@ -356,8 +375,27 @@ import OurTeam from "@/components/OurTeam.vue";
       }
     }
     .firstRow {
+      padding: 20px;
       .imgElement {
         display: none;
+      }
+      .textSection {
+        .infoText {
+          width: 100%;
+        }
+        .button {
+          width: 50%;
+          padding: 10px 0px;
+          align-self: center;
+        }
+        .infoCards {
+          flex-direction: column;
+
+          .infoCard {
+            width: 100%;
+            min-height: 175px;
+          }
+        }
       }
     }
     .secondRow {
@@ -370,6 +408,20 @@ import OurTeam from "@/components/OurTeam.vue";
       .animation {
         display: none;
       }
+
+      .infoTextSection {
+        width: 100%;
+        .infoText {
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 20px;
+
+          div {
+            width: 100%;
+          }
+        }
+      }
     }
     .kontakta {
       width: 80%;
@@ -378,12 +430,24 @@ import OurTeam from "@/components/OurTeam.vue";
       width: 100%;
     }
     .thirdRow {
+      flex-direction: column;
+      gap: 30px;
+      padding: 20px 30px;
+      h2 {
+        padding: 0;
+        margin: 0;
+      }
       .questionsContainer {
         flex-direction: column;
+        gap: 30px;
+        text-align: left;
+        p {
+          font-size: 20px;
+        }
         .knappar {
           width: 100%;
           .knappDiv {
-            align-items: center;
+            align-items: start;
           }
         }
       }

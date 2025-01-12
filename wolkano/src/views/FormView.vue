@@ -4,7 +4,8 @@
       v-motion-fade-visible-once
       :duration="500"
       :delay="100"
-      v-if="!isSubmitting">
+      v-if="!isSubmitting"
+    >
       <h1>Kontakta <span class="companyName">Wolkano</span></h1>
       <form class="form">
         <p class="description">
@@ -19,10 +20,12 @@
             id="name"
             name="name"
             placeholder="Namn*"
-            v-model="userInformation.name" />
+            v-model="userInformation.name"
+          />
           <p
             class="missingField"
-            v-if="!userInformation.name && hasMissingFields">
+            v-if="!userInformation.name && hasMissingFields"
+          >
             ❌ Fyll i namn
           </p>
         </div>
@@ -31,17 +34,20 @@
           id="companyName"
           name="companyName"
           placeholder="Företagsnamn"
-          v-model="userInformation.company" />
+          v-model="userInformation.company"
+        />
         <div>
           <input
             type="tel"
             id="phone"
             name="phone"
             placeholder="Telefonnummer*"
-            v-model="userInformation.phone" />
+            v-model="userInformation.phone"
+          />
           <p
             class="missingField"
-            v-if="!userInformation.phone && hasMissingFields">
+            v-if="!userInformation.phone && hasMissingFields"
+          >
             ❌ Fyll i telefonnummer
           </p>
           <input
@@ -49,10 +55,12 @@
             id="email"
             name="email"
             placeholder="Email*"
-            v-model="userInformation.email" />
+            v-model="userInformation.email"
+          />
           <p
             class="missingField"
-            v-if="!userInformation.email && hasMissingFields">
+            v-if="!userInformation.email && hasMissingFields"
+          >
             ❌ Fyll i email
           </p>
         </div>
@@ -62,7 +70,8 @@
             id="info"
             name="info"
             placeholder="Information"
-            v-model="userInformation.info" />
+            v-model="userInformation.info"
+          />
         </div>
         <button @click.prevent="submit">Skicka in</button>
       </form>
@@ -140,13 +149,12 @@ const isSubmitting = ref(false);
 <style lang="scss" scoped>
 @import "../assets/scss/variables.scss";
 .mainDiv {
-  background: rgb(56, 23, 173);
-  background: #{$gradient-background};
+  background-color: $background-color;
   padding-bottom: 100px;
   padding-top: 120px;
   color: black;
-  h1{
-    color:white;
+  h1 {
+    color: white;
   }
   .companyName {
     color: #fe9d01;
@@ -208,8 +216,8 @@ const isSubmitting = ref(false);
       }
     }
     button {
-      background-color: white;
-      color: #fe9d01;
+      background-color: #fe9d01;
+      color: white;
       padding: 5px 15px;
       border-radius: 5px;
       -webkit-transition: background-color 200ms linear;
@@ -257,12 +265,7 @@ const isSubmitting = ref(false);
 }
 
 .success {
-  background: rgb(56, 23, 173);
-  background: radial-gradient(
-    circle,
-    rgba(56, 23, 173, 1) 0%,
-    rgb(24, 23, 26) 100%
-  );
+  background-color: $background-color;
   padding-bottom: 100px;
   height: 100vh;
   display: flex;
@@ -282,12 +285,7 @@ const isSubmitting = ref(false);
   }
 }
 .failure {
-  background: rgb(56, 23, 173);
-  background: radial-gradient(
-    circle,
-    rgba(56, 23, 173, 1) 0%,
-    rgb(24, 23, 26) 100%
-  );
+  background-color: $background-color;
   padding-bottom: 100px;
   height: 100vh;
   display: flex;

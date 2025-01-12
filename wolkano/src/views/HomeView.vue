@@ -1,10 +1,12 @@
 <script setup>
-import { computed } from "vue";
+import { computed, ref } from "vue";
 import { useStore } from "vuex";
 import OurServices from "@/components/OurServices.vue";
 
 const store = useStore();
 const copy = computed(() => store.state.copy.home);
+const windowWidth = ref(window.innerWidth);
+const isMobile = computed(() => windowWidth.value < 768);
 </script>
 
 <template>
@@ -23,7 +25,7 @@ const copy = computed(() => store.state.copy.home);
         </div>
       </div>
 
-      <div class="image">
+      <div class="image" v-if="!isMobile">
         <img
           class="businessManImage"
           src="../assets/—Pngtree—happy corporate business professional one_13504468.png"
@@ -173,10 +175,9 @@ const copy = computed(() => store.state.copy.home);
 // Mobile styles for smaller screens
 @media (max-width: 768px) {
   .home {
-    padding-top: 150px;
-    padding-left: 20px;
-    padding-right: 20px;
-
+    height: 80vh;
+    display: flex;
+    padding: 0px 20px;
     .mainDiv {
       .intro {
         width: 100%;

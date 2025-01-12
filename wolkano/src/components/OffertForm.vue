@@ -167,7 +167,6 @@ const submit = async () => {
     !offerInformation.phone
   ) {
     hasMissingFields.value = true;
-    console.log("test");
     return;
   }
   isSubmitting.value = true;
