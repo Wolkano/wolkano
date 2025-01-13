@@ -1,17 +1,13 @@
 <template>
+  <div class="banner">
+    <p>Köp hemsida från WOLKANO</p>
+  </div>
   <div class="webbUtv">
     <div class="titel">
-      <h1>Webbutveckling</h1>
+      <h1>Hemsidor som passar dina behov</h1>
     </div>
     <div class="body">
-      <img
-        src="../assets/placeholderbild.jpg"
-        v-motion-pop-visible-once
-        :duration="700"
-        :delay="50"
-      />
       <div class="info" v-motion-pop-visible-once :duration="700" :delay="100">
-        <h2>Hemsidor som passar dina behov</h2>
         <p>
           Vi erbjuder professionell webbutveckling och hjälper dig att skapa
           moderna och användarvänliga hemsidor. Oavsett om du behöver en helt ny
@@ -25,7 +21,9 @@
         <div class="kontakta">
           <p>Behöver du en hemsida? Tveka inte att kontakta oss</p>
           <div class="button">
-            <router-link to="/form" class="button">Kontakta oss</router-link>
+            <router-link to="/form" class="buttonLink"
+              >Kontakta oss</router-link
+            >
           </div>
         </div>
       </div>
@@ -42,6 +40,34 @@
     </div>
     -->
   </div>
+  <div class="infoBanner">
+    <div>
+      <h2 class="title">Responsiv hemsida</h2>
+      <p class="subTitle">Snabbt, Enkelt & Prisvärt</p>
+      <p class="info">
+        När du bestämt dig för att köpa en hemsida till ditt företag så hjälper
+        en av våra erfarna webbdesigners dig under hela uppbyggnaden av en
+        responsiv hemsida, från start till mål. Vi levererar en prisvärd hemsida
+        och tillgång till vårt enkla men kraftfulla CMS-verktyg, Bliss CMS.
+        Verktyget är användarvänligt och kräver inga som helst kunskaper i kod.
+        Du kommer igång direkt och kan göra ändringar av innehållet, lekande
+        lätt och helt utan förkunskaper.
+      </p>
+    </div>
+    <div>
+      <h2 class="title">Fri support</h2>
+      <p class="subTitle">Experter att rådfråga</p>
+      <p class="info">
+        Hos oss kan du känna dig trygg! Skulle du ha frågor eller behöva hjälp
+        efter att du köpt en hemsida av oss så finns alltid vår duktiga support
+        tillgänglig på telefon och mail. Vi är tillgängliga vardagar 08:00 -
+        16:00 för att svara på dina frågor. Låt oss bli ditt bollplank och din
+        personliga webbyrå. Vår erfarenhet blir till din styrka. Vi erbjuder
+        även uppsättning och konvertering till effektiva maillösningar. Läs mer
+        här!
+      </p>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -51,13 +77,48 @@
 <style lang="scss" scoped>
 @import "../assets/scss/variables.scss";
 
+.banner {
+  position: relative;
+  background-image: url("../assets/placeholderbild.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 75vh;
+  padding-top: 300px;
+  overflow: hidden;
+  z-index: -5;
+
+  // Dark overlay
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($background-color, 0.9);
+    z-index: 1;
+  }
+
+  * {
+    position: relative;
+    z-index: 2;
+    color: white;
+  }
+  p {
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+}
+
 .webbUtv {
-  background: #{$background-color};
+  background-color: #f7f9fa;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   padding-bottom: 100px;
+  color: black;
+  padding-top: 50px;
 
   .titel {
     display: flex;
@@ -65,8 +126,9 @@
     width: 100%;
     padding-bottom: 30px;
     h1 {
-      font-weight: 700;
-      border-bottom: 2px solid #fe9d01;
+      font-weight: 600;
+      text-transform: uppercase;
+      border-bottom: 4px solid #fe9d01;
     }
   }
   .body {
@@ -77,10 +139,6 @@
     width: 100%;
     margin-top: 50px;
     margin-bottom: 100px;
-    img {
-      width: 35%;
-      border-radius: 5px;
-    }
     .info {
       display: flex;
       flex-direction: column;
@@ -90,7 +148,7 @@
         color: $orange;
       }
       p {
-        width: 70%;
+        width: 100%;
       }
       .kontakta {
         width: 100%;
@@ -100,13 +158,17 @@
         gap: 20px;
 
         p {
-          border-top: 2px solid $orange;
           padding-top: 10px;
           margin-top: 10px;
         }
         .button {
           font-weight: 600;
           width: fit-content;
+          background-color: $orange;
+          color: white;
+          &:hover {
+            background-color: $darkOrange;
+          }
         }
       }
     }
@@ -138,6 +200,28 @@
           box-shadow: 0px 3px 3px 1px rgb(0, 0, 0, 0.2);
         }
       }
+    }
+  }
+}
+
+.infoBanner {
+  background-color: #333333;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 75px 0px;
+  gap: 50px;
+  div {
+    width: 30%;
+    text-align: left;
+    .title {
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    .subTitle {
+      text-transform: uppercase;
+      font-weight: 700;
+      color: $orange;
     }
   }
 }
