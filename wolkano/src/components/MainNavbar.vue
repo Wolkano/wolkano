@@ -37,7 +37,7 @@
               size="2x"
               @click="toggleMenu"
           /></span>
-          <ul class="dropdown-menu">
+          <ul class="dropdown-menu" v-if="isMenuOpen">
             <router-link
               class="dropdown-item"
               to="/OfferMe"
@@ -120,9 +120,13 @@ const isLightBackground = computed(
   () => route.path === "/about" || route.path === "/works"
 );
 
-const isMenuOpen = ref(false);
+const isMenuOpen = ref(!isMobile.value);
 const toggleMenu = () => {
-  isMenuOpen.value = !isMenuOpen.value;
+  if (isMobile.value) {
+    isMenuOpen.value = !isMenuOpen.value;
+  } else {
+    return;
+  }
 };
 </script>
 
