@@ -30,6 +30,7 @@
         </div>
       </div>
     </div>
+    <!--
     <div class="kunder">
       <h2>Kolla gärna in någon av våra kunders sidor</h2>
       <div class="kund bp">
@@ -39,6 +40,7 @@
         /></a>
       </div>
     </div>
+    -->
   </div>
 </template>
 
@@ -147,7 +149,7 @@
         font-size: $font-size-mobile-h1;
       }
     }
-    .infoDiv {
+    .body {
       flex-direction: column-reverse;
       justify-content: center;
       gap: 50px;
