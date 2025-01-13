@@ -1,6 +1,6 @@
 <template>
   <div class="banner">
-    <p>Köp hemsida från WOLKANO</p>
+    <p>Köp <span class="website">hemsida</span> från WOLKANO</p>
   </div>
   <div class="webbUtv">
     <div class="titel">
@@ -107,6 +107,10 @@
   p {
     text-transform: uppercase;
     font-weight: 700;
+    font-size: x-large;
+    .website {
+      color: $orange;
+    }
   }
 }
 
@@ -116,7 +120,7 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  padding-bottom: 100px;
+  padding-bottom: 50;
   color: black;
   padding-top: 50px;
 
