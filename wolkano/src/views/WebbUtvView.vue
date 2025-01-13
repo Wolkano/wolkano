@@ -246,6 +246,10 @@
 }
 
 @media (max-width: 768px) {
+  .banner {
+    height: 50vh;
+    padding-top: 250px;
+  }
   .webbUtv {
     .titel {
       h1 {
@@ -279,6 +283,14 @@
           text-align: left;
         }
       }
+    }
+  }
+  .infoBanner {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    div {
+      width: 90%;
     }
   }
 }
