@@ -98,6 +98,7 @@ const copy = computed(() => store.state.copy.works);
   padding-top: 150px;
   h1 {
     color: #031a4a;
+    text-align: left;
   }
 
   .mainDiv {
@@ -123,6 +124,9 @@ const copy = computed(() => store.state.copy.works);
       display: flex;
       flex-direction: column;
       gap: 20px;
+      h2 {
+        color: $orange;
+      }
 
       p {
         font-size: 24px;
@@ -207,7 +211,8 @@ const copy = computed(() => store.state.copy.works);
 @media (max-width: 768px) {
   .home {
     h1 {
-      font-size: $font-size-mobile-h1;
+      padding-left: 20px;
+      padding-right: 20px;
     }
     .mainDiv {
       padding-left: 20px;
@@ -216,7 +221,6 @@ const copy = computed(() => store.state.copy.works);
         width: 100%;
         justify-content: center;
         h2 {
-          font-size: $font-size-mobile-h2;
           margin-bottom: 0;
         }
         p {
@@ -235,7 +239,6 @@ const copy = computed(() => store.state.copy.works);
         width: 100%;
         justify-content: center;
         h1 {
-          font-size: $font-size-mobile-h1;
           margin-bottom: 0;
         }
         p {

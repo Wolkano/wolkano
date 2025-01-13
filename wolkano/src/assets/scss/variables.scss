@@ -58,3 +58,24 @@ h4 {
 p {
   font-size: $font-size-p;
 }
+
+@media all and (min-width: 0px) and (max-width: 768px) {
+  h1 {
+    font-size: $font-size-mobile-h1;
+    font-weight: 600;
+    margin-bottom: $spacing-unit * 2;
+  }
+  h2 {
+    font-size: $font-size-mobile-h2;
+    font-weight: 600;
+    margin-bottom: $spacing-unit * 1.5;
+  }
+  h3 {
+    font-size: $font-size-mobile-h3;
+    margin-bottom: $spacing-unit * 1.25;
+  }
+  h4 {
+    font-size: $font-size-mobile-h4;
+    margin-bottom: $spacing-unit * 1;
+  }
+}

@@ -115,4 +115,33 @@
     }
   }
 }
+@media (max-width: 768px) {
+  .mainDiv {
+    padding: 50px 20px;
+    .headingAndCards {
+      flex-direction: column;
+      .headingAndText {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        justify-content: space-between;
+        margin-bottom: 50px;
+        > * {
+          width: 100%;
+        }
+      }
+      .serviceCards {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        .serviceCard {
+          width: 100%;
+          .info {
+            text-align: left;
+          }
+        }
+      }
+    }
+  }
+}
 </style>

@@ -22,7 +22,6 @@
           :duration="700"
           :delay="100"
         >
-          <h2>Vad är OfferMe?</h2>
           <p class="infoText">
             OfferMe är tjänsten som revolutionerar hur offerter skapas. Med vår
             smarta och användarvänliga plattform kan kunder snabbt och enkelt få
@@ -173,7 +172,7 @@ import OurTeam from "@/components/OurTeam.vue";
     display: flex;
     justify-content: center;
     img {
-      width: 30%;
+      width: 20%;
     }
   }
 

@@ -50,7 +50,7 @@ export default createStore({
           commit("setOfferSubmittedSuccessfully", true);
           commit("setHasSubmittedOffer", true);
         } catch (error) {
-          commit("setOfferSubmittedSuccessfully", true);
+          commit("setOfferSubmittedSuccessfully", false);
           commit("setHasSubmittedOffer", true);
         }
       })();
