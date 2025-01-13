@@ -4,7 +4,8 @@
   </div>
   <div class="webbUtv">
     <div class="titel">
-      <h1>Hemsidor som passar dina behov</h1>
+      <h1>Skräddarsydda Hemsidor</h1>
+      <p>Designade för dina unika behov</p>
     </div>
     <div class="body">
       <div class="info" v-motion-pop-visible-once :duration="700" :delay="100">
@@ -14,9 +15,12 @@
           hemsida eller vill redigera och förbättra en befintlig, står vi redo
           att leverera lösningar som anpassas efter dina önskemål. Vårt mål är
           att ge dig en digital närvaro som verkligen representerar dig eller
-          ditt företag – snabbt, smidigt och med hög kvalitet. Hör av dig till
-          oss för att diskutera dina idéer och hur vi kan hjälpa dig att
-          förverkliga dem!
+          ditt företag – snabbt, smidigt och med hög kvalitet. För en ännu
+          smidigare start erbjuder vi
+          <a href="#/OfferMe" class="offerMe">OfferMe</a>, vår automatiserade
+          offertförfrågningstjänst, som gör det enkelt för dig att snabbt få en
+          skräddarsydd offert baserad på dina behov. Hör av dig till oss för att
+          diskutera dina idéer och hur vi kan hjälpa dig att förverkliga dem!
         </p>
         <div class="kontakta">
           <p>Behöver du en hemsida? Tveka inte att kontakta oss</p>
@@ -126,13 +130,17 @@
 
   .titel {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     width: 100%;
     padding-bottom: 30px;
     h1 {
       font-weight: 600;
       text-transform: uppercase;
-      border-bottom: 4px solid #fe9d01;
+    }
+    p {
+      font-weight: 600;
+      text-transform: uppercase;
     }
   }
   .body {
@@ -149,6 +157,9 @@
       align-items: center;
       width: 50%;
       h2 {
+        color: $orange;
+      }
+      .offerMe {
         color: $orange;
       }
       p {
