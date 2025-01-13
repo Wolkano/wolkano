@@ -37,7 +37,7 @@
               size="2x"
               @click="toggleMenu"
           /></span>
-          <ul class="dropdown-menu" v-if="isMenuOpen">
+          <ul class="dropdown-menu">
             <router-link
               class="dropdown-item"
               to="/OfferMe"
@@ -122,9 +122,7 @@ const isLightBackground = computed(
 
 const isMenuOpen = ref(false);
 const toggleMenu = () => {
-  console.log("Toggling menu, current state:", isMenuOpen.value);
   isMenuOpen.value = !isMenuOpen.value;
-  console.log("New menu state:", isMenuOpen.value);
 };
 </script>
 
@@ -213,6 +211,10 @@ const toggleMenu = () => {
         opacity: 1;
         transform: scaleX(1);
       }
+      .dropdownMenuOpen {
+        opacity: 1;
+        transform: scaleX(1);
+      }
 
       .dropdown-menu {
         position: absolute;
@@ -264,15 +266,6 @@ const toggleMenu = () => {
         }
       }
     }
-  }
-  .dropdownMenuOpen {
-    opacity: 1;
-    transform: scaleX(1);
-  }
-  .dropdownMenuClosed {
-    opacity: 0;
-    transform: scaleX(0);
-    transition: opacity 0.3s ease, transform 0.3s ease;
   }
 }
 @media (max-width: 768px) {
