@@ -47,28 +47,29 @@
   <div class="infoBanner">
     <div>
       <h2 class="title">Responsiv hemsida</h2>
-      <p class="subTitle">Snabbt, Enkelt & Prisvärt</p>
+      <p class="subTitle">Snabbt, Smidigt & Prisvärt</p>
       <p class="info">
-        När du bestämt dig för att köpa en hemsida till ditt företag så hjälper
-        en av våra erfarna webbdesigners dig under hela uppbyggnaden av en
-        responsiv hemsida, från start till mål. Vi levererar en prisvärd hemsida
-        och tillgång till vårt enkla men kraftfulla CMS-verktyg, Bliss CMS.
-        Verktyget är användarvänligt och kräver inga som helst kunskaper i kod.
-        Du kommer igång direkt och kan göra ändringar av innehållet, lekande
-        lätt och helt utan förkunskaper.
+        När du väljer att köpa en hemsida från WOLKANO får du en skräddarsydd
+        lösning som passar ditt företag perfekt. Våra erfarna webbdesigners
+        guidar dig genom hela processen – från idé till färdig, responsiv
+        hemsida. Vi levererar prisvärda hemsidor tillsammans med vårt
+        användarvänliga och kraftfulla CMS-verktyg, Bliss CMS. Med Bliss CMS kan
+        du enkelt uppdatera och hantera din hemsida utan några förkunskaper i
+        kod. Du kommer igång direkt och kan anpassa innehållet helt efter dina
+        behov.
       </p>
     </div>
     <div>
       <h2 class="title">Fri support</h2>
-      <p class="subTitle">Experter att rådfråga</p>
+      <p class="subTitle">Din Personliga Webbyrå</p>
       <p class="info">
-        Hos oss kan du känna dig trygg! Skulle du ha frågor eller behöva hjälp
-        efter att du köpt en hemsida av oss så finns alltid vår duktiga support
-        tillgänglig på telefon och mail. Vi är tillgängliga vardagar 08:00 -
-        16:00 för att svara på dina frågor. Låt oss bli ditt bollplank och din
-        personliga webbyrå. Vår erfarenhet blir till din styrka. Vi erbjuder
-        även uppsättning och konvertering till effektiva maillösningar. Läs mer
-        här!
+        Med WOLKANO vid din sida kan du känna dig trygg. Vår kunniga support
+        finns alltid här för dig via telefon och e-post, vardagar mellan
+        08:00–16:00. Oavsett om du har frågor eller behöver teknisk hjälp står
+        vi redo att stötta dig. Vi vill vara mer än bara en leverantör – vi vill
+        vara din digitala partner. Utöver hemsidor erbjuder vi även hjälp med
+        effektiva maillösningar och teknisk uppsättning. Hör av dig till oss och
+        låt vår expertis bli din styrka!
       </p>
     </div>
   </div>
