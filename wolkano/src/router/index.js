@@ -34,7 +34,7 @@ const routes = [
   },
   {
     path: "/works",
-    name: "Webbutveckling · Hur fungerar det",
+    name: "Hur fungerar det · Wolkano",
     component: HowItWorks,
   },
 ];
@@ -42,7 +42,9 @@ const routes = [
 const router = createRouter({
   history: createWebHashHistory(),
   routes,
-  scrollBehavior() {return { top: 0 };}, // Gör så att man hamnar högst upp på sidan när man redirectar
+  scrollBehavior() {
+    return { top: 0 };
+  },
 });
 
 router.beforeEach((to, from, next) => {

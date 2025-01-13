@@ -15,8 +15,8 @@
           hemsida eller vill redigera och förbättra en befintlig, står vi redo
           att leverera lösningar som anpassas efter dina önskemål. Vårt mål är
           att ge dig en digital närvaro som verkligen representerar dig eller
-          ditt företag – snabbt, smidigt och med hög kvalitet. För en ännu
-          smidigare start erbjuder vi
+          ditt företag – snabbt, smidigt och med hög kvalitet. <br />
+          <br />För en ännu smidigare start erbjuder vi
           <a href="#/OfferMe" class="offerMe">OfferMe</a>, vår automatiserade
           offertförfrågningstjänst, som gör det enkelt för dig att snabbt få en
           skräddarsydd offert baserad på dina behov. Hör av dig till oss för att
@@ -141,6 +141,9 @@
     p {
       font-weight: 600;
       text-transform: uppercase;
+      border-bottom: $orange solid 3px;
+      width: fit-content;
+      margin: auto;
     }
   }
   .body {
@@ -161,6 +164,7 @@
       }
       .offerMe {
         color: $orange;
+        font-weight: 600;
       }
       p {
         width: 100%;
