@@ -34,17 +34,25 @@
             ><font-awesome-icon
               :class="{ blackText: isLightBackground }"
               :icon="['fas', 'bars']"
-              @click="toggleMenu"
               size="2x"
+              @click="toggleMenu"
           /></span>
-          <ul class="dropdown-menu" :class="{ dropdownMenuOpen: isMenuOpen }">
-            <router-link class="dropdown-item" to="/OfferMe">
+          <ul class="dropdown-menu" v-if="isMenuOpen">
+            <router-link
+              class="dropdown-item"
+              to="/OfferMe"
+              @click="toggleMenu"
+            >
               <p :class="{ blackText: isLightBackground }">
                 OfferMe<br />
                 <span v-if="!isMobile">Vår automatiserade offerttjänst</span>
               </p>
             </router-link>
-            <router-link class="dropdown-item" to="/WebbUtv">
+            <router-link
+              class="dropdown-item"
+              to="/WebbUtv"
+              @click="toggleMenu"
+            >
               <p :class="{ blackText: isLightBackground }">
                 Webbutveckling<br />
                 <span v-if="!isMobile"
@@ -52,7 +60,7 @@
                 >
               </p>
             </router-link>
-            <router-link class="dropdown-item" to="/works">
+            <router-link class="dropdown-item" to="/works" @click="toggleMenu">
               <p :class="{ blackText: isLightBackground }">
                 Hur Fungerar Det?<br />
                 <span v-if="!isMobile"
@@ -61,12 +69,20 @@
                 <!--CRM-system (Pilot)-->
               </p>
             </router-link>
-            <router-link class="dropdown-item" v-if="isMobile" to="/about"
+            <router-link
+              class="dropdown-item"
+              v-if="isMobile"
+              to="/about"
+              @click="toggleMenu"
               ><p :class="{ blackText: isLightBackground }">
                 Om oss
               </p></router-link
             >
-            <router-link class="dropdown-item" v-if="isMobile" to="/form"
+            <router-link
+              class="dropdown-item"
+              v-if="isMobile"
+              to="/form"
+              @click="toggleMenu"
               ><p :class="{ blackText: isLightBackground }">
                 Kontakta oss
               </p></router-link
@@ -106,7 +122,9 @@ const isLightBackground = computed(
 
 const isMenuOpen = ref(false);
 const toggleMenu = () => {
+  console.log("Toggling menu, current state:", isMenuOpen.value);
   isMenuOpen.value = !isMenuOpen.value;
+  console.log("New menu state:", isMenuOpen.value);
 };
 </script>
 
@@ -195,10 +213,7 @@ const toggleMenu = () => {
         opacity: 1;
         transform: scaleX(1);
       }
-      .dropdownMenuOpen {
-        opacity: 1;
-        transform: scaleX(1);
-      }
+
       .dropdown-menu {
         position: absolute;
         display: flex;
@@ -249,6 +264,15 @@ const toggleMenu = () => {
         }
       }
     }
+  }
+  .dropdownMenuOpen {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+  .dropdownMenuClosed {
+    opacity: 0;
+    transform: scaleX(0);
+    transition: opacity 0.3s ease, transform 0.3s ease;
   }
 }
 @media (max-width: 768px) {
