@@ -98,7 +98,6 @@ const copy = computed(() => store.state.copy.works);
   padding-top: 150px;
   h1 {
     color: #031a4a;
-    text-align: left;
   }
 
   .mainDiv {
@@ -213,6 +212,7 @@ const copy = computed(() => store.state.copy.works);
     h1 {
       padding-left: 20px;
       padding-right: 20px;
+      text-align: left;
     }
     .mainDiv {
       padding-left: 20px;
