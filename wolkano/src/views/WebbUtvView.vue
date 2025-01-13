@@ -124,7 +124,7 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  padding-bottom: 50;
+  padding-bottom: 50px;
   color: black;
   padding-top: 50px;
 
