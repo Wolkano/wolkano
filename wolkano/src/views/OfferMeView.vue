@@ -33,9 +33,6 @@
             som både är tydlig och professionell. Resultatet levereras
             omedelbart – ingen väntetid, inget krångel.
           </p>
-          <button class="button" href="#" v-scroll-to="'#offertFormDiv'">
-            Testa redan idag!
-          </button>
           <div class="infoCards">
             <div class="infoCard">
               <!-- <img
@@ -44,8 +41,8 @@
               /> -->
               <p class="emoji">✅</p>
               <div class="cardText">
-                <p>Snabb och Smidig Offertgenerering</p>
-                <h4>Automatiserad, skräddarsydd offert</h4>
+                <p>Snabbt och Smidigt</p>
+                <p class="bigP">skräddarsydd offert</p>
               </div>
             </div>
             <div class="infoCard">
@@ -56,21 +53,23 @@
               <p class="emoji">✅</p>
               <div class="cardText">
                 <p>Intuitiv Process</p>
-                <h4>Enkel steg-för-steg vägledning</h4>
+                <p class="bigP">Enkel steg-för-steg vägledning</p>
               </div>
             </div>
           </div>
+          <button class="button" href="#" v-scroll-to="'#offertFormDiv'">
+            Testa redan idag!
+          </button>
         </div>
       </div>
       <div class="row secondRow">
-        <div
-          class="infoTextSection"
-          v-motion-pop-visible-once
-          :duration="700"
-          :delay="50"
-        >
+        <div class="infoTextSection">
           <div class="infoText">
-            <div>
+            <div
+              v-motion-slide-visible-once-bottom
+              :duration="500"
+              :delay="100"
+            >
               <p class="emoji">⚡️</p>
               <h3>Snabbhet och effektivitet</h3>
               <p>
@@ -80,7 +79,11 @@
               </p>
             </div>
 
-            <div>
+            <div
+              v-motion-slide-visible-once-bottom
+              :duration="500"
+              :delay="300"
+            >
               <p class="emoji">🧩</p>
               <h3>Skräddarsydda lösningar</h3>
               <p>
@@ -88,7 +91,11 @@
                 chanserna att du vinner affären.
               </p>
             </div>
-            <div>
+            <div
+              v-motion-slide-visible-once-bottom
+              :duration="500"
+              :delay="500"
+            >
               <p class="emoji">🛠️</p>
               <h3>Tid för det som är viktigast</h3>
               <p>
@@ -212,26 +219,32 @@ import OurTeam from "@/components/OurTeam.vue";
         gap: 30px;
 
         .infoCard {
+          justify-content: space-between;
+          display: flex;
+          flex-direction: column;
           background-color: white;
           color: black;
           width: 50%;
           border-radius: 10px;
-
+          padding: 10px 10px;
           .emoji {
             font-size: xx-large;
+            text-align: left;
           }
 
           p {
             color: darkgray;
+          }
+          .bigP {
+            color: $orange;
+            text-transform: uppercase;
+            font-weight: 700;
           }
           img {
             width: 100%;
             aspect-ratio: 1 / 1;
             border-radius: 8px 8px 0px 0px;
           }
-        }
-        .cardText {
-          padding: 10px;
         }
       }
 
@@ -383,16 +396,29 @@ import OurTeam from "@/components/OurTeam.vue";
           width: 100%;
         }
         .button {
-          width: 50%;
-          padding: 10px 0px;
+          width: 100%;
+          padding: 20px 0px;
+          background-color: $orange;
+          color: white;
           align-self: center;
         }
         .infoCards {
           flex-direction: column;
 
           .infoCard {
+            flex-direction: row;
             width: 100%;
-            min-height: 175px;
+            min-height: 150px;
+            padding: 0px 15px;
+            align-items: center;
+            .emoji {
+              font-size: 40px;
+
+              width: 20%;
+            }
+            .cardText {
+              width: 80%;
+            }
           }
         }
       }

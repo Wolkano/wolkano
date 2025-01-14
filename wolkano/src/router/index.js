@@ -24,7 +24,7 @@ const routes = [
   },
   {
     path: "/OfferMe",
-    name: "OfferMe",
+    name: "OfferMe · Wolkano",
     component: OfferMeView,
   },
   {
