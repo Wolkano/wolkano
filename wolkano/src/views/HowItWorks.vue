@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="home first">
     <h1>Hur fungerar det</h1>
     <div class="mainDiv">
       <div class="intro">
@@ -92,10 +92,12 @@ const copy = computed(() => store.state.copy.works);
     transform: rotate(360deg);
   }
 }
+.first {
+  padding-top: 150px;
+}
 
 .home {
   background-color: #f7f9fa;
-  padding-top: 150px;
   h1 {
     color: #031a4a;
   }
@@ -108,7 +110,7 @@ const copy = computed(() => store.state.copy.works);
     flex-wrap: wrap;
     flex-direction: row-reverse;
     color: #031a4a;
-    padding-bottom: 150px;
+    padding: 100px 0px;
 
     .image {
       img {
