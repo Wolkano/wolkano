@@ -70,6 +70,7 @@
         display: flex;
         flex-direction: column;
         justify-content: baseline;
+        text-align: left;
         .icon {
           text-align: left;
           font-size: x-large;

@@ -4,7 +4,12 @@
     <h2>Vårt team</h2>
     <p>Möt våra experter inom anbud och webbdesign.</p>
     <div class="contactGrid">
-      <div class="contactCard">
+      <div
+        class="contactCard"
+        v-motion-slide-visible-once-bottom
+        :duration="500"
+        :delay="100"
+      >
         <img
           src="https://wac-cdn.atlassian.com/dam/jcr:ba03a215-2f45-40f5-8540-b2015223c918/Max-R_Headshot%20(1).jpg?cdnVersion=2488"
         />
@@ -40,7 +45,12 @@
           </svg>
         </div>
       </div>
-      <div class="contactCard">
+      <div
+        class="contactCard"
+        v-motion-slide-visible-once-bottom
+        :duration="500"
+        :delay="300"
+      >
         <img
           src="https://wac-cdn.atlassian.com/dam/jcr:ba03a215-2f45-40f5-8540-b2015223c918/Max-R_Headshot%20(1).jpg?cdnVersion=2488"
         />
@@ -76,7 +86,12 @@
           </svg>
         </div>
       </div>
-      <div class="contactCard">
+      <div
+        class="contactCard"
+        v-motion-slide-visible-once-bottom
+        :duration="500"
+        :delay="500"
+      >
         <img
           src="https://wac-cdn.atlassian.com/dam/jcr:ba03a215-2f45-40f5-8540-b2015223c918/Max-R_Headshot%20(1).jpg?cdnVersion=2488"
         />
@@ -112,7 +127,12 @@
           </svg>
         </div>
       </div>
-      <div class="contactCard">
+      <div
+        class="contactCard"
+        v-motion-slide-visible-once-bottom
+        :duration="500"
+        :delay="700"
+      >
         <img
           src="https://wac-cdn.atlassian.com/dam/jcr:ba03a215-2f45-40f5-8540-b2015223c918/Max-R_Headshot%20(1).jpg?cdnVersion=2488"
         />

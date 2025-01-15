@@ -35,10 +35,6 @@
           </p>
           <div class="infoCards">
             <div class="infoCard">
-              <!-- <img
-                src="https://plus.unsplash.com/premium_photo-1678871480887-e71988d52031?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8b2ZmZXJ8ZW58MHx8MHx8fDA%3D"
-                alt=""
-              /> -->
               <p class="emoji">✅</p>
               <div class="cardText">
                 <p>Snabbt och Smidigt</p>
@@ -46,10 +42,6 @@
               </div>
             </div>
             <div class="infoCard">
-              <!-- <img
-                src="https://plus.unsplash.com/premium_photo-1678871480887-e71988d52031?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8b2ZmZXJ8ZW58MHx8MHx8fDA%3D"
-                alt=""
-              /> -->
               <p class="emoji">✅</p>
               <div class="cardText">
                 <p>Intuitiv Process</p>
@@ -111,7 +103,6 @@
           <OurTeam />
         </div>
       </div>
-
       <div
         class="row thirdRow"
         v-motion-pop-visible-once
@@ -122,12 +113,14 @@
         <div class="questionsContainer">
           <div class="knappar">
             <div class="knappDiv">
+              <p class="emoji">🔧</p>
               <p>Se hur den automatiserade offertjänsten fungerar</p>
               <router-link to="/works" class="button"
                 >Hur Fungerar det?</router-link
               >
             </div>
             <div class="knappDiv">
+              <p class="emoji">🌟</p>
               <p>
                 Vi på OfferMe finns här för att hjälpa dig - tveka inte att
                 kontakta oss!
@@ -138,9 +131,6 @@
                 >
               </div>
             </div>
-          </div>
-          <div class="killarImageDiv">
-            <img class="killarImage" src="../assets/4killar.jpeg" />
           </div>
         </div>
       </div>
@@ -314,6 +304,23 @@ import OurTeam from "@/components/OurTeam.vue";
     flex-wrap: wrap;
     padding-left: 20px;
     padding-right: 20px;
+    background-image: url("../assets/placeholderbild.jpg");
+    background-size: cover;
+    background-position: center;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba($background-color, 0.9);
+      z-index: 1;
+    }
+    * {
+      position: relative;
+      z-index: 2;
+    }
     .questionsContainer {
       display: flex;
       flex-direction: row;
@@ -321,19 +328,11 @@ import OurTeam from "@/components/OurTeam.vue";
       justify-content: center;
       align-items: center;
     }
-    .killarImageDiv {
-      height: 300px;
-      .killarImage {
-        width: 600px;
-        border-radius: 10px;
-        height: 100%; /* Image height as a percentage of the container */
-        object-fit: cover; /* This ensures the image fills the container, maintaining its aspect ratio */
-      }
-    }
-
     h2 {
       width: 100%;
       padding-bottom: 30px;
+      text-transform: uppercase;
+      font-weight: 700;
     }
     .button {
       font-weight: 600;
@@ -341,16 +340,31 @@ import OurTeam from "@/components/OurTeam.vue";
     }
     .knappar {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       gap: 40px;
-      width: 50%;
+      width: 75%;
       .knappDiv {
         display: flex;
         flex-direction: column;
-        align-items: baseline;
         gap: 20px;
+        align-items: center;
+        width: 500px;
+        justify-content: space-between;
+        text-align: left;
+        .button {
+          background-color: $orange;
+          color: white;
+          &:hover {
+            background-color: $darkOrange;
+          }
+        }
         p {
           font-weight: 600;
+          font-size: 20px;
+        }
+        .emoji {
+          font-size: xx-large;
+          align-self: center;
         }
       }
     }
