@@ -37,7 +37,7 @@ const isMobile = computed(() => windowWidth.value < 768);
     <div class="secondDiv">
       <div>
         <div>
-          <div v-motion-pop-visible-once :duration="700" :delay="100">
+          <div v-motion-slide-visible-once-bottom :duration="500" :delay="100">
             <p class="icon">✅</p>
             <h3>Inmatning av information</h3>
             <p>
@@ -47,7 +47,7 @@ const isMobile = computed(() => windowWidth.value < 768);
               från kunden.
             </p>
           </div>
-          <div v-motion-pop-visible-once :duration="700" :delay="100">
+          <div v-motion-slide-visible-once-bottom :duration="500" :delay="300">
             <p class="icon">🤖</p>
             <h3>Automatisk analys</h3>
             <p>
@@ -57,7 +57,7 @@ const isMobile = computed(() => windowWidth.value < 768);
               kostnader baserat på aktuella data.
             </p>
           </div>
-          <div v-motion-pop-visible-once :duration="700" :delay="100">
+          <div v-motion-slide-visible-once-bottom :duration="500" :delay="600">
             <p class="icon">📄</p>
             <h3>Skapande av offert</h3>
             <p>
@@ -66,7 +66,7 @@ const isMobile = computed(() => windowWidth.value < 768);
               att allt är korrekt och ser professionellt ut.
             </p>
           </div>
-          <div v-motion-pop-visible-once :duration="700" :delay="100">
+          <div v-motion-slide-visible-once-bottom :duration="500" :delay="900">
             <p class="icon">📩</p>
             <h3>Uppföljning och spårning</h3>
             <p>
@@ -76,7 +76,6 @@ const isMobile = computed(() => windowWidth.value < 768);
             </p>
           </div>
         </div>
-        <img class="flowGif" src="../assets/Förnamn.gif" />
       </div>
     </div>
   </Transition>
@@ -133,20 +132,26 @@ const isMobile = computed(() => windowWidth.value < 768);
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    padding: 20px 0px;
+    padding: 20px 90px;
     align-items: center;
+    flex-wrap: wrap;
 
     div {
       display: flex;
-      flex-direction: column;
-      width: 30%;
+      flex-direction: row;
+      width: 100%;
       div {
-        width: 100%;
+        display: flex;
+        flex-direction: column;
+        width: 40%;
+        justify-content: start;
+        align-items: start;
         .icon {
           color: #fe9d01;
           margin-top: 20px;
           margin-bottom: 5px;
           font-size: xx-large;
+          align-self: center;
         }
 
         h3 {

@@ -18,10 +18,12 @@
           :delay="100"
         >
           <p class="icon">✅</p>
-          <h3>Automatiserade anbudsförfrågningar för ditt företag</h3>
-          <p class="info">
-            Skapa en imponerande webbplats som engagerar dina kunder.
-          </p>
+          <div>
+            <h3>Automatiserade anbudsförfrågningar för ditt företag</h3>
+            <p class="info">
+              Skapa en imponerande webbplats som engagerar dina kunder.
+            </p>
+          </div>
         </div>
         <div
           class="serviceCard"
@@ -30,10 +32,12 @@
           :delay="300"
         >
           <p class="icon">✅</p>
-          <h3>Professionella webbplatsbyggande tjänster för alla behov</h3>
-          <p class="info">
-            Skapa en imponerande webbplats som engagerar dina kunder.
-          </p>
+          <div>
+            <h3>Professionella webbplatsbyggande tjänster för alla behov</h3>
+            <p class="info">
+              Skapa en imponerande webbplats som engagerar dina kunder.
+            </p>
+          </div>
         </div>
         <div
           class="serviceCard"
@@ -42,10 +46,12 @@
           :delay="600"
         >
           <p class="icon">✅</p>
-          <h3>Varför välja oss för dina tjänster?</h3>
-          <p class="info">
-            Vi kombinerar innovation med expertis för bästa resultat.
-          </p>
+          <div>
+            <h3>Varför välja oss för dina tjänster?</h3>
+            <p class="info">
+              Vi kombinerar innovation med expertis för bästa resultat.
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -85,7 +91,7 @@
         width: 0;
         display: flex;
         flex-direction: column;
-        justify-content: baseline;
+        justify-content: space-between;
         text-align: left;
         padding: 20px;
         border-radius: 10px;
@@ -93,8 +99,13 @@
           text-align: left;
           font-size: x-large;
         }
-        h3 {
-          text-align: left;
+        div {
+          h3 {
+            text-align: left;
+          }
+          .info {
+            align-self: flex-end;
+          }
         }
       }
     }
