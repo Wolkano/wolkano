@@ -1,31 +1,8 @@
 <template>
-  <div
-    class="row thirdRow"
-    v-motion-pop-visible-once
-    :duration="700"
-    :delay="50"
-  >
-    <h2>Har du frågor eller funderingar?</h2>
+  <div class="row thirdRow">
+    <h2>BRA TITEL</h2>
     <div class="questionsContainer">
-      <div class="knappar">
-        <div class="knappDiv">
-          <p class="emoji">🔧</p>
-          <p>Se hur den automatiserade offertjänsten fungerar</p>
-          <router-link to="/works" class="button"
-            >Hur Fungerar det?</router-link
-          >
-        </div>
-        <div class="knappDiv">
-          <p class="emoji">🌟</p>
-          <p>
-            Vi på OfferMe finns här för att hjälpa dig - tveka inte att kontakta
-            oss!
-          </p>
-          <div class="button">
-            <router-link to="/form" class="button">Kontakta oss</router-link>
-          </div>
-        </div>
-      </div>
+      <p>TEXT SOM HENKE FÅR LÄGGA IN</p>
     </div>
   </div>
 </template>
@@ -42,6 +19,7 @@
   background-image: url("../assets/placeholderbild.jpg");
   background-size: cover;
   background-position: center;
+  position: relative;
   &::before {
     content: "";
     position: absolute;
@@ -75,36 +53,6 @@
     font-weight: 600;
     width: fit-content;
   }
-  .knappar {
-    display: flex;
-    flex-direction: row;
-    gap: 40px;
-    width: 75%;
-    .knappDiv {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      align-items: center;
-      width: 500px;
-      justify-content: space-between;
-      text-align: left;
-      .button {
-        background-color: $orange;
-        color: white;
-        &:hover {
-          background-color: $darkOrange;
-        }
-      }
-      p {
-        font-weight: 600;
-        font-size: 20px;
-      }
-      .emoji {
-        font-size: xx-large;
-        align-self: center;
-      }
-    }
-  }
 }
 
 @media (max-width: 768px) {
@@ -122,12 +70,6 @@
       text-align: left;
       p {
         font-size: 20px;
-      }
-      .knappar {
-        width: 100%;
-        .knappDiv {
-          align-items: start;
-        }
       }
     }
   }

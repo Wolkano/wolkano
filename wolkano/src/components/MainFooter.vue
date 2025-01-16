@@ -58,12 +58,13 @@
     .subFooter {
       display: flex;
       flex-direction: row;
-      border-top: 2px solid #1f1e18;
+      border-top: 2px solid #313026;
       width: 60%;
       padding-top: 20px;
     }
   }
   .logo {
+    padding-top: 50px;
     width: 200px;
   }
 }

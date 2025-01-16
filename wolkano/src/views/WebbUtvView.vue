@@ -45,7 +45,7 @@
     -->
   </div>
   <div class="infoBanner">
-    <div>
+    <div v-motion-slide-visible-once-bottom :duration="500" :delay="300">
       <h2 class="title">Responsiv hemsida</h2>
       <p class="subTitle">Snabbt, Smidigt & Prisvärt</p>
       <p class="info">
@@ -59,7 +59,7 @@
         behov.
       </p>
     </div>
-    <div>
+    <div v-motion-slide-visible-once-bottom :duration="500" :delay="600">
       <h2 class="title">Fri support</h2>
       <p class="subTitle">Din Personliga Webbyrå</p>
       <p class="info">

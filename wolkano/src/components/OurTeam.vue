@@ -71,7 +71,7 @@
         :duration="500"
         :delay="500"
       >
-        <img src="../assets/magnus.jpg" />
+        <img src="../assets/magnus.jpeg" />
         <h3>Magnus Bengtsson</h3>
         <p class="role">Webbutvecklare</p>
         <p>Studerar Webbutveckling på Karlstad universitet.</p>

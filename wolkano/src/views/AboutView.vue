@@ -17,54 +17,50 @@
       </div>
     </div>
   </div>
-  <OurTeam />
-  <Transition name="fade" appear>
-    <div class="secondDiv">
-      <div>
-        <div>
-          <div v-motion-pop-visible-once :duration="700" :delay="100">
-            <p class="icon">✅</p>
-            <h3>Inmatning av information</h3>
-            <p>
-              Kunden fyller i ett enkelt formulär online med detaljer om sina
-              behov, inklusive specifikationer, kvantiteter och önskade
-              tidsramar. Systemet samlar in all nödvändig information direkt
-              från kunden.
-            </p>
-          </div>
-          <div v-motion-pop-visible-once :duration="700" :delay="100">
-            <p class="icon">🤖</p>
-            <h3>Automatisk analys</h3>
-            <p>
-              Systemet analyserar den inskickade informationen med hjälp av
-              förinställda parametrar och smarta algoritmer. Det identifierar
-              matchande produkter, tjänster eller leverantörer och beräknar
-              kostnader baserat på aktuella data.
-            </p>
-          </div>
-          <div v-motion-pop-visible-once :duration="700" :delay="100">
-            <p class="icon">📄</p>
-            <h3>Skapande av offert</h3>
-            <p>
-              Offerten genereras automatiskt och kan anpassas med företagets
-              logotyp, villkor och en personlig hälsning. Systemet säkerställer
-              att allt är korrekt och ser professionellt ut.
-            </p>
-          </div>
-          <div v-motion-pop-visible-once :duration="700" :delay="100">
-            <p class="icon">📩</p>
-            <h3>Uppföljning och spårning</h3>
-            <p>
-              Systemet håller reda på när kunden öppnar offerten och kan
-              automatiskt skicka påminnelser om svar. Det ger dig full insyn i
-              processen och hjälper dig att stänga affärer snabbare.
-            </p>
-          </div>
-        </div>
-        <img class="flowGif" src="../assets/Förnamn.gif" />
+  <div class="ourTeamContainer">
+    <OurTeam />
+  </div>
+  <div class="secondDiv">
+    <div>
+      <div v-motion-slide-visible-once-bottom :duration="500" :delay="100">
+        <p class="icon">✅</p>
+        <h3>Inmatning av information</h3>
+        <p>
+          Kunden fyller i ett enkelt formulär online med detaljer om sina behov,
+          inklusive specifikationer, kvantiteter och önskade tidsramar. Systemet
+          samlar in all nödvändig information direkt från kunden.
+        </p>
+      </div>
+      <div v-motion-slide-visible-once-bottom :duration="500" :delay="300">
+        <p class="icon">🤖</p>
+        <h3>Automatisk analys</h3>
+        <p>
+          Systemet analyserar den inskickade informationen med hjälp av
+          förinställda parametrar och smarta algoritmer. Det identifierar
+          matchande produkter, tjänster eller leverantörer och beräknar
+          kostnader baserat på aktuella data.
+        </p>
+      </div>
+      <div v-motion-slide-visible-once-bottom :duration="500" :delay="600">
+        <p class="icon">📄</p>
+        <h3>Skapande av offert</h3>
+        <p>
+          Offerten genereras automatiskt och kan anpassas med företagets
+          logotyp, villkor och en personlig hälsning. Systemet säkerställer att
+          allt är korrekt och ser professionellt ut.
+        </p>
+      </div>
+      <div v-motion-slide-visible-once-bottom :duration="500" :delay="900">
+        <p class="icon">📩</p>
+        <h3>Uppföljning och spårning</h3>
+        <p>
+          Systemet håller reda på när kunden öppnar offerten och kan automatiskt
+          skicka påminnelser om svar. Det ger dig full insyn i processen och
+          hjälper dig att stänga affärer snabbare.
+        </p>
       </div>
     </div>
-  </Transition>
+  </div>
 </template>
 
 <script setup>
@@ -129,37 +125,45 @@ const copy = computed(() => store.state.copy.about);
     }
   }
 }
+.ourTeamContainer {
+  padding: 30px 0px;
+}
 
 .secondDiv {
+  background-color: #f7f9fa;
+  padding: 30px 0px;
   div {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     padding: 20px 0px;
     align-items: center;
+    flex-wrap: wrap;
+    width: 75%;
+    gap: 20px;
+    margin: auto;
 
     div {
       display: flex;
       flex-direction: column;
-      width: 30%;
-      div {
-        width: 100%;
-        .icon {
-          color: #fe9d01;
-          margin-top: 20px;
-          margin-bottom: 5px;
-          font-size: xx-large;
-        }
+      align-items: center;
+      justify-content: flex-start;
+      width: 40%;
+      .icon {
+        color: #fe9d01;
+        margin-top: 20px;
+        margin-bottom: 5px;
+        font-size: xx-large;
+      }
 
-        h3 {
-          font-weight: 700;
-          color: $text-color;
-          text-align: left;
-        }
-        p {
-          color: black;
-          text-align: left;
-        }
+      h3 {
+        font-weight: 700;
+        color: $text-color;
+        text-align: left;
+      }
+      p {
+        color: black;
+        text-align: left;
       }
     }
 
