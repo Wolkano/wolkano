@@ -173,9 +173,10 @@ const isSubmitting = ref(false);
     width: 50%;
     margin-left: auto;
     margin-right: auto;
-    background-color: white;
+    background-color: $orange;
     padding: 50px 30px;
     border-radius: 5px;
+    color: white;
     .missingField {
       color: red;
       font-style: italic;
@@ -184,8 +185,7 @@ const isSubmitting = ref(false);
       color: black;
       width: 100%;
       border-radius: 3px;
-      padding: 5px;
-      border: 1px solid gray;
+      padding: 10px;
     }
     div {
       display: flex;
@@ -197,7 +197,7 @@ const isSubmitting = ref(false);
         color: black;
         width: 100%;
         border-radius: 3px;
-        padding: 5px;
+        padding: 10px;
       }
       p {
         margin-top: 5px;
@@ -212,12 +212,11 @@ const isSubmitting = ref(false);
         color: black;
         border-radius: 3px;
         padding: 5px;
-        border: 1px solid gray;
       }
     }
     button {
-      background-color: #fe9d01;
-      color: white;
+      background-color: white;
+      color: $orange;
       padding: 5px 15px;
       border-radius: 5px;
       -webkit-transition: background-color 200ms linear;

@@ -55,85 +55,12 @@
         </div>
       </div>
       <div class="row secondRow">
-        <div class="infoTextSection">
-          <div class="infoText">
-            <div
-              v-motion-slide-visible-once-bottom
-              :duration="500"
-              :delay="100"
-            >
-              <p class="emoji">⚡️</p>
-              <h3>Snabbhet och effektivitet</h3>
-              <p>
-                Med OfferMe får dina kunder en professionell offert på några
-                sekunder. Vår automatiserade process eliminerar väntetider och
-                säkerställer att du alltid ligger steget före.
-              </p>
-            </div>
-
-            <div
-              v-motion-slide-visible-once-bottom
-              :duration="500"
-              :delay="300"
-            >
-              <p class="emoji">🧩</p>
-              <h3>Skräddarsydda lösningar</h3>
-              <p>
-                Varje offert anpassas efter kundens specifika behov, vilket ökar
-                chanserna att du vinner affären.
-              </p>
-            </div>
-            <div
-              v-motion-slide-visible-once-bottom
-              :duration="500"
-              :delay="500"
-            >
-              <p class="emoji">🛠️</p>
-              <h3>Tid för det som är viktigast</h3>
-              <p>
-                Genom att automatisera offertprocessen kan du fokusera mer på
-                din kärnverksamhet och mindre på administration.
-              </p>
-            </div>
-          </div>
-        </div>
+        <InfoTextSection />
       </div>
       <div class="ourTeamContainer">
-        <div>
-          <OurTeam />
-        </div>
+        <OurTeam />
       </div>
-      <div
-        class="row thirdRow"
-        v-motion-pop-visible-once
-        :duration="700"
-        :delay="50"
-      >
-        <h2>Har du frågor eller funderingar?</h2>
-        <div class="questionsContainer">
-          <div class="knappar">
-            <div class="knappDiv">
-              <p class="emoji">🔧</p>
-              <p>Se hur den automatiserade offertjänsten fungerar</p>
-              <router-link to="/works" class="button"
-                >Hur Fungerar det?</router-link
-              >
-            </div>
-            <div class="knappDiv">
-              <p class="emoji">🌟</p>
-              <p>
-                Vi på OfferMe finns här för att hjälpa dig - tveka inte att
-                kontakta oss!
-              </p>
-              <div class="button">
-                <router-link to="/form" class="button"
-                  >Kontakta oss</router-link
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <QuestionsBanner />
       <div class="offertFormDiv" id="offertFormDiv">
         <div v-motion-pop-visible-once :duration="700" :delay="50">
           <OffertForm />
@@ -148,8 +75,10 @@
 
 <script setup>
 //import CompanyBanner from "@/components/CompanyBanner.vue";
+import InfoTextSection from "@/components/InfoTextSection.vue";
 import OffertForm from "@/components/OffertForm.vue";
 import OurTeam from "@/components/OurTeam.vue";
+import QuestionsBanner from "@/components/QuestionsBanner.vue";
 </script>
 
 <style lang="scss" scoped>
@@ -265,109 +194,6 @@ import OurTeam from "@/components/OurTeam.vue";
     background-color: #f7f9fa;
     color: black;
     padding: 75px 0px;
-
-    .infoTextSection {
-      width: 90%;
-      .infoText {
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        justify-content: center;
-        gap: 50px;
-        flex-wrap: wrap;
-
-        div {
-          display: flex;
-          flex-direction: column;
-          text-align: left;
-          width: 25%;
-          .emoji {
-            font-size: 50px;
-          }
-          p {
-            font-size: 18px;
-          }
-        }
-
-        h3 {
-          font-weight: 600;
-        }
-        p {
-          margin-bottom: 20px;
-        }
-      }
-    }
-  }
-  .thirdRow {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    padding-left: 20px;
-    padding-right: 20px;
-    background-image: url("../assets/placeholderbild.jpg");
-    background-size: cover;
-    background-position: center;
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba($background-color, 0.9);
-      z-index: 1;
-    }
-    * {
-      position: relative;
-      z-index: 2;
-    }
-    .questionsContainer {
-      display: flex;
-      flex-direction: row;
-      gap: 50px;
-      justify-content: center;
-      align-items: center;
-    }
-    h2 {
-      width: 100%;
-      padding-bottom: 30px;
-      text-transform: uppercase;
-      font-weight: 700;
-    }
-    .button {
-      font-weight: 600;
-      width: fit-content;
-    }
-    .knappar {
-      display: flex;
-      flex-direction: row;
-      gap: 40px;
-      width: 75%;
-      .knappDiv {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        align-items: center;
-        width: 500px;
-        justify-content: space-between;
-        text-align: left;
-        .button {
-          background-color: $orange;
-          color: white;
-          &:hover {
-            background-color: $darkOrange;
-          }
-        }
-        p {
-          font-weight: 600;
-          font-size: 20px;
-        }
-        .emoji {
-          font-size: xx-large;
-          align-self: center;
-        }
-      }
-    }
   }
 }
 
@@ -447,58 +273,12 @@ import OurTeam from "@/components/OurTeam.vue";
       .animation {
         display: none;
       }
-
-      .infoTextSection {
-        width: 100%;
-        .infoText {
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          gap: 20px;
-
-          div {
-            width: 100%;
-          }
-        }
-      }
     }
     .kontakta {
       width: 80%;
     }
     .ourTeamContainer {
       width: 100%;
-    }
-    .thirdRow {
-      flex-direction: column;
-      gap: 30px;
-      padding: 20px 30px;
-      h2 {
-        padding: 0;
-        margin: 0;
-      }
-      .questionsContainer {
-        flex-direction: column;
-        gap: 30px;
-        text-align: left;
-        p {
-          font-size: 20px;
-        }
-        .knappar {
-          width: 100%;
-          .knappDiv {
-            align-items: start;
-          }
-        }
-      }
-      .killarImageDiv {
-        height: 150px;
-        .killarImage {
-          width: 600px;
-          border-radius: 10px;
-          height: 100%; /* Image height as a percentage of the container */
-          object-fit: cover; /* This ensures the image fills the container, maintaining its aspect ratio */
-        }
-      }
     }
   }
 }

@@ -2,13 +2,23 @@
   <div class="footer">
     <div>
       <img class="logo" src="../assets/newLogoWhite.png" />
-      <p>
-        Trygghet i varje offertförfrågan.<br />
-        En partner du kan lita på.
+      <p class="information">
+        Wolkano erbjuder smarta och effektiva lösningar för automatiserade
+        offerter som hjälper företag att spara tid och öka lönsamheten. Med
+        fokus på kvalitet, innovation och schyssta värderingar strävar vi efter
+        att förenkla din vardag och skapa långsiktigt värde. Vi är din pålitliga
+        partner för en smidigare affärsprocess.
       </p>
+      <div class="contactInfo">
+        <a href="">076-1778821</a>
+        <p>|</p>
+        <a href="">info@wolkano.se</a>
+      </div>
+      <div class="subFooter">
+        <p>© Wolkano 2024</p>
+        <p>Innovativa lösningar för smidigare offertförfrågningar.</p>
+      </div>
     </div>
-    <p>© Wolkano 2024</p>
-    <p>Innovativa lösningar för smidigare offertförfrågningar.</p>
   </div>
 </template>
 
@@ -28,14 +38,33 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    p {
-      font-size: 20px;
+    gap: 30px;
+    .information {
+      font-size: 16px;
+      width: 50%;
+    }
+    .contactInfo {
+      display: flex;
+      flex-direction: row;
+      a {
+        color: $orange;
+        font-size: 40px;
+      }
+      p {
+        color: $orange;
+        font-size: 40px;
+      }
+    }
+    .subFooter {
+      display: flex;
+      flex-direction: row;
+      border-top: 2px solid #1f1e18;
+      width: 60%;
+      padding-top: 20px;
     }
   }
   .logo {
     width: 200px;
-    margin-bottom: 50px;
-    margin-top: 30px;
   }
 }
 
