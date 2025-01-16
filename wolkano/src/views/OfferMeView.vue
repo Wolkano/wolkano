@@ -62,7 +62,7 @@
       </div>
       <QuestionsBanner />
       <div class="offertFormDiv" id="offertFormDiv">
-        <div v-motion-pop-visible-once :duration="700" :delay="50">
+        <div>
           <OffertForm />
         </div>
       </div>

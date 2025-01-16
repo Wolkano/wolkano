@@ -11,21 +11,36 @@
         </p>
       </div>
       <div class="serviceCards">
-        <div class="serviceCard">
+        <div
+          class="serviceCard"
+          v-motion-slide-visible-once-bottom
+          :duration="500"
+          :delay="100"
+        >
           <p class="icon">✅</p>
           <h3>Automatiserade anbudsförfrågningar för ditt företag</h3>
           <p class="info">
             Skapa en imponerande webbplats som engagerar dina kunder.
           </p>
         </div>
-        <div class="serviceCard">
+        <div
+          class="serviceCard"
+          v-motion-slide-visible-once-bottom
+          :duration="500"
+          :delay="300"
+        >
           <p class="icon">✅</p>
           <h3>Professionella webbplatsbyggande tjänster för alla behov</h3>
           <p class="info">
             Skapa en imponerande webbplats som engagerar dina kunder.
           </p>
         </div>
-        <div class="serviceCard">
+        <div
+          class="serviceCard"
+          v-motion-slide-visible-once-bottom
+          :duration="500"
+          :delay="600"
+        >
           <p class="icon">✅</p>
           <h3>Varför välja oss för dina tjänster?</h3>
           <p class="info">
@@ -65,12 +80,15 @@
       flex-direction: row;
       gap: 75px;
       .serviceCard {
+        background-color: white;
         flex: 1 1 0px;
         width: 0;
         display: flex;
         flex-direction: column;
         justify-content: baseline;
         text-align: left;
+        padding: 20px;
+        border-radius: 10px;
         .icon {
           text-align: left;
           font-size: x-large;
