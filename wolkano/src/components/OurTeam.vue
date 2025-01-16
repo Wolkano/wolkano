@@ -74,9 +74,7 @@
         <img src="../assets/magnus.jpg" />
         <h3>Magnus Bengtsson</h3>
         <p class="role">Webbutvecklare</p>
-        <p>
-          Med över 10 års erfarenhet av projektledning inom digitala lösningar.
-        </p>
+        <p>Studerar Webbutveckling på Karlstad universitet.</p>
         <div class="icons">
           <a
             href="https://www.linkedin.com/in/magnus-bengtsson-b72a41227/"
