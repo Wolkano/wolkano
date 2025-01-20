@@ -10,7 +10,7 @@
         :duration="500"
         :delay="100"
       >
-        <img src="../assets/gabriel.jpg" />
+        <img src="../assets/gabriel.png" />
         <h3>Gabriel Holmkvist</h3>
         <p class="role">Webbutvecklare</p>
         <p>
@@ -42,7 +42,7 @@
         :duration="500"
         :delay="300"
       >
-        <img src="../assets/henrik.jpg" />
+        <img src="../assets/henrik.png" />
         <h3>Henrik Bengtsson</h3>
         <p class="role">VD</p>
         <p>
@@ -71,7 +71,7 @@
         :duration="500"
         :delay="500"
       >
-        <img src="../assets/magnus.jpeg" />
+        <img src="../assets/magnus.png" />
         <h3>Magnus Bengtsson</h3>
         <p class="role">Webbutvecklare</p>
         <p>Studerar Webbutveckling på Karlstad universitet.</p>
@@ -100,7 +100,7 @@
         :duration="500"
         :delay="700"
       >
-        <img src="../assets/rozbeh.jpg" />
+        <img src="../assets/rozbeh.png" />
         <h3>Rozbeh Kazemi</h3>
         <p class="role">Försäljare</p>
         <p>
