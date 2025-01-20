@@ -144,11 +144,10 @@ const isMobile = computed(() => windowWidth.value < 768);
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    padding: 20px 0px;
+    padding: 20px 20px;
     align-items: center;
     flex-wrap: wrap;
     width: 100%;
-    gap: 20px;
     margin: auto;
 
     div {
@@ -161,7 +160,6 @@ const isMobile = computed(() => windowWidth.value < 768);
         width: 20%;
         .icon {
           color: #fe9d01;
-          margin-top: 20px;
           margin-bottom: 5px;
           font-size: xx-large;
           width: 100%;
@@ -178,19 +176,9 @@ const isMobile = computed(() => windowWidth.value < 768);
         }
       }
     }
-
-    .flowGif {
-      width: 30%;
-      height: min-content;
-      border-style: solid;
-      border-width: 5px;
-      border-color: #fe9d01;
-      border-radius: 20px;
-    }
   }
 }
 
-// Mobile styles for smaller screens
 @media (max-width: 768px) {
   .home {
     height: 80vh;

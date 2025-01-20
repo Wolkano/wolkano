@@ -168,7 +168,7 @@ const copy = computed(() => store.state.copy.works);
     flex-wrap: wrap;
     flex-direction: row;
     color: white;
-    background: #{$gradient-background};
+    background: $background-color;
     padding: 100px 0px;
     .intro {
       text-align: left;
