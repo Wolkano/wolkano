@@ -2,7 +2,7 @@
   <div class="mainDiv">
     <p>Team</p>
     <h2>Vårt team</h2>
-    <p>Möt våra experter inom anbud och webbdesign.</p>
+    <p>Möt våra experter inom automation och webbdesign.</p>
     <div class="contactGrid">
       <div
         class="contactCard"
@@ -45,9 +45,7 @@
         <img src="../assets/henrik.png" />
         <h3>Henrik Bengtsson</h3>
         <p class="role">VD</p>
-        <p>
-          Med över 10 års erfarenhet av projektledning inom digitala lösningar.
-        </p>
+        <p>"Satsar man 100% får man 200% tillbaka" - Gabriel Holmkvist</p>
         <div class="icons">
           <a href="https://www.linkedin.com/in/bengtssonhenrik/" target="_blank"
             ><svg
@@ -73,7 +71,7 @@
       >
         <img src="../assets/magnus.png" />
         <h3>Magnus Bengtsson</h3>
-        <p class="role">Webbutvecklare</p>
+        <p class="role">Back-end utvecklare</p>
         <p>Studerar Webbutveckling på Karlstad universitet.</p>
         <div class="icons">
           <a
@@ -154,7 +152,7 @@
       }
       img {
         max-height: 300px;
-        object-fit: cover;
+        object-fit: contain;
       }
       .icons {
         display: flex;

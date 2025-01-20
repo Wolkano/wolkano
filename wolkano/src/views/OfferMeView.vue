@@ -13,7 +13,7 @@
           :delay="50"
         >
           <img
-            src="https://images.unsplash.com/photo-1719937050445-098888c0625e?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=1955&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           />
         </div>
         <div
@@ -78,7 +78,7 @@
 import InfoTextSection from "@/components/InfoTextSection.vue";
 import OffertForm from "@/components/OffertForm.vue";
 import OurTeam from "@/components/OurTeam.vue";
-import QuestionsBanner from "@/components/QuestionsBanner.vue";
+//import QuestionsBanner from "@/components/QuestionsBanner.vue";
 </script>
 
 <style lang="scss" scoped>
@@ -121,6 +121,7 @@ import QuestionsBanner from "@/components/QuestionsBanner.vue";
 
       img {
         aspect-ratio: 1 / 1;
+        object-fit: cover;
         border-radius: 10px;
       }
     }
