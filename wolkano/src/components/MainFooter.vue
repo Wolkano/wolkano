@@ -78,6 +78,20 @@
       h4 {
         font-size: $font-size-mobile-h4;
       }
+      .information {
+        width: 100%;
+      }
+      .contactInfo {
+        a {
+          font-size: 20px;
+        }
+        p {
+          font-size: 20px;
+        }
+      }
+      .subFooter {
+        width: 100%;
+      }
     }
   }
   .subFooter {

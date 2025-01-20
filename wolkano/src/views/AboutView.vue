@@ -130,7 +130,7 @@ const copy = computed(() => store.state.copy.about);
 }
 
 .secondDiv {
-  background-color: #f7f9fa;
+  background-color: $offWhite2;
   padding: 30px 0px;
   div {
     display: flex;

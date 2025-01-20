@@ -13,19 +13,32 @@ const isMobile = computed(() => windowWidth.value < 768);
   <div class="home">
     <div class="mainDiv">
       <div class="intro">
-        <h1>{{ copy.title }}</h1>
-        <p>
+        <h1 v-motion-slide-visible-once-left :duration="1500" :delay="100">
+          {{ copy.title }}
+        </h1>
+        <p v-motion-slide-visible-once-bottom :duration="1000" :delay="700">
           {{ copy.description1 }}
           <span class="company_name">{{ copy.companyName }}</span
           >, {{ copy.description2 }}
         </p>
-        <div class="buttons">
+        <div
+          class="buttons"
+          v-motion-slide-visible-once-bottom
+          :duration="1000"
+          :delay="700"
+        >
           <router-link to="/about" class="button">Om oss</router-link>
           <router-link to="/form" class="button">Kontakta oss</router-link>
         </div>
       </div>
 
-      <div class="image" v-if="!isMobile">
+      <div
+        class="image"
+        v-motion-slide-visible-once-right
+        :duration="1500"
+        :delay="100"
+        v-if="!isMobile"
+      >
         <img
           class="businessManImage"
           src="../assets/—Pngtree—happy corporate business professional one_13504468.png"
@@ -33,52 +46,49 @@ const isMobile = computed(() => windowWidth.value < 768);
       </div>
     </div>
   </div>
-  <Transition name="fade" appear>
-    <div class="secondDiv">
+  <div class="secondDiv">
+    <div>
       <div>
-        <div>
-          <div v-motion-slide-visible-once-bottom :duration="500" :delay="100">
-            <p class="icon">✅</p>
-            <h3>Inmatning av information</h3>
-            <p>
-              Kunden fyller i ett enkelt formulär online med detaljer om sina
-              behov, inklusive specifikationer, kvantiteter och önskade
-              tidsramar. Systemet samlar in all nödvändig information direkt
-              från kunden.
-            </p>
-          </div>
-          <div v-motion-slide-visible-once-bottom :duration="500" :delay="300">
-            <p class="icon">🤖</p>
-            <h3>Automatisk analys</h3>
-            <p>
-              Systemet analyserar den inskickade informationen med hjälp av
-              förinställda parametrar och smarta algoritmer. Det identifierar
-              matchande produkter, tjänster eller leverantörer och beräknar
-              kostnader baserat på aktuella data.
-            </p>
-          </div>
-          <div v-motion-slide-visible-once-bottom :duration="500" :delay="600">
-            <p class="icon">📄</p>
-            <h3>Skapande av offert</h3>
-            <p>
-              Offerten genereras automatiskt och kan anpassas med företagets
-              logotyp, villkor och en personlig hälsning. Systemet säkerställer
-              att allt är korrekt och ser professionellt ut.
-            </p>
-          </div>
-          <div v-motion-slide-visible-once-bottom :duration="500" :delay="900">
-            <p class="icon">📩</p>
-            <h3>Uppföljning och spårning</h3>
-            <p>
-              Systemet håller reda på när kunden öppnar offerten och kan
-              automatiskt skicka påminnelser om svar. Det ger dig full insyn i
-              processen och hjälper dig att stänga affärer snabbare.
-            </p>
-          </div>
+        <div v-motion-slide-visible-once-bottom :duration="500" :delay="100">
+          <p class="icon">✅</p>
+          <h3>Inmatning av information</h3>
+          <p>
+            Kunden fyller i ett enkelt formulär online med detaljer om sina
+            behov, inklusive specifikationer, kvantiteter och önskade tidsramar.
+            Systemet samlar in all nödvändig information direkt från kunden.
+          </p>
+        </div>
+        <div v-motion-slide-visible-once-bottom :duration="500" :delay="300">
+          <p class="icon">🤖</p>
+          <h3>Automatisk analys</h3>
+          <p>
+            Systemet analyserar den inskickade informationen med hjälp av
+            förinställda parametrar och smarta algoritmer. Det identifierar
+            matchande produkter, tjänster eller leverantörer och beräknar
+            kostnader baserat på aktuella data.
+          </p>
+        </div>
+        <div v-motion-slide-visible-once-bottom :duration="500" :delay="600">
+          <p class="icon">📄</p>
+          <h3>Skapande av offert</h3>
+          <p>
+            Offerten genereras automatiskt och kan anpassas med företagets
+            logotyp, villkor och en personlig hälsning. Systemet säkerställer
+            att allt är korrekt och ser professionellt ut.
+          </p>
+        </div>
+        <div v-motion-slide-visible-once-bottom :duration="500" :delay="900">
+          <p class="icon">📩</p>
+          <h3>Uppföljning och spårning</h3>
+          <p>
+            Systemet håller reda på när kunden öppnar offerten och kan
+            automatiskt skicka påminnelser om svar. Det ger dig full insyn i
+            processen och hjälper dig att stänga affärer snabbare.
+          </p>
         </div>
       </div>
     </div>
-  </Transition>
+  </div>
   <OurServices />
 </template>
 
@@ -128,30 +138,33 @@ const isMobile = computed(() => windowWidth.value < 768);
 }
 
 .secondDiv {
+  background-color: #f7f9fa;
+  padding: 30px 0px;
   div {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    padding: 20px 90px;
+    padding: 20px 0px;
     align-items: center;
     flex-wrap: wrap;
+    width: 100%;
+    gap: 20px;
+    margin: auto;
 
     div {
       display: flex;
       flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
       width: 100%;
       div {
-        display: flex;
-        flex-direction: column;
-        width: 40%;
-        justify-content: start;
-        align-items: start;
+        width: 20%;
         .icon {
           color: #fe9d01;
           margin-top: 20px;
           margin-bottom: 5px;
           font-size: xx-large;
-          align-self: center;
+          width: 100%;
         }
 
         h3 {
@@ -203,7 +216,8 @@ const isMobile = computed(() => windowWidth.value < 768);
   }
 
   .secondDiv {
-    width: 90%;
+    width: 100%;
+    padding: 0px 20px;
     margin-left: auto;
     margin-right: auto;
     div {
