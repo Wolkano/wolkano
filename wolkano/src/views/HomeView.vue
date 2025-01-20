@@ -39,10 +39,7 @@ const isMobile = computed(() => windowWidth.value < 768);
         :delay="100"
         v-if="!isMobile"
       >
-        <img
-          class="businessManImage"
-          src="../assets/—Pngtree—happy corporate business professional one_13504468.png"
-        />
+        <img class="businessManImage" src="../assets/wolkano3d.png" />
       </div>
     </div>
   </div>
@@ -131,7 +128,7 @@ const isMobile = computed(() => windowWidth.value < 768);
     }
 
     .image .businessManImage {
-      width: 800px;
+      width: 700px;
       height: auto;
     }
   }
@@ -144,7 +141,7 @@ const isMobile = computed(() => windowWidth.value < 768);
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    padding: 20px 20px;
+    padding: 20px 100px;
     align-items: center;
     flex-wrap: wrap;
     width: 100%;
@@ -157,7 +154,7 @@ const isMobile = computed(() => windowWidth.value < 768);
       justify-content: flex-start;
       width: 100%;
       div {
-        width: 20%;
+        width: 50%;
         .icon {
           color: #fe9d01;
           margin-bottom: 5px;
@@ -213,8 +210,12 @@ const isMobile = computed(() => windowWidth.value < 768);
       align-items: flex-start;
       text-align: left;
       width: 100%;
+      padding: 20px 20px;
       div {
         width: 100%;
+        div {
+          width: 100%;
+        }
         .icon {
           align-self: center;
           margin-bottom: 30px;
