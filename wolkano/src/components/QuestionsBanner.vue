@@ -20,6 +20,13 @@
   background-size: cover;
   background-position: center;
   position: relative;
+
+  h2 {
+    color: rgb(255, 255, 255, 0);
+  }
+  p {
+    color: rgb(255, 255, 255, 0);
+  }
   &::before {
     content: "";
     position: absolute;

@@ -182,6 +182,7 @@ const isSubmitting = ref(false);
 <style lang="scss" scoped>
 @import "../assets/scss/variables.scss";
 .mainDiv {
+  padding-top: 30px;
   background-color: white;
   color: black;
   .companyName {
@@ -202,7 +203,7 @@ const isSubmitting = ref(false);
     width: 50%;
     margin-left: auto;
     margin-right: auto;
-    background-color: white;
+    background-color: $offWhite;
     padding: 50px 50px;
     border-radius: 5px;
 
@@ -214,6 +215,19 @@ const isSubmitting = ref(false);
       justify-content: center;
       align-items: center;
     }
+    input {
+      color: black;
+      background-color: white;
+      width: 100%;
+      border-radius: 3px;
+      padding: 10px;
+      box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+      border: 1px solid white;
+      &:focus {
+        outline: none;
+        border: 1px solid $orange;
+      }
+    }
     .slidecontainer {
       display: flex;
       justify-content: center;
@@ -223,7 +237,7 @@ const isSubmitting = ref(false);
       input {
         accent-color: $orange;
         padding: 10px 0px;
-
+        box-shadow: 0px 0px 0px rgba(0, 0, 0, 0); // bara för att tabort box-shadow
         &::-webkit-slider-thumb {
           padding: 12px;
           cursor: pointer;
@@ -237,13 +251,7 @@ const isSubmitting = ref(false);
       color: red;
       font-style: italic;
     }
-    input {
-      color: black;
-      width: 100%;
-      border-radius: 3px;
-      padding: 5px;
-      border: 1px solid gray;
-    }
+
     div {
       display: flex;
       flex-direction: column;

@@ -97,7 +97,7 @@ const copy = computed(() => store.state.copy.works);
 }
 
 .home {
-  background-color: #f7f9fa;
+  background-color: #f0f0ee;
   h1 {
     color: #031a4a;
   }
