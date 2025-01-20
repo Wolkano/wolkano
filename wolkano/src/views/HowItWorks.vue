@@ -14,7 +14,7 @@
       </div>
 
       <div class="image">
-        <img class="businessManImage" src="https://placehold.co/600x400" />
+        <img class="businessManImage" src="../assets/vulkan.png" />
       </div>
     </div>
   </div>
@@ -97,9 +97,9 @@ const copy = computed(() => store.state.copy.works);
 }
 
 .home {
-  background-color: $offWhite2;
+  background-color: $background-color;
   h1 {
-    color: #031a4a;
+    color: white;
   }
 
   .mainDiv {
@@ -109,7 +109,7 @@ const copy = computed(() => store.state.copy.works);
     gap: 5rem;
     flex-wrap: wrap;
     flex-direction: row-reverse;
-    color: #031a4a;
+    color: white;
     padding: 100px 0px;
 
     .image {
