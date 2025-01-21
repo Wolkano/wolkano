@@ -116,9 +116,7 @@ import { useRoute } from "vue-router";
 const route = useRoute();
 const windowWidth = ref(window.innerWidth);
 const isMobile = computed(() => windowWidth.value < 768);
-const isLightBackground = computed(
-  () => route.path === "/about" || route.path === "/works"
-);
+const isLightBackground = computed(() => route.path === "/about");
 
 const isMenuOpen = ref(!isMobile.value);
 const toggleMenu = () => {
