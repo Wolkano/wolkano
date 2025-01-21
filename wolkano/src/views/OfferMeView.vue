@@ -55,7 +55,31 @@
         </div>
       </div>
       <div class="row secondRow">
-        <InfoTextSection />
+        <svg
+          class="lavaUp"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1440 320"
+        >
+          <path
+            fill="#fe9d01"
+            fill-opacity="1"
+            d="M0,96L15,133.3C30,171,60,245,90,261.3C120,277,150,235,180,218.7C210,203,240,213,270,186.7C300,160,330,96,360,101.3C390,107,420,181,450,218.7C480,256,510,256,540,229.3C570,203,600,149,630,154.7C660,160,690,224,720,229.3C750,235,780,181,810,144C840,107,870,85,900,69.3C930,53,960,43,990,53.3C1020,64,1050,96,1080,101.3C1110,107,1140,85,1170,64C1200,43,1230,21,1260,53.3C1290,85,1320,171,1350,202.7C1380,235,1410,213,1425,202.7L1440,192L1440,320L1425,320C1410,320,1380,320,1350,320C1320,320,1290,320,1260,320C1230,320,1200,320,1170,320C1140,320,1110,320,1080,320C1050,320,1020,320,990,320C960,320,930,320,900,320C870,320,840,320,810,320C780,320,750,320,720,320C690,320,660,320,630,320C600,320,570,320,540,320C510,320,480,320,450,320C420,320,390,320,360,320C330,320,300,320,270,320C240,320,210,320,180,320C150,320,120,320,90,320C60,320,30,320,15,320L0,320Z"
+          ></path>
+        </svg>
+        <div class="textSection">
+          <InfoTextSection />
+        </div>
+        <svg
+          class="lavaDown"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1440 320"
+        >
+          <path
+            fill="#fe9d01"
+            fill-opacity="1"
+            d="M0,128L15,144C30,160,60,192,90,192C120,192,150,160,180,133.3C210,107,240,85,270,101.3C300,117,330,171,360,176C390,181,420,139,450,106.7C480,75,510,53,540,42.7C570,32,600,32,630,58.7C660,85,690,139,720,181.3C750,224,780,256,810,245.3C840,235,870,181,900,170.7C930,160,960,192,990,186.7C1020,181,1050,139,1080,112C1110,85,1140,75,1170,69.3C1200,64,1230,64,1260,64C1290,64,1320,64,1350,69.3C1380,75,1410,85,1425,90.7L1440,96L1440,0L1425,0C1410,0,1380,0,1350,0C1320,0,1290,0,1260,0C1230,0,1200,0,1170,0C1140,0,1110,0,1080,0C1050,0,1020,0,990,0C960,0,930,0,900,0C870,0,840,0,810,0C780,0,750,0,720,0C690,0,660,0,630,0C600,0,570,0,540,0C510,0,480,0,450,0C420,0,390,0,360,0C330,0,300,0,270,0C240,0,210,0,180,0C150,0,120,0,90,0C60,0,30,0,15,0L0,0Z"
+          ></path>
+        </svg>
       </div>
       <div class="ourTeamContainer">
         <OurTeam />
@@ -130,7 +154,7 @@ import OurTeam from "@/components/OurTeam.vue";
       flex-direction: column;
       width: 40%;
       justify-content: space-between;
-      align-items: start;
+      align-items: center;
       gap: 40px;
       height: 100%;
       .infoCards {
@@ -192,9 +216,19 @@ import OurTeam from "@/components/OurTeam.vue";
     }
   }
   .secondRow {
-    background-color: #f7f9fa;
-    color: black;
-    padding: 75px 0px;
+    display: flex;
+    gap: 0;
+    padding: 0;
+    justify-content: center;
+    flex-direction: column;
+    .textSection {
+      background-color: $orange;
+      width: 100%;
+      height: 100%;
+    }
+    .lavaDown {
+      background-color: white;
+    }
   }
 }
 
@@ -265,14 +299,24 @@ import OurTeam from "@/components/OurTeam.vue";
       }
     }
     .secondRow {
-      padding: 30px 20px;
+      flex-direction: column;
+      gap: 0;
+      width: 100%;
+      padding: 0;
       .textSection {
+        padding: 20px;
         .infoText {
           text-align: left;
         }
       }
       .animation {
         display: none;
+      }
+      .lavaUp {
+        margin-bottom: -2px;
+      }
+      .lavaDown {
+        margin-top: -2px;
       }
     }
     .kontakta {
