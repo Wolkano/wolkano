@@ -4,7 +4,23 @@
       <div class="titel">
         <img src="../assets/offermewhitelogo.png" alt="OfferMe Logo white" />
       </div>
-
+      <div class="subMenu">
+        <button v-motion-pop-visible-once :duration="700" :delay="50">
+          Hur Fungerar Det?
+        </button>
+        <button
+          href="#"
+          v-scroll-to="'#offertFormDiv'"
+          v-motion-pop-visible-once
+          :duration="700"
+          :delay="50"
+        >
+          Testa en låtsas offert
+        </button>
+        <button v-motion-pop-visible-once :duration="700" :delay="50">
+          Prislista
+        </button>
+      </div>
       <div class="row firstRow">
         <div
           class="imgElement"
@@ -54,6 +70,7 @@
           </button>
         </div>
       </div>
+
       <div class="row secondRow">
         <svg
           class="lavaUp"
@@ -116,6 +133,44 @@ import OurTeam from "@/components/OurTeam.vue";
     flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
+
+    .subMenu {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-evenly;
+      box-sizing: border-box;
+      margin-top: 50px;
+      margin-bottom: 100px;
+      width: 100%;
+      padding: 40px 0px;
+
+      button {
+        position: relative;
+        width: 15%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        padding: 10px 15px;
+        gap: 10px;
+        cursor: pointer;
+        border-radius: 10px;
+        font-size: larger;
+        font-weight: 600;
+        color: black;
+
+        background-color: $offWhite2;
+        -webkit-transition: color 200ms linear, background-color 200ms linear;
+        -ms-transition: color 200ms linear, background-color 300ms linear;
+        transition: color 200ms linear, background-color 200ms linear;
+
+        &:hover {
+          background-color: rgb(0, 0, 0, 0.1);
+          color: $offWhite;
+        }
+      }
+    }
   }
   .titel {
     width: 100%;
