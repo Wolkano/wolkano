@@ -184,6 +184,7 @@ import OurTeam from "@/components/OurTeam.vue";
   .ourTeamContainer {
     padding: 50px 0;
     background-color: white;
+    z-index: 2;
   }
 
   .row {
@@ -280,15 +281,26 @@ import OurTeam from "@/components/OurTeam.vue";
       background-color: $orange;
       width: 100%;
       height: 100%;
+      z-index: 2;
     }
     .lavaDown {
       background-color: white;
+      margin-bottom: -1px;
+      path {
+        filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+      }
+    }
+    .lavaUp {
+      path {
+        filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+      }
     }
   }
 }
 
 .offertFormDiv {
   padding: 30px 0px;
+  z-index: 2;
   background-color: white;
   width: 100%;
   display: flex;
