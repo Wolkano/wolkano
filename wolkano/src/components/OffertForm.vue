@@ -6,95 +6,23 @@
       :delay="100"
       v-if="!isSubmitting"
     >
-      <h1><span class="companyName">Testa</span> denna låtsas-offert</h1>
-      <form class="form">
-        <p class="description">
-          Har du frågor om våra automatiserade offerttjänster, eller vill du
-          veta hur vi kan hjälpa ditt företag att spara tid och öka
-          effektiviteten? Vi finns här för att hjälpa dig! Fyll i formuläret
-          nedan, så återkommer vi till dig så snart som möjligt.
-        </p>
-        <div class="newRadioButtons">
-          <FormRadioButton
-            v-model:activePlan="offerInformation.activePlan"
-            :title="'Produkt 1'"
-            description="Testar"
-            :planDollars="5"
-          />
-          <FormRadioButton
-            v-model:activePlan="offerInformation.activePlan"
-            :title="'Produkt 2'"
-            description="Testar igen"
-            :planDollars="5"
-          />
-          <FormRadioButton
-            v-model:activePlan="offerInformation.activePlan"
-            :title="'Produkt 3'"
-            description="Lorem ipsum"
-            :planDollars="5"
-          />
-        </div>
-        <div class="slidecontainer">
-          <h3>Välj antal produkter</h3>
-          <p>
-            <b>{{ offerInformation.sliderValue }}</b>
-            {{ offerInformation.sliderValue === 1 ? "produkt" : "produkter" }}
-          </p>
-          <input
-            type="range"
-            min="0"
-            max="10"
-            step="1"
-            v-model="offerInformation.sliderValue"
-            class="slider"
-            id="myRange"
-          />
-        </div>
-        <div>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            placeholder="Namn*"
-            v-model="offerInformation.name"
-          />
-          <p
-            class="missingField"
-            v-if="!offerInformation.name && hasMissingFields"
-          >
-            ❌ Fyll i namn
-          </p>
-        </div>
-        <div>
-          <input
-            type="tel"
-            id="phone"
-            name="phone"
-            placeholder="Telefonnummer*"
-            v-model="offerInformation.phone"
-          />
-          <p
-            class="missingField"
-            v-if="!offerInformation.phone && hasMissingFields"
-          >
-            ❌ Fyll i telefonnummer
-          </p>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Email*"
-            v-model="offerInformation.email"
-          />
-          <p
-            class="missingField"
-            v-if="!offerInformation.email && hasMissingFields"
-          >
-            ❌ Fyll i email
-          </p>
-        </div>
-        <button @click.prevent="submit">Skicka in</button>
-      </form>
+      <h1><span class="companyName">Test</span>-offert</h1>
+      <div class="carousel-container">
+        <swiper
+          :modules="[SwiperNavigation, SwiperPagination]"
+          :slides-per-view="1"
+          navigation
+          pagination
+        >
+          <swiper-slide v-for="(form, index) in forms" :key="index">
+            <component
+              :is="form.component"
+              @slider-touch="toggleSwipe(false)"
+              @slider-release="toggleSwipe(true)"
+            />
+          </swiper-slide>
+        </swiper>
+      </div>
     </div>
 
     <div v-if="isSubmitting" class="spinner-container">
@@ -141,36 +69,34 @@
 </template>
 
 <script setup>
-import { reactive, computed, ref } from "vue";
+import { computed, ref } from "vue";
 import { useStore } from "vuex";
-import FormRadioButton from "./FormRadioButton.vue";
+import { Swiper, SwiperSlide } from "swiper/vue";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import {
+  Navigation as SwiperNavigation,
+  Pagination as SwiperPagination,
+} from "swiper/modules";
+import FormComponent from "./FormComponent.vue";
 const store = useStore();
 const success = computed(() => store.state.submittedOfferSuccessfully);
 const hasSubmitted = computed(() => store.state.hasSubmittedOffer);
-const offerInformation = reactive({
-  name: "",
-  email: "",
-  phone: "",
-  activePlan: "",
-  sliderValue: 5,
-});
-const hasMissingFields = ref(false);
+
+const allowSwipe = ref(true);
+
+const toggleSwipe = (state) => {
+  allowSwipe.value = state;
+};
+const forms = ref([
+  { name: "Form One", component: FormComponent },
+  { name: "Form Two", component: FormComponent },
+  { name: "Form Three", component: FormComponent },
+]);
 
 const scrollToTop = () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
-};
-
-const submit = async () => {
-  if (
-    !offerInformation.name ||
-    !offerInformation.email ||
-    !offerInformation.phone
-  ) {
-    hasMissingFields.value = true;
-    return;
-  }
-  isSubmitting.value = true;
-  await store.dispatch("submitOffer", offerInformation);
 };
 const reset = () => {
   isSubmitting.value = false;
@@ -185,6 +111,11 @@ const isSubmitting = ref(false);
   padding-top: 30px;
   background-color: white;
   color: black;
+  .carousel-container {
+    width: 100%;
+    max-width: 1500px;
+    margin: auto;
+  }
   .companyName {
     color: #fe9d01;
   }
@@ -193,107 +124,6 @@ const isSubmitting = ref(false);
     margin-left: auto;
     margin-right: auto;
     font-size: 18px;
-  }
-  .form {
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: $offWhite;
-    padding: 50px 50px;
-    border-radius: 5px;
-
-    .newRadioButtons {
-      color: black;
-      display: flex;
-      flex-direction: row;
-      gap: 20px;
-      justify-content: center;
-      align-items: center;
-    }
-    input {
-      color: black;
-      background-color: white;
-      width: 100%;
-      border-radius: 3px;
-      padding: 10px;
-      box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
-      border: 1px solid white;
-      &:focus {
-        outline: none;
-        border: 1px solid $orange;
-      }
-    }
-    .slidecontainer {
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      align-items: center;
-
-      input {
-        accent-color: $orange;
-        padding: 10px 0px;
-        box-shadow: 0px 0px 0px rgba(0, 0, 0, 0); // bara för att tabort box-shadow
-        &::-webkit-slider-thumb {
-          padding: 12px;
-          cursor: pointer;
-        }
-      }
-      p {
-        align-self: center !important;
-      }
-    }
-    .missingField {
-      color: red;
-      font-style: italic;
-    }
-
-    div {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      width: 100%;
-      gap: 20px;
-      input {
-        color: black;
-        width: 100%;
-        border-radius: 3px;
-        padding: 5px;
-      }
-      p {
-        margin-top: 5px;
-        margin-bottom: 5px;
-        align-self: flex-start;
-      }
-    }
-    .infoDiv {
-      flex-direction: column;
-      width: 100%;
-      textarea {
-        color: black;
-        border-radius: 3px;
-        padding: 5px;
-        border: 1px solid gray;
-      }
-    }
-    button {
-      background-color: $orange;
-      color: white;
-      padding: 10px 30px;
-      border-radius: 5px;
-      -webkit-transition: background-color 200ms linear;
-      -ms-transition: background-color 200ms linear;
-      transition: background-color 200ms linear;
-      font-weight: 600;
-      &:hover {
-        background-color: #cf8102;
-        color: white;
-      }
-    }
   }
 
   .spinner-container {
@@ -426,6 +256,11 @@ const isSubmitting = ref(false);
 
 @media (max-width: 768px) {
   .mainDiv {
+    .carousel-container {
+      width: 100%;
+      max-width: 400px;
+      margin: auto;
+    }
     h1 {
       font-size: $font-size-mobile-h1;
     }
