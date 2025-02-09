@@ -2,12 +2,12 @@
   <div class="offerMe">
     <div class="body">
       <div class="titel">
-        <img src="../assets/offermewhitelogo.png" alt="OfferMe Logo white" />
+        <img src="../assets/Newestlogo.png" alt="OfferMe Logo white" />
       </div>
       <div class="subMenu">
-        <button v-motion-pop-visible-once :duration="700" :delay="50">
+        <router-link v-motion-pop-visible-once :duration="700" :delay="50">
           Hur Fungerar Det?
-        </button>
+        </router-link>
         <button
           href="#"
           v-scroll-to="'#offertFormDiv'"
@@ -78,7 +78,7 @@
           viewBox="0 0 1440 320"
         >
           <path
-            fill="#fe9d01"
+            fill="#ff5500"
             fill-opacity="1"
             d="M0,192L48,160C96,128,192,64,288,80C384,96,480,192,576,213.3C672,235,768,181,864,149.3C960,117,1056,107,1152,117.3C1248,128,1344,160,1392,176L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
           ></path>
@@ -92,7 +92,7 @@
           viewBox="0 0 1440 320"
         >
           <path
-            fill="#fe9d01"
+            fill="#ff5500"
             fill-opacity="1"
             d="M0,256L48,229.3C96,203,192,149,288,138.7C384,128,480,160,576,197.3C672,235,768,277,864,256C960,235,1056,149,1152,133.3C1248,117,1344,171,1392,197.3L1440,224L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
           ></path>
@@ -126,7 +126,7 @@ import OurTeam from "@/components/OurTeam.vue";
 @import "../assets/scss/variables.scss";
 
 .offerMe {
-  background-color: $background-color;
+  background-color: $primary;
 
   .body {
     display: flex;
@@ -183,7 +183,7 @@ import OurTeam from "@/components/OurTeam.vue";
 
   .ourTeamContainer {
     padding: 50px 0;
-    background-color: white;
+    background-color: $secondary;
     z-index: 2;
   }
 
@@ -222,7 +222,7 @@ import OurTeam from "@/components/OurTeam.vue";
           justify-content: space-between;
           display: flex;
           flex-direction: column;
-          background-color: white;
+          background-color: $secondary;
           color: black;
           width: 50%;
           border-radius: 10px;
@@ -257,7 +257,7 @@ import OurTeam from "@/components/OurTeam.vue";
         width: 80%;
       }
       h2 {
-        color: #fe9d01;
+        color: $detail;
       }
     }
   }
@@ -278,13 +278,13 @@ import OurTeam from "@/components/OurTeam.vue";
     justify-content: center;
     flex-direction: column;
     .textSection {
-      background-color: $orange;
+      background-color: $detail;
       width: 100%;
       height: 100%;
       z-index: 2;
     }
     .lavaDown {
-      background-color: white;
+      background-color: $secondary;
       margin-bottom: -1px;
       path {
         filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
@@ -301,7 +301,7 @@ import OurTeam from "@/components/OurTeam.vue";
 .offertFormDiv {
   padding: 30px 0px;
   z-index: 2;
-  background-color: white;
+  background-color: $secondary;
   width: 100%;
   display: flex;
   justify-content: center;

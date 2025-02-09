@@ -146,7 +146,7 @@ const isSubmitting = ref(false);
   }
   input {
     color: black;
-    background-color: white;
+    background-color: $secondary;
     width: 100%;
     border-radius: 3px;
     padding: 10px;
@@ -154,7 +154,7 @@ const isSubmitting = ref(false);
     border: 1px solid white;
     &:focus {
       outline: none;
-      border: 1px solid $orange;
+      border: 1px solid $detail;
     }
   }
   .slidecontainer {
@@ -164,7 +164,7 @@ const isSubmitting = ref(false);
     align-items: center;
 
     input {
-      accent-color: $orange;
+      accent-color: $detail;
       padding: 10px 0px;
       box-shadow: 0px 0px 0px rgba(0, 0, 0, 0); // bara för att tabort box-shadow
       &::-webkit-slider-thumb {
@@ -210,7 +210,7 @@ const isSubmitting = ref(false);
     }
   }
   button {
-    background-color: $orange;
+    background-color: $detail;
     color: white;
     padding: 10px 30px;
     border-radius: 5px;
@@ -219,7 +219,7 @@ const isSubmitting = ref(false);
     transition: background-color 200ms linear;
     font-weight: 600;
     &:hover {
-      background-color: #cf8102;
+      background-color: $darkDetail;
       color: white;
     }
   }

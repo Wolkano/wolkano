@@ -6,8 +6,8 @@
           <img
             :src="
               isLightBackground
-                ? require('../assets/newLogo.png')
-                : require('../assets/newLogoWhite.png')
+                ? require('../assets/Newestlogo.png')
+                : require('../assets/Newestlogo.png')
             "
             class="logo"
           />
@@ -178,13 +178,13 @@ const toggleMenu = () => {
       text-decoration: none;
 
       p {
-        color: #fe9d01 !important;
+        color: $detail !important;
       }
     }
 
     .router-link-exact-active {
       p {
-        color: #fe9d01 !important;
+        color: $detail !important;
       }
     }
 
@@ -259,7 +259,7 @@ const toggleMenu = () => {
             padding-right: 5px;
             font-size: 14px;
             font-weight: 300;
-            border-top: 3px solid #fe9d01;
+            border-top: 3px solid $detail;
           }
 
           &:hover {

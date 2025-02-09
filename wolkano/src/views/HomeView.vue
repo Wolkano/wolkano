@@ -93,7 +93,7 @@ const isMobile = computed(() => windowWidth.value < 768);
 @import "../assets/scss/variables.scss";
 
 .home {
-  background: $background-color;
+  background: $primary;
   .mainDiv {
     display: flex;
     justify-content: center;
@@ -113,7 +113,7 @@ const isMobile = computed(() => windowWidth.value < 768);
         font-size: 24px;
 
         .company_name {
-          color: #fe9d01;
+          color: $detail;
           font-weight: 800;
         }
       }
@@ -135,7 +135,7 @@ const isMobile = computed(() => windowWidth.value < 768);
 }
 
 .secondDiv {
-  background-color: #f7f9fa;
+  background-color: $secondary;
   padding: 30px 0px;
   div {
     display: flex;

@@ -109,7 +109,7 @@ const isSubmitting = ref(false);
 @import "../assets/scss/variables.scss";
 .mainDiv {
   padding-top: 30px;
-  background-color: white;
+  background-color: $secondary;
   color: black;
   .carousel-container {
     width: 100%;
@@ -117,7 +117,7 @@ const isSubmitting = ref(false);
     margin: auto;
   }
   .companyName {
-    color: #fe9d01;
+    color: $detail;
   }
   .description {
     width: 100%;
@@ -142,7 +142,7 @@ const isSubmitting = ref(false);
   .spinner {
     margin-bottom: 25px;
     border: 5px solid rgba(255, 255, 255, 0.2);
-    border-top: 5px solid #fe9d01;
+    border-top: 5px solid $detail;
     border-radius: 50%;
     width: 50px;
     height: 50px;
@@ -168,7 +168,7 @@ const isSubmitting = ref(false);
   align-items: center;
   padding: 0px 20px;
   h1 {
-    color: #fe9d01;
+    color: $detail;
   }
   .icon {
     font-size: 80px;
@@ -228,7 +228,7 @@ const isSubmitting = ref(false);
   align-items: center;
   padding: 0px 20px;
   h1 {
-    color: #fe9d01;
+    color: $detail;
   }
   .icon {
     font-size: 80px;
@@ -238,7 +238,7 @@ const isSubmitting = ref(false);
     font-size: larger;
   }
   button {
-    background-color: #fe9d01;
+    background-color: $detail;
     color: white;
     padding: 5px 15px;
     border-radius: 5px;
@@ -248,7 +248,7 @@ const isSubmitting = ref(false);
     margin-top: 25px;
     font-weight: 600;
     &:hover {
-      background-color: #cf8102;
+      background-color: $darkDetail;
       color: white;
     }
   }

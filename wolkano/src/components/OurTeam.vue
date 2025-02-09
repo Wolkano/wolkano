@@ -133,7 +133,7 @@
 .mainDiv {
   color: black;
   h2 {
-    color: $orange;
+    color: $detail;
   }
   .contactGrid {
     color: black;
@@ -148,7 +148,7 @@
       display: flex;
       flex-direction: column;
       .role {
-        color: $orange;
+        color: $detail;
       }
       img {
         max-height: 300px;

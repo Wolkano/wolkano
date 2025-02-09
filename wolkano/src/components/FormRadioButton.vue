@@ -71,7 +71,7 @@ const updateActivePlan = () => {
 @import "../assets/scss/variables.scss";
 .plan-card {
   width: 12rem;
-  background-color: white;
+  background-color: $secondary;
   border-radius: 0.5rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 1.5rem;
@@ -81,14 +81,14 @@ const updateActivePlan = () => {
   text-align: left;
 
   &--active {
-    background-color: #fbe4c0;
-    box-shadow: 0 0 0 2px $orange;
+    background-color: $lightDetail;
+    box-shadow: 0 0 0 2px $detail;
   }
 
   &:hover,
   &:focus {
-    background-color: #fbe4c0;
-    box-shadow: 0 0 0 2px $orange;
+    background-color: $lightDetail;
+    box-shadow: 0 0 0 2px $detail;
   }
 
   &:focus {

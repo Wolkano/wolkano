@@ -147,6 +147,9 @@ const copy = computed(() => store.state.copy.works);
           font-weight: 600;
           min-width: 100px;
           text-align: center;
+          &:hover {
+            background-color: $darkOrange;
+          }
         }
       }
     }

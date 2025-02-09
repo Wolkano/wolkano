@@ -27,7 +27,8 @@
 .footer {
   padding: 15px 0px;
   width: 100%;
-  background-color: #3d3b30;
+  background-color: $detail;
+  //background-color: #3d3b30;
   min-height: 130px;
   display: flex;
   justify-content: center;

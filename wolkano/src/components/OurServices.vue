@@ -65,7 +65,7 @@
 @import "../assets/scss/variables.scss";
 
 .mainDiv {
-  background-color: #f7f9fa;
+  background-color: $secondary;
   padding: 100px 300px;
   color: black;
   .headingAndCards {
@@ -86,7 +86,7 @@
       flex-direction: row;
       gap: 75px;
       .serviceCard {
-        background-color: white;
+        background-color: $offWhite;
         flex: 1 1 0px;
         width: 0;
         display: flex;
@@ -122,24 +122,24 @@
       border-radius: 3px;
     }
     .primaryButton {
-      background-color: $orange;
-      border-color: $orange;
+      background-color: $detail;
+      border-color: $detail;
       border-width: 2px;
       color: #f7f9fa;
       &:hover {
-        background-color: #cf8102;
-        border-color: #cf8102;
+        background-color: $darkDetail;
+        border-color: $darkDetail;
       }
     }
 
     .secondaryButton {
-      color: $orange;
+      color: $detail;
       background-color: #f7f9fa;
-      border-color: $orange;
+      border-color: $detail;
       border-width: 2px;
       &:hover {
-        background-color: #cf8102;
-        border-color: #cf8102;
+        background-color: $darkDetail;
+        border-color: $darkDetail;
         color: #f7f9fa;
       }
     }
