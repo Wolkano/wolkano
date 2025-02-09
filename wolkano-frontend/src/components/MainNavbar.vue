@@ -3,7 +3,11 @@
     <div class="navbar">
       <div class="first flex items-center justify-center">
         <router-link to="/">
-          <img src="../assets/wolkano-hq-logo.png" class="logo" />
+          <img
+            src="../assets/wolkano-hq-logo.png"
+            class="logo"
+            alt="Wolkano HQ logga med 'Wolkano' i orange text på vit bakgrund och 'HQ' i vit text på orange bakgrund"
+          />
         </router-link>
 
         <!--

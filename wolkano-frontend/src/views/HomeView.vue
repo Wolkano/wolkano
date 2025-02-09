@@ -39,7 +39,11 @@ const isMobile = computed(() => windowWidth.value < 768);
         :delay="100"
         v-if="!isMobile"
       >
-        <img class="businessManImage" src="../assets/wolkano3d.png" />
+        <img
+          class="businessManImage"
+          src="../assets/wolkano3d.png"
+          alt="Svart vulkan med metalliska detaljer och röd lava som rinner ner för sidorna"
+        />
       </div>
     </div>
   </div>

@@ -1,7 +1,11 @@
 <template>
   <div class="footer">
     <div>
-      <img class="logo" src="../assets/wolkano-hq-logo.png" />
+      <img
+        class="logo"
+        src="../assets/wolkano-hq-logo.png"
+        alt="Wolkano HQ logga med 'Wolkano' i orange text på vit bakgrund och 'HQ' i vit text på orange bakgrund"
+      />
       <p class="information">
         Wolkano erbjuder smarta och effektiva lösningar för automatiserade
         offerter som hjälper företag att spara tid och öka lönsamheten. Med

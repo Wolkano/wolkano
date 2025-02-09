@@ -14,7 +14,11 @@
       </div>
 
       <div class="image">
-        <img class="businessManImage" src="../assets/vulkan.png" />
+        <img
+          class="businessManImage"
+          src="../assets/vulkan.png"
+          alt="3D-vulkan som spottar papper med text"
+        />
       </div>
     </div>
   </div>

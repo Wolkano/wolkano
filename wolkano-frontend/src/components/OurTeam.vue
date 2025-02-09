@@ -10,7 +10,10 @@
         :duration="500"
         :delay="100"
       >
-        <img src="../assets/gabriel.png" />
+        <img
+          src="../assets/gabriel.png"
+          alt="Porträtt av Gabriel Holmkvist med kort brunt hår och ett neutralt uttryck"
+        />
         <h3>Gabriel Holmkvist</h3>
         <p class="role">Webbutvecklare</p>
         <p>
@@ -42,7 +45,10 @@
         :duration="500"
         :delay="300"
       >
-        <img src="../assets/henrik.png" />
+        <img
+          src="../assets/henrik.png"
+          alt="Porträtt av Henrik Bengtsson med kort blont hår och ett neutralt uttryck"
+        />
         <h3>Henrik Bengtsson</h3>
         <p class="role">VD</p>
         <p>"Satsar man 100% får man 200% tillbaka" - Gabriel Holmkvist</p>
@@ -69,7 +75,10 @@
         :duration="500"
         :delay="500"
       >
-        <img src="../assets/magnus.png" />
+        <img
+          src="../assets/magnus.png"
+          alt="Porträtt av Magnus Bengtsson med kort blont hår och ett neutralt uttryck"
+        />
         <h3>Magnus Bengtsson</h3>
         <p class="role">Back-end utvecklare</p>
         <p>Studerar Webbutveckling på Karlstad universitet.</p>
@@ -98,7 +107,10 @@
         :duration="500"
         :delay="700"
       >
-        <img src="../assets/rozbeh.png" />
+        <img
+          src="../assets/rozbeh.png"
+          alt="Porträtt av Rozbeh Kazemi med kort svart hår och ett leende"
+        />
         <h3>Rozbeh Kazemi</h3>
         <p class="role">Försäljare</p>
         <p>

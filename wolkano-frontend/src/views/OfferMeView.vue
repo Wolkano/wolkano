@@ -2,7 +2,10 @@
   <div class="offerMe">
     <div class="body">
       <div class="titel">
-        <img src="../assets/Newestlogo.png" alt="OfferMe Logo white" />
+        <img
+          src="../assets/Newestlogo.png"
+          alt="OfferMe logga med 'Offer' i orange text på vit bakgrund och 'Me' i vit text på orange bakgrund"
+        />
       </div>
       <div class="subMenu" style="display: none">
         <router-link
@@ -42,6 +45,7 @@
         >
           <img
             src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=1955&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="Laptop på ett bord med en webbläsare som visar texten 'I design and develop experiences that make people's lives simple'"
           />
         </div>
         <div
