@@ -126,7 +126,7 @@ const copy = computed(() => store.state.copy.works);
       flex-direction: column;
       gap: 20px;
       h2 {
-        color: $detail;
+        color: $secondary;
       }
 
       p {

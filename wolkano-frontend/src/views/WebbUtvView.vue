@@ -94,10 +94,13 @@
   background-image: url("../assets/placeholderbild.jpg");
   background-size: cover;
   background-position: center;
-  height: 75vh;
-  padding-top: 300px;
+  height: 60vh;
+  //padding-top: 100px;
   overflow: hidden;
   z-index: -5;
+  p {
+    display: none;
+  }
 
   &::before {
     content: "";
@@ -258,7 +261,11 @@
 @media (max-width: 768px) {
   .banner {
     height: 50vh;
-    padding-top: 250px;
+    padding-top: 100px;
+
+    p {
+      display: none;
+    }
   }
   .lavaUp {
     margin-top: -100px;

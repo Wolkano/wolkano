@@ -56,8 +56,8 @@
       </div>
     </div>
     <div class="buttons">
-      <button class="primaryButton">Läs mer</button>
-      <button class="secondaryButton">Anmäl dig</button>
+      <router-link class="primaryButton" to="/works">Läs mer</router-link>
+      <router-link class="secondaryButton" to="/Form">Kontakta oss</router-link>
     </div>
   </div>
 </template>
@@ -116,16 +116,15 @@
     flex-direction: row;
     justify-content: first baseline;
     gap: 30px;
-    button {
-      padding: 10px 20px;
 
-      border-radius: 3px;
-    }
     .primaryButton {
       background-color: $detail;
       border-color: $detail;
       border-width: 2px;
       color: #f7f9fa;
+      padding: 10px 20px;
+
+      border-radius: 3px;
       &:hover {
         background-color: $darkDetail;
         border-color: $darkDetail;
@@ -137,6 +136,9 @@
       background-color: #f7f9fa;
       border-color: $detail;
       border-width: 2px;
+      padding: 10px 20px;
+
+      border-radius: 3px;
       &:hover {
         background-color: $darkDetail;
         border-color: $darkDetail;

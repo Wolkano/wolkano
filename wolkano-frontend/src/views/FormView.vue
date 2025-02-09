@@ -20,8 +20,11 @@
         till dig så snart som möjligt.
       </p>
       <p class="mail">
-        Kontakta oss på:
-        <button class="email" @click="copyToClipboard">info@wolkano.se</button>
+        Kontakta oss på: <a href="mailto:info@wolkano.se">info@wolkano.se</a>
+        <br />
+        <button class="email" id="email" @click="copyToClipboard">
+          Kopiera E-post
+        </button>
       </p>
     </div>
   </div>
@@ -178,6 +181,7 @@ import OurTeam from "@/components/OurTeam.vue";
 // const isSubmitting = ref(false);
 const email = ref("info@wolkano.se");
 const copied = ref(false);
+
 const copyToClipboard = async () => {
   try {
     await navigator.clipboard.writeText(email.value);
@@ -219,8 +223,9 @@ const copyToClipboard = async () => {
   .kontaktaH {
     background-color: $secondary;
     border-radius: 5px;
-    width: 50%;
-    padding: 20px;
+    width: 40%;
+    padding-top: 20px;
+    padding-bottom: 20px;
     h1 {
       color: $detail;
     }
@@ -229,11 +234,27 @@ const copyToClipboard = async () => {
       margin-left: auto;
       margin-right: auto;
       font-size: 18px;
+      padding-bottom: 20px;
     }
     .mail {
-      button {
+      a {
         color: $detail;
         text-decoration: underline;
+        &:hover {
+          color: $darkDetail;
+        }
+      }
+      .email {
+        margin-top: 10px;
+        background-color: $detail;
+        color: $secondary;
+        border-radius: 5px;
+        font-weight: 600;
+        padding: 5px;
+
+        &:hover {
+          background-color: $darkDetail;
+        }
       }
     }
   }
@@ -248,7 +269,11 @@ const copyToClipboard = async () => {
     h1 {
       font-size: $font-size-mobile-h1;
     }
-    .form {
+    .kontaktaH {
+      width: 90%;
+    }
+
+    /*.form {
       width: 90%;
       padding: 15px;
       div {
@@ -288,6 +313,7 @@ const copyToClipboard = async () => {
     p {
       font-size: large;
     }
+  }*/
   }
 }
 </style>
