@@ -89,7 +89,7 @@ const copy = computed(() => store.state.copy.about);
     gap: 5rem;
     flex-wrap: wrap;
     flex-direction: row-reverse;
-    color: $pr;
+    color: $primary;
 
     .intro {
       text-align: left;
