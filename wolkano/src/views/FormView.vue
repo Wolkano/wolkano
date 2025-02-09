@@ -1,5 +1,5 @@
 <template>
-  <div class="mainDiv">
+  <div class="mainDiv1">
     <div class="popupDiv">
       <div
         v-if="copied"
@@ -28,6 +28,7 @@
   <div class="ourTeamContainer">
     <OurTeam />
   </div>
+  <!--
   <div class="mainDiv" style="display: none" v-if="!hasSubmitted">
     <div
       v-motion-fade-visible-once
@@ -114,8 +115,9 @@
       <p>Skickar in...</p>
     </div>
   </div>
+  -->
 
-  <div class="success" style="display: none" v-if="hasSubmitted && success">
+  <!-- <div class="success" style="display: none" v-if="hasSubmitted && success">
     <div v-motion-slide-left :duration="1500" :delay="100" class="icon">📨</div>
     <div v-motion-fade-visible-once :duration="1000" :delay="100">
       <h1>Tack för din inskickade information!</h1>
@@ -136,44 +138,44 @@
       <p>Vänligen försök igen senare</p>
       <button @click.prevent="reset">Försök igen</button>
     </div>
-  </div>
+  </div> -->
 </template>
 
 <script setup>
-import { reactive, computed, ref } from "vue";
-import { useStore } from "vuex";
+import { ref } from "vue";
+// import { useStore } from "vuex";
 import OurTeam from "@/components/OurTeam.vue";
-const store = useStore();
-const success = computed(() => store.state.submittedSuccessfully);
-const hasSubmitted = computed(() => store.state.hasSubmitted);
-const userInformation = reactive({
-  firstName: "",
-  email: "",
-  phone: "",
-  info: "",
-  company: "",
-});
-const hasMissingFields = ref(false);
+// const store = useStore();
+// const success = computed(() => store.state.submittedSuccessfully);
+// const hasSubmitted = computed(() => store.state.hasSubmitted);
+// const userInformation = reactive({
+//   firstName: "",
+//   email: "",
+//   phone: "",
+//   info: "",
+//   company: "",
+// });
+// const hasMissingFields = ref(false);
 
-const submit = async () => {
-  if (
-    !userInformation.name ||
-    !userInformation.email ||
-    !userInformation.phone
-  ) {
-    hasMissingFields.value = true;
-    console.log("test");
-    return;
-  }
-  isSubmitting.value = true;
-  await store.dispatch("submitToNotion", userInformation);
-  window.scrollTo({ top: 0, behavior: "smooth" });
-};
-const reset = () => {
-  isSubmitting.value = false;
-  store.commit("setHasSubmitted", false);
-};
-const isSubmitting = ref(false);
+// const submit = async () => {
+//   if (
+//     !userInformation.name ||
+//     !userInformation.email ||
+//     !userInformation.phone
+//   ) {
+//     hasMissingFields.value = true;
+//     console.log("test");
+//     return;
+//   }
+//   isSubmitting.value = true;
+//   await store.dispatch("submitToNotion", userInformation);
+//   window.scrollTo({ top: 0, behavior: "smooth" });
+// };
+// const reset = () => {
+//   isSubmitting.value = false;
+//   store.commit("setHasSubmitted", false);
+// };
+// const isSubmitting = ref(false);
 const email = ref("info@wolkano.se");
 const copied = ref(false);
 const copyToClipboard = async () => {
@@ -194,190 +196,7 @@ const copyToClipboard = async () => {
 <style lang="scss" scoped>
 @import "../assets/scss/variables.scss";
 
-.mainDiv {
-  background-color: $background-color;
-  padding-bottom: 100px;
-  padding-top: 120px;
-  color: black;
-  h1 {
-    color: white;
-  }
-  .companyName {
-    color: #fe9d01;
-  }
-  .description {
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 18px;
-  }
-  .form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: #f0f0ee;
-    padding: 50px 30px;
-    border-radius: 5px;
-    color: black;
-    .missingField {
-      color: red;
-      font-style: italic;
-    }
-    input {
-      color: black;
-      background-color: white;
-      width: 100%;
-      border-radius: 3px;
-      padding: 10px;
-      box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
-      border: 1px solid white;
-      &:focus {
-        outline: none;
-        border: 1px solid $orange;
-      }
-    }
-    div {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      width: 100%;
-      gap: 20px;
-      input {
-        color: black;
-        width: 100%;
-        border-radius: 3px;
-        padding: 10px;
-      }
-      p {
-        margin-top: 5px;
-        margin-bottom: 5px;
-        align-self: flex-start;
-      }
-    }
-    .infoDiv {
-      flex-direction: column;
-      width: 100%;
-      textarea {
-        color: black;
-        border-radius: 3px;
-        padding: 5px;
-        box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
-        border: 1px solid white;
-        &:focus {
-          outline: none;
-          border: 1px solid $orange;
-        }
-      }
-    }
-    button {
-      background-color: $orange;
-      color: white;
-      padding: 5px 15px;
-      border-radius: 5px;
-      -webkit-transition: background-color 200ms linear;
-      -ms-transition: background-color 200ms linear;
-      transition: background-color 200ms linear;
-      font-weight: 600;
-      &:hover {
-        background-color: white;
-        color: $orange;
-      }
-    }
-  }
-
-  .spinner-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    color: white;
-    padding-bottom: 100px;
-    .icon {
-      font-size: 50px;
-    }
-  }
-
-  .spinner {
-    margin-bottom: 25px;
-    border: 5px solid rgba(255, 255, 255, 0.2);
-    border-top: 5px solid #fe9d01;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    animation: spin 1s linear infinite;
-  }
-
-  @keyframes spin {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-}
-
-.success {
-  background-color: $background-color;
-  padding-bottom: 100px;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 0px 20px;
-  h1 {
-    color: #fe9d01;
-  }
-  .icon {
-    font-size: 80px;
-  }
-
-  p {
-    font-size: larger;
-  }
-}
-.failure {
-  background-color: $background-color;
-  padding-bottom: 100px;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 0px 20px;
-  h1 {
-    color: #fe9d01;
-  }
-  .icon {
-    font-size: 80px;
-  }
-
-  p {
-    font-size: larger;
-  }
-  button {
-    background-color: #fe9d01;
-    color: white;
-    padding: 5px 15px;
-    border-radius: 5px;
-    -webkit-transition: background-color 200ms linear;
-    -ms-transition: background-color 200ms linear;
-    transition: background-color 200ms linear;
-    margin-top: 25px;
-    font-weight: 600;
-    &:hover {
-      background-color: #cf8102;
-      color: white;
-    }
-  }
-}
-.mainDiv {
+.mainDiv1 {
   background-color: $primary;
   padding-top: 150px;
   color: black;
@@ -385,13 +204,12 @@ const copyToClipboard = async () => {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding-bottom: 100px;
   .popup {
     background-color: $secondary;
     width: 100%;
-
     border-radius: 5px;
     margin: 10px;
-
     z-index: 10;
   }
   .popupDiv {
@@ -421,13 +239,12 @@ const copyToClipboard = async () => {
   }
 }
 .ourTeamContainer {
-  //padding: 50px 0;
+  padding-top: 50px;
   background-color: $secondary;
-  z-index: 1;
 }
 
 @media (max-width: 768px) {
-  .mainDiv {
+  .mainDiv1 {
     h1 {
       font-size: $font-size-mobile-h1;
     }
