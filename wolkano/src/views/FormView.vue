@@ -1,5 +1,17 @@
 <template>
-  <div class="mainDiv" v-if="!hasSubmitted">
+  <div class="mainDiv">
+    <div class="kontaktaH">
+      <h1>Kontakta wolkano</h1>
+      <p class="description">
+        Har du frågor om våra automatiserade offerttjänster, eller vill du veta
+        hur vi kan hjälpa ditt företag att spara tid och öka effektiviteten? Vi
+        finns här för att hjälpa dig! Fyll i formuläret nedan, så återkommer vi
+        till dig så snart som möjligt.
+      </p>
+      <p class="mail">Kontakta oss på: henrik@wolkano.se</p>
+    </div>
+  </div>
+  <div class="mainDiv" style="display: none" v-if="!hasSubmitted">
     <div
       v-motion-fade-visible-once
       :duration="500"
@@ -86,7 +98,7 @@
     </div>
   </div>
 
-  <div class="success" v-if="hasSubmitted && success">
+  <div class="success" style="display: none" v-if="hasSubmitted && success">
     <div v-motion-slide-left :duration="1500" :delay="100" class="icon">📨</div>
     <div v-motion-fade-visible-once :duration="1000" :delay="100">
       <h1>Tack för din inskickade information!</h1>
@@ -98,7 +110,7 @@
     </div>
   </div>
 
-  <div class="failure" v-if="hasSubmitted && !success">
+  <div class="failure" style="display: none" v-if="hasSubmitted && !success">
     <div v-motion-pop-visible-once :duration="1500" :delay="100" class="icon">
       ❌
     </div>
@@ -148,6 +160,7 @@ const isSubmitting = ref(false);
 
 <style lang="scss" scoped>
 @import "../assets/scss/variables.scss";
+
 .mainDiv {
   background-color: $background-color;
   padding-bottom: 100px;
@@ -328,6 +341,32 @@ const isSubmitting = ref(false);
     &:hover {
       background-color: #cf8102;
       color: white;
+    }
+  }
+}
+.mainDiv {
+  background-color: $primary;
+
+  padding-top: 150px;
+  color: black;
+  display: flex;
+  justify-content: center;
+  .kontaktaH {
+    background-color: $secondary;
+    border-radius: 5px;
+    width: 55%;
+    padding: 20px;
+    h1 {
+      color: $detail;
+    }
+    .description {
+      width: 50%;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 18px;
+    }
+    .mail {
+      color: $detail;
     }
   }
 }

@@ -97,7 +97,7 @@ const copy = computed(() => store.state.copy.works);
 }
 
 .home {
-  background-color: $background-color;
+  background-color: $primary;
   h1 {
     color: white;
   }
@@ -126,14 +126,14 @@ const copy = computed(() => store.state.copy.works);
       flex-direction: column;
       gap: 20px;
       h2 {
-        color: $orange;
+        color: $detail;
       }
 
       p {
         font-size: 24px;
 
         .company_name {
-          color: #fe9d01;
+          color: $detail;
           font-weight: 800;
         }
       }
@@ -142,13 +142,13 @@ const copy = computed(() => store.state.copy.works);
         display: flex;
         gap: 50px;
         .button {
-          background-color: #fe9d01;
+          background-color: $detail;
           color: white;
           font-weight: 600;
           min-width: 100px;
           text-align: center;
           &:hover {
-            background-color: $darkOrange;
+            background-color: $darkDetail;
           }
         }
       }
@@ -171,7 +171,7 @@ const copy = computed(() => store.state.copy.works);
     flex-wrap: wrap;
     flex-direction: row;
     color: white;
-    background: $background-color;
+    background: $primary;
     padding: 100px 0px;
     .intro {
       text-align: left;

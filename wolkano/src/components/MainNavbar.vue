@@ -6,8 +6,8 @@
           <img
             :src="
               isLightBackground
-                ? require('../assets/Newestlogo.png')
-                : require('../assets/Newestlogo.png')
+                ? require('../assets/wolkano-hq-logo.png')
+                : require('../assets/wolkano-hq-logo.png')
             "
             class="logo"
           />

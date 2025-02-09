@@ -1,7 +1,7 @@
 <template>
   <div class="footer">
     <div>
-      <img class="logo" src="../assets/newLogoWhite.png" />
+      <img class="logo" src="../assets/wolkano-hq-logo.png" />
       <p class="information">
         Wolkano erbjuder smarta och effektiva lösningar för automatiserade
         offerter som hjälper företag att spara tid och öka lönsamheten. Med
@@ -48,18 +48,18 @@
       display: flex;
       flex-direction: row;
       a {
-        color: $orange;
+        color: $secondary;
         font-size: 40px;
       }
       p {
-        color: $orange;
+        color: $secondary;
         font-size: 40px;
       }
     }
     .subFooter {
       display: flex;
       flex-direction: row;
-      border-top: 2px solid #313026;
+      border-top: 2px solid black;
       width: 60%;
       padding-top: 20px;
     }

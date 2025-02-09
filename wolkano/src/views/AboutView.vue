@@ -79,7 +79,7 @@ const copy = computed(() => store.state.copy.about);
 @import "../assets/scss/variables.scss";
 
 .home {
-  background-color: #f7f9fa;
+  background-color: $secondary;
   padding-top: 150px;
   padding-bottom: 150px;
   .mainDiv {
@@ -89,7 +89,7 @@ const copy = computed(() => store.state.copy.about);
     gap: 5rem;
     flex-wrap: wrap;
     flex-direction: row-reverse;
-    color: #031a4a;
+    color: $pr;
 
     .intro {
       text-align: left;

@@ -4,11 +4,18 @@
       <div class="titel">
         <img src="../assets/Newestlogo.png" alt="OfferMe Logo white" />
       </div>
-      <div class="subMenu">
-        <router-link v-motion-pop-visible-once :duration="700" :delay="50">
+      <div class="subMenu" style="display: none">
+        <router-link
+          to="/works"
+          class="btns"
+          v-motion-pop-visible-once
+          :duration="700"
+          :delay="50"
+        >
           Hur Fungerar Det?
         </router-link>
         <button
+          class="btns"
           href="#"
           v-scroll-to="'#offertFormDiv'"
           v-motion-pop-visible-once
@@ -17,7 +24,12 @@
         >
           Testa en låtsas offert
         </button>
-        <button v-motion-pop-visible-once :duration="700" :delay="50">
+        <button
+          class="btns"
+          v-motion-pop-visible-once
+          :duration="700"
+          :delay="50"
+        >
           Prislista
         </button>
       </div>
@@ -65,7 +77,12 @@
               </div>
             </div>
           </div>
-          <button class="button" href="#" v-scroll-to="'#offertFormDiv'">
+          <button
+            class="button"
+            href="#"
+            v-scroll-to="'#offertFormDiv'"
+            style="display: none"
+          >
             Testa redan idag!
           </button>
         </div>
@@ -102,16 +119,13 @@
         <OurTeam />
       </div>
       <QuestionsBanner />
-      <div class="offertFormDiv" id="offertFormDiv">
+      <div class="offertFormDiv" style="display: none" id="offertFormDiv">
         <div>
           <OffertForm />
         </div>
       </div>
     </div>
   </div>
-  <!--
-    <CompanyBanner />
-    -->
 </template>
 
 <script setup>
@@ -145,7 +159,7 @@ import OurTeam from "@/components/OurTeam.vue";
       width: 100%;
       padding: 40px 0px;
 
-      button {
+      .btns {
         position: relative;
         width: 15%;
         display: flex;

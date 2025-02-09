@@ -106,7 +106,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba($background-color, 0.9);
+    background-color: rgba($primary, 0.9);
     z-index: 1;
   }
 
@@ -120,7 +120,7 @@
     font-weight: 700;
     font-size: x-large;
     .website {
-      color: $orange;
+      color: $detail;
     }
   }
 }
@@ -130,7 +130,7 @@
   width: 100%;
 }
 .webbUtv {
-  background-color: #f7f9fa;
+  background-color: $secondary;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -151,7 +151,7 @@
     p {
       font-weight: 600;
       text-transform: uppercase;
-      border-bottom: $orange solid 3px;
+      border-bottom: $detail solid 3px;
       width: fit-content;
       margin: auto;
     }
@@ -170,10 +170,10 @@
       align-items: center;
       width: 50%;
       h2 {
-        color: $orange;
+        color: $detail;
       }
       .offerMe {
-        color: $orange;
+        color: $detail;
         font-weight: 600;
       }
       p {
@@ -193,10 +193,10 @@
         .button {
           font-weight: 600;
           width: fit-content;
-          background-color: $orange;
+          background-color: $detail;
           color: white;
           &:hover {
-            background-color: $darkOrange;
+            background-color: $darkDetail;
           }
         }
       }
@@ -218,14 +218,14 @@
     .kund {
       img {
         padding: 10px;
-        background-color: $background-color;
+        background-color: $primary;
         border-radius: 10px;
         -webkit-transition: background-color 300ms linear,
           box-shadow 200ms linear;
         -ms-transition: background-color 300ms linear, box-shadow 200ms linear;
         transition: background-color 300ms linear, box-shadow 200ms linear;
         &:hover {
-          background-color: $orange !important;
+          background-color: $detail !important;
           box-shadow: 0px 3px 3px 1px rgb(0, 0, 0, 0.2);
         }
       }
@@ -250,7 +250,7 @@
     .subTitle {
       text-transform: uppercase;
       font-weight: 700;
-      color: $orange;
+      color: $detail;
     }
   }
 }
