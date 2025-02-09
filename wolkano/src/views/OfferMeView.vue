@@ -174,7 +174,7 @@ import OurTeam from "@/components/OurTeam.vue";
         font-weight: 600;
         color: black;
 
-        background-color: $offWhite2;
+        background-color: $offWhite;
         -webkit-transition: color 200ms linear, background-color 200ms linear;
         -ms-transition: color 200ms linear, background-color 300ms linear;
         transition: color 200ms linear, background-color 200ms linear;
@@ -250,7 +250,7 @@ import OurTeam from "@/components/OurTeam.vue";
             color: darkgray;
           }
           .bigP {
-            color: $orange;
+            color: $detail;
             text-transform: uppercase;
             font-weight: 700;
           }

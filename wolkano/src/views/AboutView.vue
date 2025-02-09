@@ -79,7 +79,7 @@ const copy = computed(() => store.state.copy.about);
 @import "../assets/scss/variables.scss";
 
 .home {
-  background-color: $secondary;
+  background-color: $primary;
   padding-top: 150px;
   padding-bottom: 150px;
   .mainDiv {
@@ -89,7 +89,7 @@ const copy = computed(() => store.state.copy.about);
     gap: 5rem;
     flex-wrap: wrap;
     flex-direction: row-reverse;
-    color: $primary;
+    color: $secondary;
 
     .intro {
       text-align: left;
@@ -103,7 +103,7 @@ const copy = computed(() => store.state.copy.about);
         font-size: 24px;
 
         .company_name {
-          color: #fe9d01;
+          color: $detail;
           font-weight: 800;
         }
       }
@@ -112,11 +112,14 @@ const copy = computed(() => store.state.copy.about);
         display: flex;
         gap: 50px;
         .button {
-          background-color: #fe9d01;
+          background-color: $detail;
           color: white;
           font-weight: 600;
           min-width: 100px;
           text-align: center;
+          &:hover {
+            background-color: $darkDetail;
+          }
         }
       }
     }

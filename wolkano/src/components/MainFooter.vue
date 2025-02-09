@@ -59,7 +59,7 @@
     .subFooter {
       display: flex;
       flex-direction: row;
-      border-top: 2px solid black;
+      border-top: 2px solid $primary;
       width: 60%;
       padding-top: 20px;
     }

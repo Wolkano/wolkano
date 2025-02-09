@@ -3,14 +3,7 @@
     <div class="navbar">
       <div class="first flex items-center justify-center">
         <router-link to="/">
-          <img
-            :src="
-              isLightBackground
-                ? require('../assets/wolkano-hq-logo.png')
-                : require('../assets/wolkano-hq-logo.png')
-            "
-            class="logo"
-          />
+          <img src="../assets/wolkano-hq-logo.png" class="logo" />
         </router-link>
 
         <!--
@@ -111,12 +104,9 @@
 
 <script setup>
 import { computed, ref } from "vue";
-import { useRoute } from "vue-router";
 
-const route = useRoute();
 const windowWidth = ref(window.innerWidth);
 const isMobile = computed(() => windowWidth.value < 768);
-const isLightBackground = computed(() => route.path === "/about");
 
 const isMenuOpen = ref(!isMobile.value);
 const toggleMenu = () => {

@@ -170,8 +170,8 @@ const copy = computed(() => store.state.copy.works);
     gap: 5rem;
     flex-wrap: wrap;
     flex-direction: row;
-    color: white;
-    background: $primary;
+    color: black;
+    background: $secondary;
     padding: 100px 0px;
     .intro {
       text-align: left;

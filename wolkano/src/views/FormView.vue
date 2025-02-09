@@ -1,5 +1,16 @@
 <template>
   <div class="mainDiv">
+    <div class="popupDiv">
+      <div
+        v-if="copied"
+        class="popup"
+        v-motion-pop-visible-once
+        :duration="700"
+        :delay="50"
+      >
+        E-post kopierad!
+      </div>
+    </div>
     <div class="kontaktaH">
       <h1>Kontakta wolkano</h1>
       <p class="description">
@@ -8,8 +19,14 @@
         finns här för att hjälpa dig! Fyll i formuläret nedan, så återkommer vi
         till dig så snart som möjligt.
       </p>
-      <p class="mail">Kontakta oss på: henrik@wolkano.se</p>
+      <p class="mail">
+        Kontakta oss på:
+        <button class="email" @click="copyToClipboard">info@wolkano.se</button>
+      </p>
     </div>
+  </div>
+  <div class="ourTeamContainer">
+    <OurTeam />
   </div>
   <div class="mainDiv" style="display: none" v-if="!hasSubmitted">
     <div
@@ -125,6 +142,7 @@
 <script setup>
 import { reactive, computed, ref } from "vue";
 import { useStore } from "vuex";
+import OurTeam from "@/components/OurTeam.vue";
 const store = useStore();
 const success = computed(() => store.state.submittedSuccessfully);
 const hasSubmitted = computed(() => store.state.hasSubmitted);
@@ -156,6 +174,21 @@ const reset = () => {
   store.commit("setHasSubmitted", false);
 };
 const isSubmitting = ref(false);
+const email = ref("info@wolkano.se");
+const copied = ref(false);
+const copyToClipboard = async () => {
+  try {
+    await navigator.clipboard.writeText(email.value);
+    copied.value = true;
+
+    // Återställ knappen efter 2 sekunder
+    setTimeout(() => {
+      copied.value = false;
+    }, 2000);
+  } catch (err) {
+    console.error("Fel vid kopiering:", err);
+  }
+};
 </script>
 
 <style lang="scss" scoped>
@@ -346,15 +379,29 @@ const isSubmitting = ref(false);
 }
 .mainDiv {
   background-color: $primary;
-
   padding-top: 150px;
   color: black;
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  .popup {
+    background-color: $secondary;
+    width: 100%;
+
+    border-radius: 5px;
+    margin: 10px;
+
+    z-index: 10;
+  }
+  .popupDiv {
+    height: 5vh;
+  }
+
   .kontaktaH {
     background-color: $secondary;
     border-radius: 5px;
-    width: 55%;
+    width: 50%;
     padding: 20px;
     h1 {
       color: $detail;
@@ -366,10 +413,19 @@ const isSubmitting = ref(false);
       font-size: 18px;
     }
     .mail {
-      color: $detail;
+      button {
+        color: $detail;
+        text-decoration: underline;
+      }
     }
   }
 }
+.ourTeamContainer {
+  //padding: 50px 0;
+  background-color: $secondary;
+  z-index: 1;
+}
+
 @media (max-width: 768px) {
   .mainDiv {
     h1 {
