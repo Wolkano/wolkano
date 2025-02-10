@@ -53,7 +53,7 @@
     </div>
   </div>
   <div class="home">
-    <div class="mainDiv">
+    <div class="mainDiv2">
       <div class="intro" v-motion-pop-visible-once :duration="700" :delay="100">
         <h2>Steg 2: Generera offerten automatiskt</h2>
         <p>
@@ -178,6 +178,66 @@ const copy = computed(() => store.state.copy.works);
       animation: spinAnimation 4s linear infinite;
     }
   }
+  .mainDiv2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+    color: white;
+    padding: 100px 0px;
+    .image {
+      img {
+        border-radius: 10px;
+      }
+    }
+
+    .intro {
+      text-align: left;
+      max-width: 48rem;
+      width: 30%;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      h2 {
+        color: $secondary;
+      }
+
+      p {
+        font-size: 24px;
+
+        .company_name {
+          color: $detail;
+          font-weight: 800;
+        }
+      }
+
+      .buttons {
+        display: flex;
+        gap: 50px;
+        .button {
+          background-color: $detail;
+          color: white;
+          font-weight: 600;
+          min-width: 100px;
+          text-align: center;
+          &:hover {
+            background-color: $darkDetail;
+          }
+        }
+      }
+    }
+
+    .icon {
+      width: 650px;
+      height: auto;
+      border-radius: 10px;
+      font-size: 100px;
+      display: inline-block; /* Necessary for animations */
+      animation: spinAnimation 4s linear infinite;
+    }
+  }
   .secondDiv {
     display: flex;
     justify-content: center;
@@ -235,6 +295,24 @@ const copy = computed(() => store.state.copy.works);
       text-align: left;
     }
     .mainDiv {
+      padding-left: 20px;
+      padding-right: 20px;
+      .intro {
+        width: 100%;
+        justify-content: center;
+        h2 {
+          margin-bottom: 0;
+        }
+        p {
+          font-size: 20px;
+        }
+      }
+
+      .image .businessManImage {
+        width: 100%;
+      }
+    }
+    .mainDiv2 {
       padding-left: 20px;
       padding-right: 20px;
       .intro {
