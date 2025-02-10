@@ -16,8 +16,7 @@
       <p class="description">
         Har du frågor om våra automatiserade offerttjänster, eller vill du veta
         hur vi kan hjälpa ditt företag att spara tid och öka effektiviteten? Vi
-        finns här för att hjälpa dig! Fyll i formuläret nedan, så återkommer vi
-        till dig så snart som möjligt.
+        finns här för att hjälpa dig!
       </p>
       <p class="mail">
         Kontakta oss på: <a href="mailto:info@wolkano.se">info@wolkano.se</a>
