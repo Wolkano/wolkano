@@ -1,5 +1,41 @@
 <template>
-  <div class="mainDiv" v-if="!hasSubmitted">
+  <div class="mainDiv1">
+    <div class="popupDiv">
+      <div
+        v-if="copied"
+        class="popup"
+        v-motion-pop-visible-once
+        :duration="700"
+        :delay="50"
+      >
+        E-post kopierad!
+      </div>
+    </div>
+    <div class="kontaktaH">
+      <h1>Kontakta wolkano</h1>
+      <p class="description">
+        Har du frågor om våra automatiserade offerttjänster, eller vill du veta
+        hur vi kan hjälpa ditt företag att spara tid och öka effektiviteten? Vi
+        finns här för att hjälpa dig!
+      </p>
+      <p class="mail">
+        Kontakta oss på: <a href="mailto:info@wolkano.se">info@wolkano.se</a>
+        <br />
+        <button
+          class="email"
+          id="email"
+          @click="copyToClipboard"
+          style="display: none"
+        >
+          Kopiera E-post
+        </button>
+      </p>
+    </div>
+  </div>
+  <div class="ourTeamContainer" style="display: none">
+    <OurTeam />
+  </div>
+  <div class="mainDiv" v-if="!hasSubmitted" style="display: none">
     <div
       v-motion-fade-visible-once
       :duration="500"
@@ -108,7 +144,70 @@ document.addEventListener("DOMContentLoaded", function () {
 
 <style lang="scss" scoped>
 @import "../assets/scss/variables.scss";
-.mainDiv {
+.mainDiv1 {
+  background-color: $secondary;
+  padding-top: 150px;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 100px;
+  .popup {
+    background-color: $secondary;
+    width: 100%;
+    border-radius: 5px;
+    margin: 10px;
+    z-index: 10;
+  }
+  .popupDiv {
+    height: 5vh;
+  }
+
+  .kontaktaH {
+    background-color: $secondary;
+    border-radius: 5px;
+    width: 40%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    h1 {
+      color: $detail;
+    }
+    .description {
+      width: 50%;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 18px;
+      padding-bottom: 20px;
+    }
+    .mail {
+      a {
+        color: $detail;
+        text-decoration: underline;
+        &:hover {
+          color: $darkDetail;
+        }
+      }
+      .email {
+        margin-top: 10px;
+        background-color: $detail;
+        color: $secondary;
+        border-radius: 5px;
+        font-weight: 600;
+        padding: 5px;
+
+        &:hover {
+          background-color: $darkDetail;
+        }
+      }
+    }
+  }
+}
+.ourTeamContainer {
+  padding-top: 50px;
+  background-color: $secondary;
+}
+/*.mainDiv {
   background-color: $secondary;
   padding-bottom: 100px;
   padding-top: 120px;
@@ -234,10 +333,18 @@ document.addEventListener("DOMContentLoaded", function () {
       transform: rotate(360deg);
     }
   }
-}
+}*/
 
 @media (max-width: 768px) {
-  .mainDiv {
+  .mainDiv1 {
+    h1 {
+      font-size: $font-size-mobile-h1;
+    }
+    .kontaktaH {
+      width: 90%;
+    }
+  }
+  /*.mainDiv {
     h1 {
       font-size: $font-size-mobile-h1;
     }
@@ -259,6 +366,6 @@ document.addEventListener("DOMContentLoaded", function () {
       width: 60%;
       font-weight: 600;
     }
-  }
+  }*/
 }
 </style>
