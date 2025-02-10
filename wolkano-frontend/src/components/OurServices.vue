@@ -29,7 +29,7 @@
           class="serviceCard"
           v-motion-slide-visible-once-bottom
           :duration="500"
-          :delay="300"
+          :delay="isMobile ? 100 : 300"
         >
           <p class="icon">✅</p>
           <div>
@@ -43,7 +43,7 @@
           class="serviceCard"
           v-motion-slide-visible-once-bottom
           :duration="500"
-          :delay="600"
+          :delay="isMobile ? 100 : 600"
         >
           <p class="icon">✅</p>
           <div>
@@ -61,6 +61,11 @@
     </div>
   </div>
 </template>
+<script setup>
+import { ref, computed } from "vue";
+const windowWidth = ref(window.innerWidth);
+const isMobile = computed(() => windowWidth.value < 768);
+</script>
 <style lang="scss" scoped>
 @import "../assets/scss/variables.scss";
 

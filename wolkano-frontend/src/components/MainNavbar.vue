@@ -7,19 +7,20 @@
             src="../assets/wolkano-hq-logo.png"
             class="logo"
             alt="Wolkano HQ logga med 'Wolkano' i orange text på vit bakgrund och 'HQ' i vit text på orange bakgrund"
+            v-if="!shouldHideLogo"
           />
         </router-link>
 
         <!--
         <router-link class="item" to="/works" v-if="!isMobile">
-          <p :class="{ blackText: isLightBackground }">Hur fungerar det</p>
+          <p :class="{ blackText: isFormView }">Hur fungerar det</p>
         </router-link>
         -->
         <div class="dropdown">
           <span
             v-if="!isMobile"
             class="menu-link dropdown-toggle"
-            :class="{ blackText: isLightBackground }"
+            :class="{ blackText: isFormView }"
           >
             Tjänster
             <!--&nbsp;
@@ -29,7 +30,7 @@
 
           <span v-else
             ><font-awesome-icon
-              :class="{ blackText: isLightBackground }"
+              :class="{ blackText: isFormView }"
               :icon="['fas', 'bars']"
               size="2x"
               @click="toggleMenu"
@@ -40,7 +41,7 @@
               to="/OfferMe"
               @click="toggleMenu"
             >
-              <p :class="{ blackText: isLightBackground }">
+              <p :class="{ blackText: isFormView }">
                 OfferMe<br />
                 <span v-if="!isMobile">Vår automatiserade offerttjänst</span>
               </p>
@@ -53,7 +54,7 @@
               to="/WebbUtv"
               @click="toggleMenu"
             >
-              <p :class="{ blackText: isLightBackground }">
+              <p :class="{ blackText: isFormView }">
                 Webbutveckling<br />
                 <span v-if="!isMobile"
                   >Skräddarsydda hemsidor för din framgång</span
@@ -67,14 +68,14 @@
               class="dropdown-item"
               to="/crm"
               @click="toggleMenu"
-              ><p :class="{ blackText: isLightBackground }">
+              ><p :class="{ blackText: isFormView }">
                 Vision Crm<br />
                 <span v-if="!isMobile">Vårt egna Crm-system</span>
               </p>
             </router-link>
 
             <router-link class="dropdown-item" to="/works" @click="toggleMenu">
-              <p :class="{ blackText: isLightBackground }">
+              <p :class="{ blackText: isFormView }">
                 Hur Fungerar Det?<br />
                 <span v-if="!isMobile"
                   >Så fungerar vår automatiserade offerttjänst</span
@@ -87,21 +88,19 @@
               v-if="isMobile"
               to="/about"
               @click="toggleMenu"
-              ><p :class="{ blackText: isLightBackground }">
-                Om oss
-              </p></router-link
+              ><p :class="{ blackText: isFormView }">Om oss</p></router-link
             >
             <router-link
               class="dropdown-item"
               v-if="isMobile"
               to="/form"
               @click="toggleMenu"
-              ><p :class="{ blackText: isLightBackground }">
+              ><p :class="{ blackText: isFormView }">
                 Kontakta oss
               </p></router-link
             >
             <router-link v-if="isMobile" class="dropdown-item" to="/works">
-              <p :class="{ blackText: isLightBackground }">Hur fungerar det</p>
+              <p :class="{ blackText: isFormView }">Hur fungerar det</p>
             </router-link>
             <!--
             <router-link v-if="isMobile" class="dropdown-item" to="/works">
@@ -113,12 +112,10 @@
       </div>
       <div class="second flex items-center justify-center" v-if="!isMobile">
         <router-link class="item" to="/about"
-          ><p :class="{ blackText: isLightBackground }">Om oss</p></router-link
+          ><p :class="{ blackText: isFormView }">Om oss</p></router-link
         >
         <router-link class="item" to="/form"
-          ><p :class="{ blackText: isLightBackground }">
-            Kontakta oss
-          </p></router-link
+          ><p :class="{ blackText: isFormView }">Kontakta oss</p></router-link
         >
       </div>
     </div>
@@ -127,7 +124,11 @@
 
 <script setup>
 import { computed, ref } from "vue";
+import { useRoute } from "vue-router";
 
+const route = useRoute();
+const isHomeView = computed(() => route.fullPath === "/");
+const isFormView = computed(() => route.fullPath === "/form");
 const windowWidth = ref(window.innerWidth);
 const isMobile = computed(() => windowWidth.value < 768);
 
@@ -139,13 +140,14 @@ const toggleMenu = () => {
     return;
   }
 };
+const shouldHideLogo = computed(() => isMobile.value && isHomeView.value);
 </script>
 
 <style scoped lang="scss">
 @import "../assets/scss/variables.scss";
 
 .blackText {
-  color: #031a4a !important;
+  color: black !important;
 }
 
 .mainDiv {
