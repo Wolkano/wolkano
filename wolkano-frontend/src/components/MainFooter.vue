@@ -14,9 +14,9 @@
         partner för en smidigare affärsprocess.
       </p>
       <div class="contactInfo">
-        <a href="">076-1778821</a>
+        <a href="tel:+46709435527">070-943 55 27</a>
         <p>|</p>
-        <a href="">info@wolkano.se</a>
+        <a href="mailto:info@wolkano.se">info@wolkano.se</a>
       </div>
       <div class="subFooter">
         <p>© Wolkano 2024</p>
@@ -95,6 +95,7 @@
         }
       }
       .subFooter {
+        flex-direction: column-reverse;
         width: 100%;
       }
     }

@@ -254,6 +254,7 @@ const copy = computed(() => store.state.copy.works);
       width: 30%;
       display: flex;
       flex-direction: column;
+      align-items: flex-start;
       gap: 20px;
 
       p {
@@ -299,9 +300,10 @@ const copy = computed(() => store.state.copy.works);
       padding-right: 20px;
       .intro {
         width: 100%;
-        justify-content: center;
-        h2 {
-          margin-bottom: 0;
+        align-items: flex-start;
+        h1 {
+          margin: 0;
+          padding: 0px;
         }
         p {
           font-size: 20px;
