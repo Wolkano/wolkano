@@ -11,6 +11,7 @@
         name="contact"
         class="form"
         method="POST"
+        action="/thank-you"
         netlify
         @submit="handleSubmit"
       >

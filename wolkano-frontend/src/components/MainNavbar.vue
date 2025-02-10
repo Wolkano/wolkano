@@ -99,9 +99,7 @@
                 Kontakta oss
               </p></router-link
             >
-            <router-link v-if="isMobile" class="dropdown-item" to="/works">
-              <p :class="{ blackText: isFormView }">Hur fungerar det</p>
-            </router-link>
+
             <!--
             <router-link v-if="isMobile" class="dropdown-item" to="/works">
               <p :class="{ blackText: isLightBackground }">Hur fungerar det</p>
