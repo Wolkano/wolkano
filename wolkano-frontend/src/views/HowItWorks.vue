@@ -1,9 +1,9 @@
 <template>
   <div class="home first">
-    <h1>Hur fungerar det</h1>
+    <!--<h1>Hur fungerar det</h1>-->
     <div class="mainDiv">
       <div class="intro">
-        <h2>{{ copy.title }}</h2>
+        <h1>{{ copy.title }}</h1>
         <p>
           {{ copy.description1 }}
         </p>
@@ -114,8 +114,7 @@ const copy = computed(() => store.state.copy.works);
     flex-wrap: wrap;
     flex-direction: row-reverse;
     color: white;
-    padding: 100px 0px;
-
+    padding-bottom: 100px;
     .image {
       img {
         border-radius: 10px;

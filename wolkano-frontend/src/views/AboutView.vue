@@ -206,7 +206,7 @@ const copy = computed(() => store.state.copy.about);
       }
 
       .image .businessManImage {
-        width: 100%;
+        display: none;
       }
     }
   }
