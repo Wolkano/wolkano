@@ -82,13 +82,16 @@
       }
     }
     .serviceCards {
+      width: 100%;
       display: flex;
       flex-direction: row;
       gap: 75px;
+
       .serviceCard {
         background-color: $offWhite;
+
         flex: 1 1 0px;
-        width: 0;
+
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -147,7 +150,7 @@
     }
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 1300px) {
   .mainDiv {
     padding: 50px 20px;
     .headingAndCards {
@@ -166,6 +169,7 @@
         display: flex;
         flex-direction: column;
         gap: 30px;
+
         .serviceCard {
           width: 100%;
           .info {

@@ -22,13 +22,18 @@
       <p class="mail">
         Kontakta oss på: <a href="mailto:info@wolkano.se">info@wolkano.se</a>
         <br />
-        <button class="email" id="email" @click="copyToClipboard">
+        <button
+          class="email"
+          id="email"
+          @click="copyToClipboard"
+          style="display: none"
+        >
           Kopiera E-post
         </button>
       </p>
     </div>
   </div>
-  <div class="ourTeamContainer">
+  <div class="ourTeamContainer" style="display: none">
     <OurTeam />
   </div>
   <!--

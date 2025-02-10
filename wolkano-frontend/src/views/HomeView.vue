@@ -98,6 +98,10 @@ const isMobile = computed(() => windowWidth.value < 768);
 
 .home {
   background: $primary;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   .mainDiv {
     display: flex;
     justify-content: center;

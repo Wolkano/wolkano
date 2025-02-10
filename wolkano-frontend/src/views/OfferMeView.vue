@@ -99,7 +99,7 @@
           viewBox="0 0 1440 320"
         >
           <path
-            fill="#ff5500"
+            fill="#f7f9fa"
             fill-opacity="1"
             d="M0,192L48,160C96,128,192,64,288,80C384,96,480,192,576,213.3C672,235,768,181,864,149.3C960,117,1056,107,1152,117.3C1248,128,1344,160,1392,176L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
           ></path>
@@ -111,6 +111,7 @@
           class="lavaDown"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 1440 320"
+          style="display: none"
         >
           <path
             fill="#ff5500"
@@ -119,7 +120,7 @@
           ></path>
         </svg>
       </div>
-      <div class="ourTeamContainer">
+      <div class="ourTeamContainer" style="display: none">
         <OurTeam />
       </div>
       <QuestionsBanner />
@@ -296,10 +297,12 @@ import OurTeam from "@/components/OurTeam.vue";
     justify-content: center;
     flex-direction: column;
     .textSection {
-      background-color: $detail;
+      background-color: $secondary;
+      color: black;
       width: 100%;
       height: 100%;
       z-index: 2;
+      padding-bottom: 100px;
     }
     .lavaDown {
       background-color: $secondary;

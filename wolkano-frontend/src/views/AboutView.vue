@@ -21,7 +21,7 @@
       </div>
     </div>
   </div>
-  <div class="ourTeamContainer">
+  <div class="ourTeamContainer" style="display: none">
     <OurTeam />
   </div>
   <div class="secondDiv">
