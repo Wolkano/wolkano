@@ -7,7 +7,7 @@
       v-if="!isSubmitting"
     >
       <h1>Kontakta <span class="companyName">Wolkano</span></h1>
-      <form name="contact" class="form" netlify>
+      <form name="contact" class="form" method="POST" netlify>
         <p class="description">
           Har du frågor om våra automatiserade offerttjänster, eller vill du
           veta hur vi kan hjälpa ditt företag att spara tid och öka
@@ -71,10 +71,10 @@
 
 <script setup>
 //@submit="handleSubmit"
-import { reactive, computed, ref } from "vue";
-import { useStore } from "vuex";
-const store = useStore();
-const hasSubmitted = computed(() => store.state.hasSubmitted);
+import { reactive, ref } from "vue";
+//import { useStore } from "vuex";
+//const store = useStore();
+//const hasSubmitted = computed(() => store.state.hasSubmitted);
 const userInformation = reactive({
   firstName: "",
   email: "",
@@ -84,7 +84,7 @@ const userInformation = reactive({
 });
 const isSubmitting = ref(false);
 
-const handleSubmit = (event) => {
+/*const handleSubmit = (event) => {
   event.preventDefault();
 
   const myForm = event.target;
@@ -103,7 +103,7 @@ const handleSubmit = (event) => {
 };
 document.addEventListener("DOMContentLoaded", function () {
   document.querySelector("form").addEventListener("submit", handleSubmit);
-});
+});*/
 </script>
 
 <style lang="scss" scoped>
