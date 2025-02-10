@@ -7,13 +7,7 @@
       v-if="!isSubmitting"
     >
       <h1>Kontakta <span class="companyName">Wolkano</span></h1>
-      <form
-        name="contact"
-        class="form"
-        method="POST"
-        action="/thank-you"
-        netlify
-      >
+      <form name="contact" class="form" method="POST" netlify>
         <p class="description">
           Har du frågor om våra automatiserade offerttjänster, eller vill du
           veta hur vi kan hjälpa ditt företag att spara tid och öka
