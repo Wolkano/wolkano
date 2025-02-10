@@ -51,7 +51,7 @@
         />
         <h3>Henrik Bengtsson</h3>
         <p class="role">VD</p>
-        <p>"Satsar man 100% får man 200% tillbaka" - Gabriel Holmkvist</p>
+        <p></p>
         <div class="icons">
           <a href="https://www.linkedin.com/in/bengtssonhenrik/" target="_blank"
             ><svg
@@ -113,9 +113,7 @@
         />
         <h3>Rozbeh Kazemi</h3>
         <p class="role">Försäljare</p>
-        <p>
-          Med över 10 års erfarenhet av projektledning inom digitala lösningar.
-        </p>
+        <p></p>
         <div class="icons">
           <a
             href="https://www.linkedin.com/in/rozbeh-kazemi-12268a118/"
