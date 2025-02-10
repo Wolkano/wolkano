@@ -13,7 +13,6 @@
         method="POST"
         action="/thank-you"
         netlify
-        @submit="handleSubmit"
       >
         <p class="description">
           Har du frågor om våra automatiserade offerttjänster, eller vill du
@@ -77,6 +76,7 @@
 </template>
 
 <script setup>
+//@submit="handleSubmit"
 import { reactive, computed, ref } from "vue";
 import { useStore } from "vuex";
 const store = useStore();
@@ -107,6 +107,7 @@ const handleSubmit = (event) => {
     })
     .catch((error) => alert(error));
 };
+document.querySelector("form").addEventListener("submit", handleSubmit);
 </script>
 
 <style lang="scss" scoped>
