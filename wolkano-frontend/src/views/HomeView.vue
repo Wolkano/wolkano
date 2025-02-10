@@ -186,7 +186,7 @@ const isMobile = computed(() => windowWidth.value < 768);
 
 @media (max-width: 768px) {
   .home {
-    height: 80vh;
+    height: 100vh;
     display: flex;
     padding: 0px 20px;
     .mainDiv {
