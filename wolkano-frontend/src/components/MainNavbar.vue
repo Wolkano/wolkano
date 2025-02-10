@@ -45,6 +45,8 @@
                 <span v-if="!isMobile">Vår automatiserade offerttjänst</span>
               </p>
             </router-link>
+
+            <!--Fixas o sen display block-->
             <router-link
               style="display: none"
               class="dropdown-item"
@@ -58,15 +60,28 @@
                 >
               </p>
             </router-link>
+
+            <!--Fixas o sen display block-->
+            <router-link
+              style="display: none"
+              class="dropdown-item"
+              to="/crm"
+              @click="toggleMenu"
+              ><p :class="{ blackText: isLightBackground }">
+                Vision Crm<br />
+                <span v-if="!isMobile">Vårt egna Crm-system</span>
+              </p>
+            </router-link>
+
             <router-link class="dropdown-item" to="/works" @click="toggleMenu">
               <p :class="{ blackText: isLightBackground }">
                 Hur Fungerar Det?<br />
                 <span v-if="!isMobile"
                   >Så fungerar vår automatiserade offerttjänst</span
                 >
-                <!--CRM-system (Pilot)-->
               </p>
             </router-link>
+
             <router-link
               class="dropdown-item"
               v-if="isMobile"
@@ -85,6 +100,9 @@
                 Kontakta oss
               </p></router-link
             >
+            <router-link v-if="isMobile" class="dropdown-item" to="/works">
+              <p :class="{ blackText: isLightBackground }">Hur fungerar det</p>
+            </router-link>
             <!--
             <router-link v-if="isMobile" class="dropdown-item" to="/works">
               <p :class="{ blackText: isLightBackground }">Hur fungerar det</p>

@@ -5,6 +5,7 @@ import AboutView from "../views/AboutView.vue";
 import OfferMeView from "../views/OfferMeView.vue";
 import WebbUtvView from "../views/WebbUtvView.vue";
 import HowItWorks from "@/views/HowItWorks.vue";
+import VisionCrm from "../views/CrmView.vue";
 
 const routes = [
   {
@@ -37,6 +38,7 @@ const routes = [
     name: "Hur fungerar det · Wolkano",
     component: HowItWorks,
   },
+  { path: "/crm", name: "Vision Crm · Wolkano", component: VisionCrm },
 ];
 
 const router = createRouter({
