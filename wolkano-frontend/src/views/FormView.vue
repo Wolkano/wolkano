@@ -107,7 +107,9 @@ const handleSubmit = (event) => {
     })
     .catch((error) => alert(error));
 };
-document.querySelector("form").addEventListener("submit", handleSubmit);
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelector("form").addEventListener("submit", handleSubmit);
+});
 </script>
 
 <style lang="scss" scoped>
