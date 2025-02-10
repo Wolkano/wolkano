@@ -2,8 +2,15 @@
   <div class="home first">
     <!--<h1>Hur fungerar det</h1>-->
     <div class="mainDiv">
-      <div class="intro">
-        <h1>{{ copy.title }}</h1>
+      <div
+        class="intro"
+        v-motion-slide-visible-once-left
+        :duration="1500"
+        :delay="100"
+      >
+        <h1>
+          {{ copy.title }}
+        </h1>
         <p>
           {{ copy.description1 }}
         </p>
@@ -13,7 +20,12 @@
         </div>
       </div>
 
-      <div class="image">
+      <div
+        class="image"
+        v-motion-slide-visible-once-left
+        :duration="1000"
+        :delay="700"
+      >
         <img
           class="businessManImage"
           src="../assets/vulkan.png"
