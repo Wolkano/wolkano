@@ -167,6 +167,9 @@ const copy = computed(() => store.state.copy.about);
 #blueWave {
   margin-top: -5px;
   background-color: $secondary;
+  path {
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+  }
 }
 
 .secondDiv {

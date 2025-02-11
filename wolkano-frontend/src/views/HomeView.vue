@@ -185,6 +185,9 @@ const isMobile = computed(() => windowWidth.value < 768);
 
 #blueWave {
   background-color: $secondary;
+  path {
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+  }
 }
 
 .secondDiv {
