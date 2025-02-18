@@ -29,9 +29,9 @@
       <p class="information">
         Wolkano erbjuder smarta och effektiva lösningar för automatiserade
         offerter som hjälper företag att spara tid och öka lönsamheten. Med
-        fokus på kvalitet, innovation och schyssta värderingar strävar vi efter
-        att förenkla din vardag och skapa långsiktigt värde. Vi är din pålitliga
-        partner för en smidigare affärsprocess.
+        fokus på kvalitet, innovation och resultat strävar vi efter att förenkla
+        din vardag och skapa långsiktigt värde. Vi är din pålitliga partner för
+        en smidigare affärsprocess.
       </p>
       <div class="contactInfo">
         <a href="tel:+46709435527">070-943 55 27</a>
@@ -40,7 +40,7 @@
       </div>
       <div class="subFooter">
         <p>© Wolkano 2024</p>
-        <p>Innovativa lösningar för smidigare offertförfrågningar.</p>
+        <p>Innovativa lösningar för ökade resultat.</p>
       </div>
     </div>
   </div>

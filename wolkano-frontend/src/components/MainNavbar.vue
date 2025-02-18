@@ -19,13 +19,10 @@
         <div class="dropdown">
           <span
             v-if="!isMobile"
-            class="menu-link dropdown-toggle"
+            class="menu-link"
             :class="{ blackText: isFormView }"
           >
             Tjänster
-            <!--&nbsp;
-            <font-awesome-icon :icon="['fas', 'arrow-right']" />
-            -->
           </span>
 
           <span v-else
@@ -149,6 +146,7 @@ const shouldHideLogo = computed(() => isMobile.value && isHomeView.value);
 }
 
 .mainDiv {
+  z-index: 10;
   width: 100%;
 
   .navbar {
@@ -204,6 +202,8 @@ const shouldHideLogo = computed(() => isMobile.value && isHomeView.value);
     .dropdown {
       position: relative;
       cursor: pointer;
+      display: flex;
+      align-items: center;
 
       .menu-link {
         color: #fff;
@@ -213,7 +213,7 @@ const shouldHideLogo = computed(() => isMobile.value && isHomeView.value);
         transition: color 100ms linear;
         font-weight: 600;
         transition: opacity 0.3s ease, transform 0.3s ease;
-        opacity: 1;
+        opacity: 0;
         transform: scaleX(1);
         transform-origin: right;
       }
@@ -235,8 +235,9 @@ const shouldHideLogo = computed(() => isMobile.value && isHomeView.value);
         position: absolute;
         display: flex;
         flex-direction: row;
-        justify-content: flex-start;
-        top: -60%;
+        justify-content: center;
+        align-items: center;
+        top: auto;
         padding: 15px 20px;
         left: 0%;
         list-style: none;
@@ -246,9 +247,10 @@ const shouldHideLogo = computed(() => isMobile.value && isHomeView.value);
         text-align: left;
         border-radius: 10px;
         transition: opacity 0.3s ease, transform 0.3s ease;
-        opacity: 0;
-        transform: scaleX(0);
+        opacity: 1;
+        transform: scaleX(1);
         transform-origin: left;
+        gap: 10px;
       }
 
       .dropdown-item {
@@ -261,10 +263,9 @@ const shouldHideLogo = computed(() => isMobile.value && isHomeView.value);
           -webkit-transition: color 200ms linear;
           -ms-transition: color 200ms linear;
           transition: color 200ms linear;
-          -webkit-transition: background-color 200ms linear;
-          -ms-transition: background-color 200ms linear;
-          transition: background-color 200ms linear;
-          border-radius: 5px;
+          -webkit-transition: color 200ms linear, background-color 200ms linear;
+          -ms-transition: color 200ms linear, background-color 200ms linear;
+          transition: color 200ms linear, background-color 200ms linear;
 
           //manges kod
           span {
@@ -276,7 +277,8 @@ const shouldHideLogo = computed(() => isMobile.value && isHomeView.value);
           }
 
           &:hover {
-            background-color: rgba(0, 0, 0, 0.2);
+            //background-color: rgba(0, 0, 0, 0.2);
+            color: $detail !important;
           }
         }
       }

@@ -58,42 +58,62 @@
 
   <div class="secondDiv">
     <div>
-      <div v-motion-slide-visible-once-bottom :duration="500" :delay="100">
-        <p class="icon">✅</p>
-        <h3>Inmatning av information</h3>
-        <p>
-          Kunden fyller i ett enkelt formulär online med detaljer om sina behov,
-          inklusive specifikationer, kvantiteter och önskade tidsramar. Systemet
-          samlar in all nödvändig information direkt från kunden.
-        </p>
-      </div>
-      <div v-motion-slide-visible-once-bottom :duration="500" :delay="300">
-        <p class="icon">🤖</p>
-        <h3>Automatisk analys</h3>
-        <p>
-          Systemet analyserar den inskickade informationen med hjälp av
-          förinställda parametrar och smarta algoritmer. Det identifierar
-          matchande produkter, tjänster eller leverantörer och beräknar
-          kostnader baserat på aktuella data.
-        </p>
-      </div>
-      <div v-motion-slide-visible-once-bottom :duration="500" :delay="600">
-        <p class="icon">📄</p>
-        <h3>Skapande av offert</h3>
-        <p>
-          Offerten genereras automatiskt och kan anpassas med företagets
-          logotyp, villkor och en personlig hälsning. Systemet säkerställer att
-          allt är korrekt och ser professionellt ut.
-        </p>
-      </div>
-      <div v-motion-slide-visible-once-bottom :duration="500" :delay="900">
-        <p class="icon">📩</p>
-        <h3>Uppföljning och spårning</h3>
-        <p>
-          Systemet håller reda på när kunden öppnar offerten och kan automatiskt
-          skicka påminnelser om svar. Det ger dig full insyn i processen och
-          hjälper dig att stänga affärer snabbare.
-        </p>
+      <div>
+        <div v-motion-slide-visible-once-bottom :duration="500" :delay="100">
+          <p class="icon">1.</p>
+          <!--✅-->
+          <h3>Enkelt för kunden</h3>
+          <p>
+            Kunden fyller i ett enkelt formulär online med detaljer om sina
+            behov, inklusive specifikationer, kvantiteter och önskade tidsramar.
+            Systemet samlar in all nödvändig information direkt från kunden.
+          </p>
+        </div>
+        <div
+          v-motion-slide-visible-once-bottom
+          :duration="500"
+          :delay="isMobile ? 100 : 300"
+        >
+          <p class="icon">2.</p>
+          <!--🤖-->
+          <h3>Automatisk analys</h3>
+          <p>
+            Systemet analyserar den inskickade informationen med hjälp av
+            förinställda parametrar och smarta algoritmer. Det identifierar
+            matchande produkter, tjänster eller leverantörer och beräknar
+            kostnader baserat på aktuella data.
+          </p>
+        </div>
+        <div
+          v-motion-slide-visible-once-bottom
+          :duration="500"
+          :delay="isMobile ? 100 : 600"
+        >
+          <p class="icon">3.</p>
+          <!--📄-->
+          <h3>Offerten skapas</h3>
+          <p>
+            Offerten genereras automatiskt och kan anpassas med företagets
+            logotyp, villkor och en personlig hälsning. Systemet säkerställer
+            att allt är korrekt och ser professionellt ut.
+          </p>
+        </div>
+        <div
+          v-motion-slide-visible-once-bottom
+          :duration="500"
+          :delay="isMobile ? 100 : 900"
+        >
+          <p class="icon">4.</p>
+          <!--📩-->
+          <h3>Presentation & plastbesök</h3>
+          <p>
+            En preliminär offert presenteras för kunden inom 5 minuter.
+            Samtidigt får kunden möjlighet att boka platsbesök och
+            kontaktuppgifter till er. Med en prisbild hos kunden innan
+            platsbesöket har ni större chans att landa kunden. Vilket ger färre
+            onödiga körningar!
+          </p>
+        </div>
       </div>
     </div>
   </div>
@@ -178,50 +198,42 @@ const copy = computed(() => store.state.copy.about);
 
 .secondDiv {
   background-color: $secondary;
-  padding-top: 0px;
   padding-bottom: 30px;
   div {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    padding: 20px 0px;
+    padding: 20px 100px;
     align-items: center;
     flex-wrap: wrap;
-    width: 75%;
-    gap: 20px;
+    width: 100%;
     margin: auto;
 
     div {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       align-items: center;
       justify-content: flex-start;
-      width: 40%;
-      .icon {
-        color: #fe9d01;
-        margin-top: 20px;
-        margin-bottom: 5px;
-        font-size: xx-large;
-      }
+      width: 100%;
+      div {
+        width: 50%;
+        .icon {
+          color: $detail;
+          margin-bottom: 5px;
+          font-size: xx-large;
+          width: 100%;
+        }
 
-      h3 {
-        font-weight: 700;
-        color: $text-color;
-        text-align: left;
+        h3 {
+          font-weight: 700;
+          color: $text-color;
+          text-align: left;
+        }
+        p {
+          color: black;
+          text-align: left;
+        }
       }
-      p {
-        color: black;
-        text-align: left;
-      }
-    }
-
-    .flowGif {
-      width: 30%;
-      height: min-content;
-      border-style: solid;
-      border-width: 5px;
-      border-color: #fe9d01;
-      border-radius: 20px;
     }
   }
 }
@@ -262,8 +274,12 @@ const copy = computed(() => store.state.copy.about);
       align-items: flex-start;
       text-align: left;
       width: 100%;
+      padding: 20px 0px;
       div {
         width: 100%;
+        div {
+          width: 100%;
+        }
         .icon {
           align-self: center;
           margin-bottom: 30px;
