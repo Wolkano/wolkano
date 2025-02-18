@@ -26,9 +26,9 @@ const isMobile = computed(() => windowWidth.value < 768);
           {{ copy.title }}
         </h1>
         <p v-motion-slide-visible-once-bottom :duration="1000" :delay="700">
-          {{ copy.description1 }}
-          <span class="company_name">{{ copy.companyName }}</span
-          >, {{ copy.description2 }}
+          <span class="company_name">OfferMe</span> - Den smarta lösningen för
+          effektiva och lönsammare offertförfrågningar. Optimera tiden, öka
+          antal projekt och leverera en förstklassig kundupplevelse.
         </p>
         <div
           class="buttons"
@@ -82,8 +82,9 @@ const isMobile = computed(() => windowWidth.value < 768);
     <div>
       <div>
         <div v-motion-slide-visible-once-bottom :duration="500" :delay="100">
-          <p class="icon">✅</p>
-          <h3>Inmatning av information</h3>
+          <p class="icon">1.</p>
+          <!--✅-->
+          <h3>Enkelt för kunden</h3>
           <p>
             Kunden fyller i ett enkelt formulär online med detaljer om sina
             behov, inklusive specifikationer, kvantiteter och önskade tidsramar.
@@ -95,7 +96,8 @@ const isMobile = computed(() => windowWidth.value < 768);
           :duration="500"
           :delay="isMobile ? 100 : 300"
         >
-          <p class="icon">🤖</p>
+          <p class="icon">2.</p>
+          <!--🤖-->
           <h3>Automatisk analys</h3>
           <p>
             Systemet analyserar den inskickade informationen med hjälp av
@@ -109,8 +111,9 @@ const isMobile = computed(() => windowWidth.value < 768);
           :duration="500"
           :delay="isMobile ? 100 : 600"
         >
-          <p class="icon">📄</p>
-          <h3>Skapande av offert</h3>
+          <p class="icon">3.</p>
+          <!--📄-->
+          <h3>Offerten skapas</h3>
           <p>
             Offerten genereras automatiskt och kan anpassas med företagets
             logotyp, villkor och en personlig hälsning. Systemet säkerställer
@@ -122,12 +125,15 @@ const isMobile = computed(() => windowWidth.value < 768);
           :duration="500"
           :delay="isMobile ? 100 : 900"
         >
-          <p class="icon">📩</p>
-          <h3>Uppföljning och spårning</h3>
+          <p class="icon">4.</p>
+          <!--📩-->
+          <h3>Presentation & plastbesök</h3>
           <p>
-            Systemet håller reda på när kunden öppnar offerten och kan
-            automatiskt skicka påminnelser om svar. Det ger dig full insyn i
-            processen och hjälper dig att stänga affärer snabbare.
+            En preliminär offert presenteras för kunden inom 5 minuter.
+            Samtidigt får kunden möjlighet att boka platsbesök och
+            kontaktuppgifter till er. Med en prisbild hos kunden innan
+            platsbesöket har ni större chans att landa kunden. Vilket ger färre
+            onödiga körningar!
           </p>
         </div>
       </div>
@@ -172,7 +178,7 @@ const isMobile = computed(() => windowWidth.value < 768);
 
       .buttons {
         display: flex;
-        gap: 50px;
+        gap: 20px;
         .button {
           font-weight: 600;
         }
@@ -217,7 +223,7 @@ const isMobile = computed(() => windowWidth.value < 768);
       div {
         width: 50%;
         .icon {
-          color: #fe9d01;
+          color: $detail;
           margin-bottom: 5px;
           font-size: xx-large;
           width: 100%;
