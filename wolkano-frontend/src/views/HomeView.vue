@@ -66,8 +66,8 @@ const isMobile = computed(() => windowWidth.value < 768);
     >
       <defs>
         <linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0">
-          <stop stop-color="rgba(48, 206, 225, 1)" offset="0%"></stop>
-          <stop stop-color="rgb(48, 229, 249, 1)" offset="100%"></stop>
+          <stop stop-color="#4aa7de" offset="0%"></stop>
+          <stop stop-color="#4aa7de" offset="100%"></stop>
         </linearGradient>
       </defs>
       <path
