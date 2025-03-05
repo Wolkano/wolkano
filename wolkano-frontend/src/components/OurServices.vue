@@ -68,15 +68,15 @@
         >
       </div>
     </div>
-    <div class="meetDiv">
+    <!--<div class="meetDiv">
       <h3>Boka möte</h3>
-      <!-- Google Calendar Appointment Scheduling begin -->
+      
       <iframe
         class="meet"
         src="https://calendar.app.google/kQD7sogtCaGNXxma9"
       ></iframe>
-      <!-- end Google Calendar Appointment Scheduling -->
-    </div>
+      
+    </div>-->
   </div>
 </template>
 <script setup>
