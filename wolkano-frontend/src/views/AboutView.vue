@@ -30,22 +30,16 @@
         />
       </div>
     </div>
-  </div>
-  <div class="ourTeamContainer" style="display: none">
-    <OurTeam />
-  </div>
-  <div class="waveContainer">
     <svg
       id="blueWave"
-      style="transform: rotate(180deg); transition: 0.3s"
       viewBox="0 -1 1440 270"
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
     >
       <defs>
         <linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0">
-          <stop stop-color="rgba(48, 206, 225, 1)" offset="0%"></stop>
-          <stop stop-color="rgb(48, 229, 249, 1)" offset="100%"></stop>
+          <stop stop-color="#f7f9fa" offset="0%"></stop>
+          <stop stop-color="rgba(247, 249, 250, 1)" offset="100%"></stop>
         </linearGradient>
       </defs>
       <path
@@ -122,7 +116,6 @@
 <script setup>
 import { computed } from "vue";
 import { useStore } from "vuex";
-import OurTeam from "@/components/OurTeam.vue";
 
 const store = useStore();
 const copy = computed(() => store.state.copy.about);
@@ -134,7 +127,7 @@ const copy = computed(() => store.state.copy.about);
 .home {
   background-color: $primary;
   padding-top: 150px;
-  padding-bottom: 150px;
+
   .mainDiv {
     display: flex;
     justify-content: center;
@@ -181,17 +174,6 @@ const copy = computed(() => store.state.copy.about);
       width: 650px;
       height: auto;
       border-radius: 10px;
-    }
-  }
-}
-.ourTeamContainer {
-  padding: 30px 0px;
-}
-.waveContainer {
-  background-color: $secondary;
-  #blueWave {
-    path {
-      filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
     }
   }
 }
@@ -242,10 +224,10 @@ const copy = computed(() => store.state.copy.about);
 @media (max-width: 768px) {
   .home {
     padding-top: 150px;
-    padding-left: 20px;
-    padding-right: 20px;
 
     .mainDiv {
+      padding-left: 20px;
+      padding-right: 20px;
       .intro {
         width: 100%;
         justify-content: center;
