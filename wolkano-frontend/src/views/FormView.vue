@@ -152,6 +152,7 @@ const isSubmitting = ref(false);
   }
   .companyName {
     color: $detail;
+    font-size: 4rem;
   }
   .description {
     width: 100%;

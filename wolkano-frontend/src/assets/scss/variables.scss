@@ -1,6 +1,6 @@
-$primary: #4aa7de; //$primary: #30cee1; gammla
+$primary: #2e3538; //$primary: #30cee1; gammla #4aa7de nygammla
 $secondary: #f7f9fa;
-$detail: #ff5500;
+$detail: #fcab54;
 $lightDetail: #fccab1;
 $darkDetail: #b63d00;
 $text-color: #333333;
@@ -59,8 +59,17 @@ h4 {
   font-size: $font-size-h4;
   margin-bottom: $spacing-unit * 1;
 }
-p {
+p,
+span {
+  font-family: "Blinker", sans-serif;
   font-size: $font-size-p;
+  font-size: 24px;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Lexend Deca", sans-serif;
 }
 
 @media all and (min-width: 0px) and (max-width: 768px) {
