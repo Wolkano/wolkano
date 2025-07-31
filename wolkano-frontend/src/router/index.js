@@ -39,6 +39,11 @@ const routes = [
     component: HowItWorks,
   },
   { path: "/crm", name: "Vision Crm · Wolkano", component: VisionCrm },
+  {
+  path: '/:pathMatch(.*)*',
+  redirect: '/'
+},
+
 ];
 
 const router = createRouter({
