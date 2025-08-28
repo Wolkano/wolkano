@@ -265,7 +265,7 @@ import OurTeam from "@/components/OurTeam.vue";
           .bigP {
             color: $detail;
             text-transform: uppercase;
-
+            text-shadow: 1px 1px 0px $shadow;
             font-weight: 700;
           }
           img {
