@@ -260,11 +260,12 @@ import OurTeam from "@/components/OurTeam.vue";
           }
 
           p {
-            color: darkgray;
+            color: black;
           }
           .bigP {
             color: $detail;
             text-transform: uppercase;
+
             font-weight: 700;
           }
           img {

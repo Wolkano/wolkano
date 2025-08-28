@@ -226,7 +226,7 @@ const isSubmitting = ref(false);
       background-color: $detail;
       color: white;
       padding: 10px 50px;
-
+      text-shadow: 1px 1px 0px $shadow;
       -webkit-transition: background-color 200ms linear;
       -ms-transition: background-color 200ms linear;
       transition: background-color 200ms linear;

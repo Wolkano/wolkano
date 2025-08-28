@@ -74,6 +74,7 @@
     .information {
       font-size: 16px;
       width: 50%;
+      text-shadow: 1px 1px 0px $shadow;
     }
     .contactInfo {
       display: flex;
@@ -81,9 +82,11 @@
       a {
         color: $secondary;
         font-size: 40px;
+        text-shadow: 1px 1px 0px $shadow;
       }
       p {
         color: $secondary;
+        text-shadow: 1px 1px 0px $shadow;
         font-size: 40px;
       }
     }
@@ -93,6 +96,7 @@
       border-top: 2px solid $secondary;
       width: 60%;
       padding-top: 20px;
+      text-shadow: 1px 1px 0px $shadow;
     }
   }
   .logo {

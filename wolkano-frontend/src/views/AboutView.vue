@@ -160,6 +160,7 @@ const copy = computed(() => store.state.copy.about);
         .button {
           background-color: $detail;
           color: white;
+          text-shadow: 1px 1px 0px $shadow;
           font-weight: 600;
           min-width: 100px;
           text-align: center;

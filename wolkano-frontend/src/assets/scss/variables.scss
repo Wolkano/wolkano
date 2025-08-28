@@ -10,6 +10,7 @@ $offWhite: #f0f0ee;
 $offWhite2: #f7f9fa;
 $font-size-base: 16px;
 $spacing-unit: 8px;
+$shadow: #00000025;
 $gradient-background: radial-gradient(
   circle,
   rgba(31, 0, 145, 1) 1%,
@@ -33,11 +34,12 @@ $font-size-mobile-h4: 20px;
   background-color: white;
   color: black;
   padding: 10px 20px;
-  transition: background-color 200ms linear;
+  transition: background-color 200ms linear, color 200ms ease-in-out;
   cursor: pointer;
 
   &:hover {
-    background-color: rgb(231, 231, 231);
+    background-color: $darkDetail;
+    color: white;
   }
 }
 

@@ -122,7 +122,7 @@ const isMobile = computed(() => windowWidth.value < 768);
         background-color: $offWhite;
         max-width: 300px;
         // flex: 1 1 0px;
-
+        box-shadow: 0px 0px 10px $shadow;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -169,12 +169,14 @@ const isMobile = computed(() => windowWidth.value < 768);
     }
 
     .secondaryButton {
-      color: $detail;
-      background-color: #f7f9fa;
-      border-color: $detail;
+      color: $secondary;
+      background-color: $primary;
+
+      border-color: $primary;
       border-width: 2px;
       padding: 10px 20px;
-      font-weight: 700;
+      font-weight: 600;
+      transition: background-color 200ms linear, border-color 200ms linear;
       &:hover {
         background-color: $darkDetail;
         border-color: $darkDetail;

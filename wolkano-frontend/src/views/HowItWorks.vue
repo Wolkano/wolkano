@@ -171,14 +171,9 @@ const copy = computed(() => store.state.copy.works);
         display: flex;
         gap: 50px;
         .button {
-          background-color: $detail;
-          color: white;
           font-weight: 600;
           min-width: 100px;
           text-align: center;
-          &:hover {
-            background-color: $darkDetail;
-          }
         }
       }
     }
