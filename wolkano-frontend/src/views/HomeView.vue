@@ -14,7 +14,7 @@ const isMobile = computed(() => windowWidth.value < 768);
 import { useHead } from "@vueuse/head";
 
 useHead({
-  title: "Hem - Wolkano",
+  title: "Välkommen till Wolkano",
   meta: [
     // Vanliga SEO-meta
     {
@@ -31,7 +31,7 @@ useHead({
     { name: "author", content: "Wolkano" },
 
     // Open Graph (för Facebook, LinkedIn m.m.)
-    { property: "og:title", content: "Hem - Wolkano" },
+    { property: "og:title", content: "Välkommen till Wolkano" },
     {
       property: "og:description",
       content:
@@ -46,7 +46,7 @@ useHead({
 
     // Twitter Cards
     { name: "twitter:card", content: "summary_large_image" },
-    { name: "twitter:title", content: "Hem - Wolkano" },
+    { name: "twitter:title", content: "Välkommen till Wolkano" },
     {
       name: "twitter:description",
       content:

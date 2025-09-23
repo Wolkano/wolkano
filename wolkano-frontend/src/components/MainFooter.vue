@@ -35,7 +35,7 @@
       <div class="contactInfo">
         <a href="tel:+46709435527">070-943 55 27</a>
         <p>|</p>
-        <a href="mailto:info@wolkano.se">info@wolkano.se</a>
+        <a href="mailto:info&#64;wolkano.se">info&#64;wolkano.se</a>
       </div>
       <div class="subFooter">
         <p>© Wolkano 2024</p>
