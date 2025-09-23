@@ -10,6 +10,54 @@ const store = useStore();
 const copy = computed(() => store.state.copy.home);
 const windowWidth = ref(window.innerWidth);
 const isMobile = computed(() => windowWidth.value < 768);
+
+import { useHead } from "@vueuse/head";
+
+useHead({
+  title: "Hem - Wolkano",
+  meta: [
+    // Vanliga SEO-meta
+    {
+      name: "description",
+      content:
+        "Upptäck Wolkano – fullt utrustade hemside-byggare med enkel navigering, snygg design och snabb åtkomst till alla tjänster du behöver.",
+    },
+    {
+      name: "keywords",
+      content:
+        "wolkano, hemside-byggare, landningssida, webbutveckling, e-tjänster",
+    },
+
+    { name: "author", content: "Wolkano" },
+
+    // Open Graph (för Facebook, LinkedIn m.m.)
+    { property: "og:title", content: "Hem - Wolkano" },
+    {
+      property: "og:description",
+      content:
+        "Upptäck Wolkano – fullt utrustade hemside-byggare med enkel navigering, snygg design och snabb åtkomst till alla tjänster du behöver.",
+    },
+    {
+      property: "og:image",
+      content: "https://wolkano.se/src/assets/wolkano-hq-logo.png",
+    },
+    { property: "og:url", content: "https://wolkano.se/" },
+    { property: "og:type", content: "website" },
+
+    // Twitter Cards
+    { name: "twitter:card", content: "summary_large_image" },
+    { name: "twitter:title", content: "Hem - Wolkano" },
+    {
+      name: "twitter:description",
+      content:
+        "Upptäck Wolkano – fullt utrustade hemside-byggare med enkel navigering, snygg design och snabb åtkomst till alla tjänster du behöver.",
+    },
+    {
+      name: "twitter:image",
+      content: "https://wolkano.se/src/assets/wolkano-hq-logo.png",
+    },
+  ],
+});
 </script>
 
 <template>
