@@ -25,7 +25,7 @@ useHead({
     {
       name: "keywords",
       content:
-        "wolkano, hemside-byggare, landningssida, webbutveckling, e-tjänster",
+        "wolkano, hemside-byggare, webbutveckling, e-tjänster, automatiserade,offerme",
     },
 
     { name: "author", content: "Wolkano" },
