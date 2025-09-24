@@ -60,9 +60,9 @@
         </div>
       </div>
       <div class="buttons">
-        <router-link style="display: none" class="primaryButton" to="/works"
+        <!-- <router-link style="display: none" class="primaryButton" to="/works"
           >Läs mer</router-link
-        >
+        >-->
         <router-link class="secondaryButton" to="/form"
           >Kontakta oss</router-link
         >

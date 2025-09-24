@@ -6,7 +6,7 @@
           <img
             src="../assets/wolkano-hq-logo.png"
             class="logo"
-            alt="Wolkano HQ logga med 'Wolkano' i orange text på vit bakgrund och 'HQ' i vit text på orange bakgrund"
+            alt="Länk till startsidan som består av en Wolkano HQ logga med 'Wolkano' i orange text på vit bakgrund och 'HQ' i vit text på orange bakgrund"
             v-if="!shouldHideLogo"
           />
         </router-link>
