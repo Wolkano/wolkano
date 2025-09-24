@@ -13,6 +13,7 @@ const routes = [
     name: "Wolkano",
     component: HomeView,
   },
+
   {
     path: "/about",
     name: "Om oss · Wolkano",
@@ -40,10 +41,9 @@ const routes = [
   },
   { path: "/crm", name: "Vision Crm · Wolkano", component: VisionCrm },
   {
-  path: '/:pathMatch(.*)*',
-  redirect: '/'
-},
-
+    path: "/:pathMatch(.*)*",
+    redirect: "/",
+  },
 ];
 
 const router = createRouter({

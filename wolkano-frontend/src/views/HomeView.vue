@@ -16,45 +16,24 @@ import { useHead } from "@vueuse/head";
 useHead({
   title: "Välkommen till Wolkano",
   meta: [
-    // Vanliga SEO-meta
     {
       name: "description",
       content:
-        "Upptäck Wolkano – fullt utrustade hemside-byggare med enkel navigering, snygg design och snabb åtkomst till alla tjänster du behöver.",
+        "Wolkano är en webbyrå som erbjuder professionella webbutvecklingstjänster för att skapa skräddarsydda webbplatser och applikationer som möter dina affärsbehov.",
     },
     {
       name: "keywords",
       content:
-        "wolkano, hemside-byggare, webbutveckling, e-tjänster, automatiserade,offerme",
-    },
-
-    { name: "author", content: "Wolkano" },
-
-    // Open Graph (för Facebook, LinkedIn m.m.)
-    { property: "og:title", content: "Välkommen till Wolkano" },
-    {
-      property: "og:description",
-      content:
-        "Upptäck Wolkano – fullt utrustade hemside-byggare med enkel navigering, snygg design och snabb åtkomst till alla tjänster du behöver.",
-    },
-    {
-      property: "og:image",
-      content: "https://wolkano.se/src/assets/wolkano-hq-logo.png",
+        "webbutveckling, webbyrå, skräddarsydda webbplatser, applikationer, affärsbehov, professionella tjänster, digital närvaro, responsiv design, e-handelslösningar, SEO-optimering",
     },
     { property: "og:url", content: "https://wolkano.se/" },
-    { property: "og:type", content: "website" },
-
-    // Twitter Cards
-    { name: "twitter:card", content: "summary_large_image" },
     { name: "twitter:title", content: "Välkommen till Wolkano" },
+
     {
       name: "twitter:description",
+
       content:
-        "Upptäck Wolkano – fullt utrustade hemside-byggare med enkel navigering, snygg design och snabb åtkomst till alla tjänster du behöver.",
-    },
-    {
-      name: "twitter:image",
-      content: "https://wolkano.se/src/assets/wolkano-hq-logo.png",
+        "Wolkano är en webbyrå som erbjuder professionella webbutvecklingstjänster för att skapa skräddarsydda webbplatser och applikationer som möter dina affärsbehov.",
     },
   ],
 });
