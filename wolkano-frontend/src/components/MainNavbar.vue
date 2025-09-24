@@ -71,7 +71,11 @@
               </p>
             </router-link>
 
-            <router-link class="dropdown-item" to="/works" @click="toggleMenu">
+            <router-link
+              class="dropdown-item"
+              to="/tjanster"
+              @click="toggleMenu"
+            >
               <p :class="{ blackText: isFormView }">
                 Hur Fungerar Det?<br />
                 <span v-if="!isMobile"
@@ -83,14 +87,14 @@
             <router-link
               class="dropdown-item"
               v-if="isMobile"
-              to="/about"
+              to="/omoss"
               @click="toggleMenu"
               ><p :class="{ blackText: isFormView }">Om oss</p></router-link
             >
             <router-link
               class="dropdown-item"
               v-if="isMobile"
-              to="/form"
+              to="/kontakta"
               @click="toggleMenu"
               ><p :class="{ blackText: isFormView }">
                 Kontakta oss
@@ -106,10 +110,10 @@
         </div>
       </div>
       <div class="second flex items-center justify-center" v-if="!isMobile">
-        <router-link class="item" to="/about"
+        <router-link class="item" to="/omoss"
           ><p :class="{ blackText: isFormView }">Om oss</p></router-link
         >
-        <router-link class="item" to="/form"
+        <router-link class="item" to="/kontakta"
           ><p :class="{ blackText: isFormView }">Kontakta oss</p></router-link
         >
       </div>
@@ -123,7 +127,7 @@ import { useRoute } from "vue-router";
 
 const route = useRoute();
 const isHomeView = computed(() => route.fullPath === "/");
-const isFormView = computed(() => route.fullPath === "/form");
+const isFormView = computed(() => route.fullPath === "/kontakta");
 const windowWidth = ref(window.innerWidth);
 const isMobile = computed(() => windowWidth.value < 768);
 

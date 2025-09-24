@@ -14,26 +14,12 @@ const isMobile = computed(() => windowWidth.value < 768);
 import { useHead } from "@vueuse/head";
 
 useHead({
-  title: "Välkommen till Wolkano",
+  title: "Webbutveckling & Design · Välkommen till Wolkano",
   meta: [
+    { property: "og:url", content: "https://wolkano.se/ " },
     {
-      name: "description",
-      content:
-        "Wolkano är en webbyrå som erbjuder professionella webbutvecklingstjänster för att skapa skräddarsydda webbplatser och applikationer som möter dina affärsbehov.",
-    },
-    {
-      name: "keywords",
-      content:
-        "webbutveckling, webbyrå, skräddarsydda webbplatser, applikationer, affärsbehov, professionella tjänster, digital närvaro, responsiv design, e-handelslösningar, SEO-optimering",
-    },
-    { property: "og:url", content: "https://wolkano.se/" },
-    { name: "twitter:title", content: "Välkommen till Wolkano" },
-
-    {
-      name: "twitter:description",
-
-      content:
-        "Wolkano är en webbyrå som erbjuder professionella webbutvecklingstjänster för att skapa skräddarsydda webbplatser och applikationer som möter dina affärsbehov.",
+      name: "twitter:title",
+      content: "Webbutveckling & Design · Välkommen till Wolkano",
     },
   ],
 });
@@ -63,8 +49,8 @@ useHead({
           :duration="1000"
           :delay="700"
         >
-          <router-link to="/about" class="button">Om oss</router-link>
-          <router-link to="/form" class="button">Kontakta oss</router-link>
+          <router-link to="/omoss" class="button">Om oss</router-link>
+          <router-link to="/kontakta" class="button">Kontakta oss</router-link>
         </div>
       </div>
 

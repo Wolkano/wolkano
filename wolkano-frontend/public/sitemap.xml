@@ -7,13 +7,13 @@
       <priority>1.0</priority>
    </url>
    <url>
-      <loc>https://wolkano.se/about</loc>
+      <loc>https://wolkano.se/omoss</loc>
       <lastmod>2025-09-24</lastmod>
       <changefreq>yearly</changefreq>
       <priority>0.8</priority>
    </url>
    <url>
-      <loc>https://wolkano.se/form</loc>
+      <loc>https://wolkano.se/kontakta</loc>
       <lastmod>2025-09-24</lastmod>
       <changefreq>yearly</changefreq>
       <priority>0.5</priority>
@@ -25,7 +25,7 @@
       <priority>1.0</priority>
    </url>
    <url>
-      <loc>https://wolkano.se/works</loc>
+      <loc>https://wolkano.se/tjanster</loc>
       <lastmod>2025-09-24</lastmod>
       <changefreq>yearly</changefreq>
       <priority>0.8</priority>

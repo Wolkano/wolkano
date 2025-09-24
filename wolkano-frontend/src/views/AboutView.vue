@@ -13,7 +13,7 @@
         </p>
         <div class="buttons">
           <router-link to="/" class="button">Hem</router-link>
-          <router-link to="/form" class="button">Kontakta oss</router-link>
+          <router-link to="/kontakta" class="button">Kontakta oss</router-link>
         </div>
       </div>
 
@@ -119,6 +119,16 @@ import { useStore } from "vuex";
 
 const store = useStore();
 const copy = computed(() => store.state.copy.about);
+
+import { useHead } from "@vueuse/head";
+
+useHead({
+  title: "Om oss på Wolkano",
+  meta: [
+    { property: "og:url", content: "https://wolkano.se/omoss" },
+    { name: "twitter:title", content: "Om oss på Wolkano" },
+  ],
+});
 </script>
 
 <style lang="scss" scoped>

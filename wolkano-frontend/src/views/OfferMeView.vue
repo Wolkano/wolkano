@@ -147,6 +147,18 @@ import InfoTextSection from "@/components/InfoTextSection.vue";
 import OffertForm from "@/components/OffertForm.vue";
 import OurTeam from "@/components/OurTeam.vue";
 //import QuestionsBanner from "@/components/QuestionsBanner.vue";
+import { useHead } from "@vueuse/head";
+
+useHead({
+  title: "Snabbare offerter med OfferMe · Wolkano: Automatiska offerter",
+  meta: [
+    { property: "og:url", content: "https://wolkano.se/OfferMe " },
+    {
+      name: "twitter:title",
+      content: "Snabbare offerter med OfferMe · Wolkano: Automatiska offerter",
+    },
+  ],
+});
 </script>
 
 <style lang="scss" scoped>

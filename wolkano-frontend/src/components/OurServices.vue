@@ -63,7 +63,7 @@
         <!-- <router-link style="display: none" class="primaryButton" to="/works"
           >Läs mer</router-link
         >-->
-        <router-link class="secondaryButton" to="/form"
+        <router-link class="secondaryButton" to="/kontakta"
           >Kontakta oss</router-link
         >
       </div>

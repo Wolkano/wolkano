@@ -138,6 +138,15 @@ const reset = () => {
   store.commit("setHasSubmitted", false);
 };
 const isSubmitting = ref(false);
+import { useHead } from "@vueuse/head";
+
+useHead({
+  title: "Kontakta oss på Wolkano",
+  meta: [
+    { property: "og:url", content: "https://wolkano.se/kontakta" },
+    { name: "twitter:title", content: "Kontakta oss på Wolkano" },
+  ],
+});
 </script>
 
 <style lang="scss" scoped>

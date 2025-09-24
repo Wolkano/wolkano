@@ -15,12 +15,12 @@ const routes = [
   },
 
   {
-    path: "/about",
+    path: "/omoss",
     name: "Om oss · Wolkano",
     component: AboutView,
   },
   {
-    path: "/form",
+    path: "/kontakta",
     name: "Kontakta oss · Wolkano",
     component: FormView,
   },
@@ -35,7 +35,7 @@ const routes = [
     component: WebbUtvView,
   },
   {
-    path: "/works",
+    path: "/tjanster",
     name: "Hur fungerar det · Wolkano",
     component: HowItWorks,
   },
@@ -52,11 +52,6 @@ const router = createRouter({
   scrollBehavior() {
     return { top: 0 };
   },
-});
-
-router.beforeEach((to, from, next) => {
-  document.title = to.name;
-  next();
 });
 
 export default router;

@@ -32,7 +32,7 @@
         <div class="kontakta">
           <p>Behöver du en hemsida? Tveka inte att kontakta oss</p>
           <div class="button">
-            <router-link to="/form" class="buttonLink"
+            <router-link to="/kontakta" class="buttonLink"
               >Kontakta oss</router-link
             >
           </div>
